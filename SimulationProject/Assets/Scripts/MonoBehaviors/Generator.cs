@@ -5,17 +5,17 @@ using UnityEngine;
 public class Generator : Building
 {
     [SerializeField]
-    GeneratorType generator;
+    public GeneratorType generator;
     [SerializeField]
-    int currentSpawned = 0;
+    public int currentSpawned = 0;
     [SerializeField]
-    int maxSpawned = 100;
+    public int maxSpawned = 100;
     [SerializeField]
-    float timeSinceLastSpawn = 0;
+    public float timeSinceLastSpawn = 0;
 
     void Update()
     {
-        if (timeSinceLastSpawn > generator.rateOfSpawn && currentSpawned < maxSpawned)
+        if (timeSinceLastSpawn > 60/generator.rateOfSpawn && currentSpawned < maxSpawned)
         {
             GenerateResources();
         }

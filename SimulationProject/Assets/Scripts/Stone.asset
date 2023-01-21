@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Stone
   description: Something hard
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c8632926a2ba3c2439cec53634971c31, type: 3}

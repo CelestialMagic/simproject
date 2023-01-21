@@ -22,6 +22,8 @@ public class Health : MonoBehaviour
     }
     private void Die()
     {
-        //emit an event or do something
+        //emit an event signifying death!
+        //TODO CHANGE THIS LINE BELOW: Dont just destroy the gameobject(if the player health gets below zero, BOOM they will immediately die)
+        Destroy(gameObject);
     }
 }
