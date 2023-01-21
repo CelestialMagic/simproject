@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class Health : MonoBehaviour
     private float currHealth;
     [SerializeField]
     private float maxHealth = 100;
+    public event EventHandler onDeath; 
 
     void Awake()
     {
@@ -22,8 +24,10 @@ public class Health : MonoBehaviour
     }
     private void Die()
     {
-        //emit an event signifying death!
-        //TODO CHANGE THIS LINE BELOW: Dont just destroy the gameobject(if the player health gets below zero, BOOM they will immediately die)
-        Destroy(gameObject);
+        if (onDeath != null)
+        {
+            onDeath(this, EventArgs.Empty); 
+            //Emits an event that the health has dipped below 0!
+        }
     }
 }

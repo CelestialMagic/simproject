@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125c6cd37dc210148aee3760a82a1dc4, type: 3}
   m_Name: Lumberyard
   m_EditorClassIdentifier: 
-  resource: {fileID: 0}
-  rateOfSpawn: 0
+  resource: {fileID: 11400000, guid: ee4f99a7a9ddaa043b96a3e12080e3a0, type: 2}
+  rateOfSpawn: 120

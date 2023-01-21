@@ -11,4 +11,6 @@ public class GeneratorType : ScriptableObject
     public ResourceType resource;
     [SerializeField]
     public float rateOfSpawn;
+    [SerializeField]
+    public GameObject prefab;
 }
