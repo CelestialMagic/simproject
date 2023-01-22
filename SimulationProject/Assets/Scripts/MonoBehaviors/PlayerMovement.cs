@@ -2,27 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class TestMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private float moveForce;
+    private float moveForce;//Force applied to rigidbody for movement. 
 
     [SerializeField]
-    private Rigidbody rb;
-
-    [SerializeField]
-    private float rotation;
+    private Rigidbody rb;//RigidBody
 
     private Vector3 m_ToApplyMove;//A Vector3 representing the player movement force
 
+    private Input input; //To be used with Input system.
 
+    private int woodCount;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    private int stoneCount; 
 
-    }
 
     // Update is called once per frame
     void Update()
@@ -66,5 +61,18 @@ public class TestMovement : MonoBehaviour
 
     }
 
-   
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case ("Wood"):
+                break;
+            case ("Stone"):
+                break;
+            default:
+                break;
+        }
+    }
+
+
 }
