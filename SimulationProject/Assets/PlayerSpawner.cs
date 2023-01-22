@@ -12,6 +12,10 @@ public class PlayerSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        foreach(Player p in players)
+        {
+            p.Spawn();
+        }
         
         
     }

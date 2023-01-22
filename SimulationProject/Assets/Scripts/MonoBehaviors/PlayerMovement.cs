@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Rigidbody rb;//RigidBody
 
+    [SerializeField]
+    private MeshRenderer renderer; 
+
     private Vector3 m_ToApplyMove;//A Vector3 representing the player movement force
 
     private Input input; //To be used with Input system.
@@ -74,5 +77,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void Initialize(Color color)
+    {
+        renderer.material.color = color;
+    }
 
 }
