@@ -6,20 +6,44 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField]
-    private float currHealth;
+    public float CurrHealth { get; set; }
     [SerializeField]
-    private float maxHealth = 100;
-    public event EventHandler onDeath; 
+    public float MaxHealth { get; set; } = 100;
+   
+    public event EventHandler onDeath, onReceiveDamage, onReceiveHealth; 
 
     void Awake()
     {
-        currHealth = maxHealth;
+        CurrHealth = MaxHealth;
     }
 
     private void Update()
     {
-        if (currHealth <= 0){
+        if (CurrHealth <= 0){
             Die();
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Damage(10);
+        }
+    }
+    public void Damage(int amount)
+    {
+        if (onReceiveDamage != null ) onReceiveDamage(this, EventArgs.Empty);
+        CurrHealth -= amount;
+        if (CurrHealth < 0)
+        {
+            CurrHealth= 0;
+        }
+    }
+
+    public void Heal(int amount)
+    {
+        if (onReceiveDamage != null) onReceiveHealth(this, EventArgs.Empty);
+        CurrHealth += amount;
+        if (CurrHealth > MaxHealth)
+        {
+            CurrHealth = MaxHealth;
         }
     }
     private void Die()
@@ -27,7 +51,6 @@ public class Health : MonoBehaviour
         if (onDeath != null)
         {
             onDeath(this, EventArgs.Empty); 
-            //Emits an event that the health has dipped below 0!
         }
     }
 }
