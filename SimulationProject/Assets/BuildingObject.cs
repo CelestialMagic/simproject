@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
 using UnityEngine;
 [CreateAssetMenu(menuName = "Create/Custom/Building")]
-public class BuildingObject : ScriptableObject
+public class BuildingObject : Purchasable
 {
 
     [SerializeField]
-    private Building prefab;
+    public Building Prefab { get; }
 
-    public Building Spawn(PlayerMovement player)
+    public Building Spawn(Vector3 position, Quaternion rotation) 
     {
-        Building instance = GameObject.Instantiate(prefab, player.transform.position, Quaternion.identity);
-        return instance;
+        //Spawns in the object
+        Building instance = GameObject.Instantiate(Prefab, position, rotation);
+        return instance;//the return is currently unused
     }
 }
