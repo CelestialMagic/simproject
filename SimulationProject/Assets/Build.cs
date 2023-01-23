@@ -5,21 +5,18 @@ using UnityEngine;
 public class Build : MonoBehaviour
 {
     [SerializeField]
-    private List<Building> buildings;
+    private List<BuildingObject> buildings;
 
+    [SerializeField]
+    private PlayerMovement player;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X))
         {
-            Instantiate(buildings[0]); 
+            buildings[0].Spawn(player);
         }
     }
 }
