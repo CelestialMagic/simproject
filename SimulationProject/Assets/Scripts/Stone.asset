@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Stone
   m_EditorClassIdentifier: 
   name: Stone
-  description: Something hard
+  description: Yeah, I tell ya what. Neanderthals LOVE this stuff. Looks like you
+    do, too! Collect this stuff to improve building sturdiness, ya cavedweller!
   icon: {fileID: 21300000, guid: 9e5e200069c8ec14b857e10db776c146, type: 3}

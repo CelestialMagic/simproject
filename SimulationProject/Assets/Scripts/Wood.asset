@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Wood
   m_EditorClassIdentifier: 
   name: Wood
-  description: Collect from trees
+  description: I always wonder why I have to refer to this as just "wood". Sure,
+    all it needs to do is let you know this is a basic building material you need
+    to collect, but where's the class in that? Why do I have to be so barbaric referring
+    to it? If you ask me, I would've called this something like "lignum vitae"! The
+    nerve of some game devs...
   icon: {fileID: 21300000, guid: efe2ac1e04c61d1429e370eb4e493aa0, type: 3}
