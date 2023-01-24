@@ -23,7 +23,7 @@ public class ShopUI : MonoBehaviour
         //Changes current index to the previous one
         currentIndex = (currentIndex - 1 ) % items.Count;
     }
-    public virtual bool Purchase(Inventory inventory)
+    public virtual bool PurchaseCurrent(Inventory inventory)
     {
         ///Attempts to purchase the current item. Returns bool representing success of purchase
         bool result = items[currentIndex].Purchase(inventory);
