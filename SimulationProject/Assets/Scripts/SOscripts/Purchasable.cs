@@ -5,16 +5,19 @@ using UnityEngine;
 
 public class Purchasable : ScriptableObject
 {
+    ///UNTESTED. (remove this line when tested)
     /// <summary>
     /// Base class for purchasables, used by UI to display options
     /// </summary>
     [SerializeField]
-    public List<(ResourceType, int)> Cost { get; private set; }
+    public string Name;
     [SerializeField]
-    public string Description { get; private set; }
+    public List<(ResourceType, int)> Cost;
+    [SerializeField]
+    public string Description;
 
     [SerializeField]
-    public Sprite Icon { get; private set; }
+    public Sprite Icon;
 
     public bool CanPurchase(Inventory inventory)
     {

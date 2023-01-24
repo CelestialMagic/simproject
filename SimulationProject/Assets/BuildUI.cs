@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BuildUI : ShopUI
 {
+    ///UNTESTED. (remove this line when tested)
     /// <summary>
     /// An implementation of the ShopUI, with BuildingObjects as purchasables
     /// </summary>
@@ -14,10 +15,18 @@ public class BuildUI : ShopUI
 
     void Update()
     {
+        //THIS UPDATE WILL BE DELETED LATER
         if (Input.GetKeyDown(KeyCode.X))
         {
             BuildingObject buildingObject = (BuildingObject) GetCurrent(); //Typecasting the current purchasable into as a building
-            buildingObject.Spawn(player.transform.position, player.transform.rotation);
+            Vector3 spawnPosition = player.transform.position + player.transform.forward.normalized * 20;
+            buildingObject.Spawn(spawnPosition, player.transform.rotation);
+        }
+        if(Input.GetKeyDown(KeyCode.Z)) {
+            Next();
+        }
+        if(Input.GetKeyDown(KeyCode.C)) {
+            Previous();
         }
     }
 }

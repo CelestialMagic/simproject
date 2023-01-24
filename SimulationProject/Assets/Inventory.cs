@@ -5,6 +5,7 @@ using Unity.Collections;
 
 public class Inventory : MonoBehaviour
 {
+    ///UNTESTED. (remove this line when tested)
     /// <summary>
     /// Inventory script, used to manage inventory of ResourceType(s).
     /// </summary>

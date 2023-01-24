@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Resources;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Create/Custom/Building")]
+[CreateAssetMenu(menuName = "Create/Custom/BuildingObject")]
 public class BuildingObject : Purchasable
 {
+    ///UNTESTED. (remove this line when tested)
 
     [SerializeField]
-    public Building Prefab { get; }
+    public Building Prefab;
 
     public Building Spawn(Vector3 position, Quaternion rotation) 
     {

@@ -791,8 +791,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de081d46fc3f9d34ea1a7656d189cbff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Slider: {fileID: 0}
-  HealthScript: {fileID: 0}
+  Slider: {fileID: 6215079342316100666}
+  HealthScript: {fileID: 6652552752017479838}
+  fill: {fileID: 7051314615464541393}
+  LowHealth: {r: 1, g: 0, b: 0, a: 1}
+  HighHealth: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &3655946514623189731
 GameObject:
   m_ObjectHideFlags: 0

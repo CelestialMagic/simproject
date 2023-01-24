@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShopUI : MonoBehaviour
 {
+    ///Tested: Success 1/23
     /// <summary>
     /// IMPORTANT: MIGHT CHANGE THE NAME OF THIS!
     /// </summary>
@@ -32,6 +33,9 @@ public class ShopUI : MonoBehaviour
     public Purchasable GetCurrent()
     {
         ///Gets currently selected purchasable
+        Debug.Log("RUnning");
+        Debug.Log(currentIndex);
+        Debug.Log(items);
         return items[currentIndex];
     }
 
