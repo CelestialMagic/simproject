@@ -6,7 +6,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private float moveForce;//Force applied to rigidbody for movement. 
+    private float moveForce;//Force applied to rigidbody for movement.
+    [SerializeField]
+    private float rotationSpeed;
+                          
 
     [SerializeField]
     private Rigidbody rb;//RigidBody
@@ -44,15 +47,23 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
 
+        Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
         //Read movement value
         float sideInput = playerInput.Movement.Sides.ReadValue<float>();
         float forwardInput = playerInput.Movement.Forward.ReadValue<float>();
         
-        //Move Player
-        Vector3 currentPosition = transform.position;
 
         m_ToApplyMove = new Vector3(forwardInput * moveForce * Time.deltaTime, 0, sideInput * moveForce * Time.deltaTime);
+
+
+            Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+
+
+        
 
 
 

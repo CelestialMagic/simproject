@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveForce: 8000
+  rotationSpeed: 720
   rb: {fileID: 1487042005408490189}
   renderer: {fileID: 1487042005408490176}
 --- !u!54 &1487042005408490189
