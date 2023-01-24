@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
     /// Inventory script, used to manage inventory of ResourceType(s).
     /// </summary>
     [SerializeField]
-    private Dictionary<ResourceType, int> Resources { get;}
+    private Dictionary<ResourceType, int> Resources;
 
 
     public void AddResource(ResourceType resource, int quantity)
