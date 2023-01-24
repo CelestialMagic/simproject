@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
@@ -19,33 +20,39 @@ public class PlayerMovement : MonoBehaviour
 
     private int woodCount;
 
-    private int stoneCount; 
+    private int stoneCount;
 
+    [SerializeField]
+    private PlayerInput playerInput;
+
+    private void Awake()
+    {
+        playerInput = new PlayerInput();
+    }
+
+    private void OnEnable()
+    {
+        playerInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerInput.Disable();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        //Determines direction of key press
-        if (Input.GetKey(KeyCode.W))
-        {
-            m_ToApplyMove += new Vector3(0, 0, moveForce * Time.deltaTime);
 
 
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            m_ToApplyMove += new Vector3(0, 0, -moveForce * Time.deltaTime);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            m_ToApplyMove += new Vector3(moveForce * Time.deltaTime, 0, 0);
+        //Read movement value
+        float sideInput = playerInput.Movement.Sides.ReadValue<float>();
+        float forwardInput = playerInput.Movement.Forward.ReadValue<float>();
+        
+        //Move Player
+        Vector3 currentPosition = transform.position;
 
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            m_ToApplyMove += new Vector3(-moveForce * Time.deltaTime, 0, 0);
-
-        }
+        m_ToApplyMove = new Vector3(forwardInput * moveForce * Time.deltaTime, 0, sideInput * moveForce * Time.deltaTime);
 
 
 
@@ -55,8 +62,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Applies force to rigidbody to allow player to jump
-        //Resets to zero after. 
+        ////Applies force to rigidbody to allow player to jump
+        ////Resets to zero after. 
         rb.AddForce(m_ToApplyMove);
         m_ToApplyMove = Vector3.zero;
 

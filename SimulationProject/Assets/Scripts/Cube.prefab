@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9665f8bbc1686416596b2ee010df252b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 1500
+  moveForce: 8000
   rb: {fileID: 1487042005408490189}
   renderer: {fileID: 1487042005408490176}
 --- !u!54 &1487042005408490189
@@ -143,6 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef3352a3c3914d7abe3cebb2581f803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildings:
-  - {fileID: 11400000, guid: f2a3a02dfdbe6499580ef9ec11913ec7, type: 2}
+  items: []
+  currentIndex: 0
   player: {fileID: 1487042005408490190}
