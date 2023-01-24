@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShopUI : MonoBehaviour
 {
-    ///Tested: Success 1/23
+    ///UNTESTED
     /// <summary>
     /// IMPORTANT: MIGHT CHANGE THE NAME OF THIS!
     /// </summary>
