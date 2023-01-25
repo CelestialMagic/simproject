@@ -1011,18 +1011,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3629350090704535995, guid: 93ba0a31b07b10c42ba90a22cb6045a5, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3629350090704535995, guid: 93ba0a31b07b10c42ba90a22cb6045a5, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3629350090704535995, guid: 93ba0a31b07b10c42ba90a22cb6045a5, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6652552752017479833, guid: 93ba0a31b07b10c42ba90a22cb6045a5, type: 3}
       propertyPath: m_Name
       value: StoneMill
@@ -1080,18 +1068,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1285907610698533012, guid: ebd3ad15d0637bc42a3c59563a562297, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1285907610698533012, guid: ebd3ad15d0637bc42a3c59563a562297, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1285907610698533012, guid: ebd3ad15d0637bc42a3c59563a562297, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4137640931343376647, guid: ebd3ad15d0637bc42a3c59563a562297, type: 3}
       propertyPath: m_Name
       value: Lumberyard
@@ -1191,18 +1167,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3001714421857766941, guid: 826c7780b3ed0d740a326d4155cdb18c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8239284187722937530, guid: 826c7780b3ed0d740a326d4155cdb18c, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8239284187722937530, guid: 826c7780b3ed0d740a326d4155cdb18c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8239284187722937530, guid: 826c7780b3ed0d740a326d4155cdb18c, type: 3}
-      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8621271603663066663, guid: 826c7780b3ed0d740a326d4155cdb18c, type: 3}
