@@ -25,7 +25,7 @@ public class BuildUI : ShopUI
         //TODO: Calculate a position to put it
         //TODO: implement some sort of collision checking
         Vector3 spawnPosition = player.transform.position + player.transform.forward.normalized * 20;
-        buildingObject.Spawn(spawnPosition, player.transform.rotation);
+        buildingObject.Spawn(spawnPosition, Quaternion.identity);
 
     }
 

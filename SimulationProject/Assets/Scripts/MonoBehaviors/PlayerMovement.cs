@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     private float moveSpeed;//Force applied to rigidbody for movement.
     [SerializeField]
     private float rotationSpeed;
+
+    [SerializeField]
+    private Transform optionalCamera;
                           
 
     [SerializeField]
@@ -55,10 +58,21 @@ public class PlayerMovement : MonoBehaviour
         //Read movement value
         float sideInput = playerInput.Movement.Sides.ReadValue<float>();
         float forwardInput = playerInput.Movement.Forward.ReadValue<float>();
-        m_ToApplyMove = new Vector3(forwardInput, 0, sideInput).normalized * moveSpeed;
-        //Time.deltaTime is only supposed to be used if the movement is applied in update. 
-        //If used when the movement is applied in fixedupdate, Time.deltaTime will actually cause inconsistency
-        //made sure to normalize the movement(so the speed remains the same even when going diagonal)
+        m_ToApplyMove = Vector3.zero;
+        if (optionalCamera != null)
+        {
+            //If a camera is attached, move according to the look direction of the camera
+            Vector3 forwardVector = new Vector3(optionalCamera.forward.x, 0, optionalCamera.forward.z).normalized;
+            Vector3 perpendicularVector = Quaternion.Euler(0, -90, 0) * new Vector3(optionalCamera.forward.x, 0, optionalCamera.forward.z).normalized;
+            m_ToApplyMove = (- forwardVector * forwardInput + - perpendicularVector * sideInput).normalized * moveSpeed;
+        }
+        else
+        {
+            m_ToApplyMove = new Vector3(forwardInput, 0, sideInput).normalized * moveSpeed;
+            //Time.deltaTime is only supposed to be used if the movement is applied in update. 
+            //If used when the movement is applied in fixedupdate, Time.deltaTime will actually cause inconsistency
+            //made sure to normalize the movement(so the speed remains the same even when going diagonal)
+        }
 
 
         //Only rotate when there is input
