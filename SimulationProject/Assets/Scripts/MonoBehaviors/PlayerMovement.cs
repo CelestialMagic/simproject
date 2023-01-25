@@ -57,18 +57,15 @@ public class PlayerMovement : MonoBehaviour
         float forwardInput = playerInput.Movement.Forward.ReadValue<float>();
         m_ToApplyMove = new Vector3(forwardInput, 0, sideInput).normalized * moveSpeed;
         //Time.deltaTime is only supposed to be used if the movement is applied in update. 
-        //If used when the movement is applied in fixedupdate, Time.deltaTime will cause inconsistency
+        //If used when the movement is applied in fixedupdate, Time.deltaTime will actually cause inconsistency
+        //made sure to normalize the movement(so the speed remains the same even when going diagonal)
 
 
-
-        if (sideInput != 0 || forwardInput != 0) //Only rotate when there is input
+        //Only rotate when there is input
+        if (sideInput != 0 || forwardInput != 0) 
         {
             Quaternion toRotation = Quaternion.LookRotation(m_ToApplyMove, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-            //Uses Time.deltaTime because the rotation is applied in update.
-
-            //Alternative: transform.LookAt(this.transform.position + m_ToApplyMove);
-            //Alternative instantly rotates
         }
 
 
