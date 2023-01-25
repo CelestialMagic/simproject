@@ -7,7 +7,6 @@ using UnityEngine;
 public class GeneratorDisplay : MonoBehaviour
 {
     [SerializeField]
-    public Transform target;
 
     Generator generator;
     TextMeshPro text;
@@ -20,14 +19,10 @@ public class GeneratorDisplay : MonoBehaviour
         {
             generator = this.GetComponentInParent<Generator>();
         }
-        if (target == null) {
-            target = Camera.main.transform;
-        }
         iconRenderer.sprite = generator.generator.resource.icon;
     }
     void Update()
     {
-        this.transform.LookAt(this.transform.position - target.position);
         if (generator.currentSpawned != generator.maxSpawned)
         {
             text.text = "[" + generator.currentSpawned + " / " + generator.maxSpawned + "]";

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fbb00d8b74d2448397ad609f32bf38a, type: 3}
+  m_Name: Wall Purchasable
+  m_EditorClassIdentifier: 
+  Name: Wood Wall
+  Description: 
+  Icon: {fileID: 21300000, guid: 082f7453675a9e3468a060e0b75fafc7, type: 3}
+  Prefab: {fileID: 333208280, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}

@@ -5,8 +5,6 @@ using UnityEngine;
 public class ShopUI : MonoBehaviour
 {
     ///UNTESTED
-    /// <summary>
-    /// IMPORTANT: MIGHT CHANGE THE NAME OF THIS!
     /// </summary>
     /// 
 
@@ -21,7 +19,8 @@ public class ShopUI : MonoBehaviour
     public void Previous()
     {
         //Changes current index to the previous one
-        currentIndex = (currentIndex - 1 ) % items.Count;
+        currentIndex = (items.Count + currentIndex - 1 ) % items.Count;
+        //adding items.count ensures we dont run into any negative numbers
     }
     public virtual bool PurchaseCurrent(Inventory inventory)
     {
@@ -30,23 +29,28 @@ public class ShopUI : MonoBehaviour
         return result;
     }
     
+    public Purchasable GetInIndex(int index)
+    {
+        if (index < 0 || index >= items.Count)
+        {
+            return null;
+        }
+        return items[index];
+    }
     public Purchasable GetCurrent()
     {
         ///Gets currently selected purchasable
-        Debug.Log("RUnning");
-        Debug.Log(currentIndex);
-        Debug.Log(items);
         return items[currentIndex];
     }
 
     public Purchasable GetNext()
     {
         ///Gets purchasable to the right of current selected
-        return items[(currentIndex + 1) % items.Count];
+        return items[(items.Count + currentIndex + 1) % items.Count];
     }
     public Purchasable GetPrevious()
     {
         ///Gets purchasable to the left of current selected
-        return items[(currentIndex - 1) % items.Count];
+        return items[(items.Count + currentIndex - 1) % items.Count];
     }
 }

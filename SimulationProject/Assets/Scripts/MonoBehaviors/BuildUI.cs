@@ -23,25 +23,25 @@ public class BuildUI : ShopUI
     {
         BuildingObject buildingObject = (BuildingObject)GetCurrent(); //Typecasting the current purchasable into as a building
         //TODO: Calculate a position to put it
-        //TODO: implement some sort of collision checking
         Vector3 spawnPosition = player.transform.position + player.transform.forward.normalized * 20;
-        buildingObject.Spawn(spawnPosition, Quaternion.identity);
+        //TODO: implement some sort of collision checking BEFORE spawning
+        buildingObject.Spawn(spawnPosition, player.transform.rotation);
 
     }
 
     public 
     void Update()
     {
-        //THIS UPDATE WILL BE DELETED LATER
+        //THIS UPDATE WILL BE DELETED LATER!!! DELETE THIS WHEN MENU IS IMPLEMENTED
         if (Input.GetKeyDown(KeyCode.X))
         {
             SpawnCurrent();//Checking to see if spawning works, JUST FOR TESTING PURPOSES.
-                           //Should always be called through PurchaseCurrent().
-        }
-        if(Input.GetKeyDown(KeyCode.Z)) {
-            Next();
+                           //Should always be called through PurchaseCurrent(). Testingis an exception!
         }
         if(Input.GetKeyDown(KeyCode.C)) {
+            Next();
+        }
+        if(Input.GetKeyDown(KeyCode.Z)) {
             Previous();
         }
     }
