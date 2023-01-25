@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private float moveForce;//Force applied to rigidbody for movement.
+    private float moveSpeed;//Force applied to rigidbody for movement.
     [SerializeField]
     private float rotationSpeed;
                           
@@ -47,23 +47,31 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        //OLD: float horizontalInput = Input.GetAxis("Horizontal");
+        //OLD: float verticalInput = Input.GetAxis("Vertical");
 
-        Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
+        //OLD: Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
+
         //Read movement value
         float sideInput = playerInput.Movement.Sides.ReadValue<float>();
         float forwardInput = playerInput.Movement.Forward.ReadValue<float>();
-        
+        m_ToApplyMove = new Vector3(forwardInput, 0, sideInput).normalized * moveSpeed;
+        //Time.deltaTime is only supposed to be used if the movement is applied in update. 
+        //If used when the movement is applied in fixedupdate, Time.deltaTime will cause inconsistency
 
-        m_ToApplyMove = new Vector3(forwardInput * moveForce * Time.deltaTime, 0, sideInput * moveForce * Time.deltaTime);
 
 
-            Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+        if (sideInput != 0 || forwardInput != 0) //Only rotate when there is input
+        {
+            Quaternion toRotation = Quaternion.LookRotation(m_ToApplyMove, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            //Uses Time.deltaTime because the rotation is applied in update.
+
+            //Alternative: transform.LookAt(this.transform.position + m_ToApplyMove);
+            //Alternative instantly rotates
+        }
 
 
-        
 
 
 
@@ -75,7 +83,11 @@ public class PlayerMovement : MonoBehaviour
     {
         ////Applies force to rigidbody to allow player to jump
         ////Resets to zero after. 
-        rb.AddForce(m_ToApplyMove);
+ 
+        //OLD: rb.AddForce(m_ToApplyMove);
+        rb.velocity = m_ToApplyMove * Time.fixedDeltaTime;
+        //since the actual move step is called in fixed update, we use fixedDeltaTime
+        //using velocity instead of addforce for smooth movement
         m_ToApplyMove = Vector3.zero;
 
 
