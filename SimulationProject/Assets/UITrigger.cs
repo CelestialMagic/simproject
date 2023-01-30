@@ -8,16 +8,13 @@ public class UITrigger : MonoBehaviour
     [SerializeField]
     private TMP_Text displayText;
 
+    [SerializeField]
+    private GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
        displayText.gameObject.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter(Collider other)
