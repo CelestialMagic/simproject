@@ -8,8 +8,9 @@ public class PlayerSpawner : MonoBehaviour
     private List<Player> players;
 
     [SerializeField]
-    private Transform spawner; 
+    private Transform spawner;
 
+    
     
 
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class PlayerSpawner : MonoBehaviour
         {
             p.Spawn();
             p.prefab.transform.position = spawner.position;
+            
         }
         
         
