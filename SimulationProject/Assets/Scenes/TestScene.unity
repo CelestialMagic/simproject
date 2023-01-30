@@ -223,6 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players:
   - {fileID: 11400000, guid: 5dada2c50ac41481fa390178e35ab865, type: 2}
+  spawner: {fileID: 0}
 --- !u!4 &806767041
 Transform:
   m_ObjectHideFlags: 0
@@ -378,7 +379,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 10, y: 81.046, z: 0}
 --- !u!114 &1315139678
 MonoBehaviour:
@@ -620,7 +621,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1637033040
 GameObject:
@@ -846,7 +847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6652552752017479843, guid: 93ba0a31b07b10c42ba90a22cb6045a5, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6652552752017479843, guid: 93ba0a31b07b10c42ba90a22cb6045a5, type: 3}
       propertyPath: m_LocalPosition.x

@@ -6,19 +6,17 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private float moveSpeed;//Force applied to rigidbody for movement.
-    [SerializeField]
-    private float rotationSpeed;
+    private float moveForce;//Speed to move
 
     [SerializeField]
-    private Transform optionalCamera;
+    private float rotationSpeed;//Speed to rotate
                           
 
     [SerializeField]
     private Rigidbody rb;//RigidBody
 
     [SerializeField]
-    private MeshRenderer renderer; 
+    private MeshRenderer renderer;//Player meshrenderer
 
     private Vector3 m_ToApplyMove;//A Vector3 representing the player movement force
 
@@ -50,60 +48,28 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        //OLD: float horizontalInput = Input.GetAxis("Horizontal");
-        //OLD: float verticalInput = Input.GetAxis("Vertical");
-
-        //OLD: Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
-
         //Read movement value
         float sideInput = playerInput.Movement.Sides.ReadValue<float>();
         float forwardInput = playerInput.Movement.Forward.ReadValue<float>();
-        m_ToApplyMove = Vector3.zero;
-        if (optionalCamera != null)
-        {
-            //If a camera is attached, move according to the look direction of the camera
-            Vector3 forwardVector = new Vector3(optionalCamera.forward.x, 0, optionalCamera.forward.z).normalized;
-            Vector3 perpendicularVector = Quaternion.Euler(0, -90, 0) * new Vector3(optionalCamera.forward.x, 0, optionalCamera.forward.z).normalized;
-            m_ToApplyMove = (- forwardVector * forwardInput + - perpendicularVector * sideInput).normalized * moveSpeed;
-        }
-        else
-        {
-            m_ToApplyMove = new Vector3(forwardInput, 0, sideInput).normalized * moveSpeed;
-            //Time.deltaTime is only supposed to be used if the movement is applied in update. 
-            //If used when the movement is applied in fixedupdate, Time.deltaTime will actually cause inconsistency
-            //made sure to normalize the movement(so the speed remains the same even when going diagonal)
-        }
 
 
-        //Only rotate when there is input
-        if (sideInput != 0 || forwardInput != 0) 
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
+
+        m_ToApplyMove = new Vector3(forwardInput * moveForce * Time.deltaTime, 0, sideInput * moveForce * Time.deltaTime);
+        transform.Translate(m_ToApplyMove, Space.World);
+
+        if(m_ToApplyMove != Vector3.zero)
         {
-            Quaternion toRotation = Quaternion.LookRotation(m_ToApplyMove, Vector3.up);
+            Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
-
-
-
-
-
-
+        
 
     }
 
-    private void FixedUpdate()
-    {
-        ////Applies force to rigidbody to allow player to jump
-        ////Resets to zero after. 
- 
-        //OLD: rb.AddForce(m_ToApplyMove);
-        rb.velocity = m_ToApplyMove * Time.fixedDeltaTime;
-        //since the actual move step is called in fixed update, we use fixedDeltaTime
-        //using velocity instead of addforce for smooth movement
-        m_ToApplyMove = Vector3.zero;
-
-
-
-    }
 
     private void OnTriggerEnter(Collider other)
     {
