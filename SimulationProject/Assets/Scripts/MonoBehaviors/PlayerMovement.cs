@@ -6,12 +6,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private float moveForce;//Speed to move
+    private float moveSpeed;//Speed to move
 
     [SerializeField]
     private float rotationSpeed;//Speed to rotate
                           
-
     [SerializeField]
     private Rigidbody rb;//RigidBody
 
@@ -22,12 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Input input; //To be used with Input system.
 
-    private int woodCount;
-
-    private int stoneCount;
-
     [SerializeField]
-    private PlayerInput playerInput;
+    private PlayerInput playerInput;//Player Input System to be used by certain player
 
     private void Awake()
     {
@@ -48,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        //Read movement value
+        //Reads movement value from input system
         float sideInput = playerInput.Movement.Sides.ReadValue<float>();
         float forwardInput = playerInput.Movement.Forward.ReadValue<float>();
 
@@ -58,9 +53,10 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
 
-        m_ToApplyMove = new Vector3(forwardInput * moveForce * Time.deltaTime, 0, sideInput * moveForce * Time.deltaTime);
+        m_ToApplyMove = new Vector3(forwardInput * moveSpeed * Time.deltaTime, 0, sideInput * moveSpeed * Time.deltaTime);
         transform.Translate(m_ToApplyMove, Space.World);
 
+        //Determines when to rotate the player character
         if(m_ToApplyMove != Vector3.zero)
         {
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
@@ -70,20 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-
-    private void OnTriggerEnter(Collider other)
-    {
-        switch (other.gameObject.tag)
-        {
-            case ("Wood"):
-                break;
-            case ("Stone"):
-                break;
-            default:
-                break;
-        }
-    }
-
+    //To be used with potential scriptableobjects
     public void Initialize(Color color)
     {
         renderer.material.color = color;
