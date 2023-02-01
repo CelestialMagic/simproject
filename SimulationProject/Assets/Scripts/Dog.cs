@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class Dog : Animal, ISpawnableObject
 {
-    public GameObject prefab
-    {
-        get;
+    [SerializeField] private GameObject m_prefab;
 
-        [SerializeField]
-        private set;
-    }
+    public GameObject prefab { get { return m_prefab; }
+        set { prefab = m_prefab; } }
+
+    [SerializeField] private int m_cost;
     public int cost
     {
-        get;
-
-        [SerializeField]
-        private set;
+        get { return m_cost; }
+        set { cost = m_cost; }
     }
 
     public override void CreateObject()

@@ -19,9 +19,6 @@ public class Spawner : MonoBehaviour
             {
                 ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
                 ((Animal)objects[currentIndex]).CreateObject();
-                
-
-
             }
 
         }
