@@ -4,7 +4,9 @@ using UnityEngine;
 
 public interface ISpawnableObject
 {
-    
-    
-   
+    GameObject prefab { get;  }
+    int cost { get; }
+
+
+
 }

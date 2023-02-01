@@ -2,13 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Animal : MonoBehaviour
+public abstract class Animal : ObjectFactory
 {
-    [SerializeField]
-    protected GameObject prefab;
-    [SerializeField]
-    protected int cost;
-
     [SerializeField]
     protected AudioClip noise;
 

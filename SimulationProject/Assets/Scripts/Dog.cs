@@ -19,5 +19,9 @@ public class Dog : Animal, ISpawnableObject
         private set;
     }
 
-  
+    public override void CreateObject()
+    {
+        Instantiate(gameObject);
+    }
+
 }
