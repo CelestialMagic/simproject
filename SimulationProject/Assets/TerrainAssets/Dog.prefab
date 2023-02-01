@@ -503,6 +503,7 @@ MonoBehaviour:
   audioSource: {fileID: 1233404657667072791}
   audioTimer: 5
   resetTimer: 5
+  waitPeriod: 2
   m_prefab: {fileID: 1233404657667106231}
   m_cost: 50
 --- !u!65 &479037799
