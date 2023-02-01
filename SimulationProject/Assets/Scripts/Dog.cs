@@ -16,9 +16,22 @@ public class Dog : Animal, ISpawnableObject
         set { cost = m_cost; }
     }
 
+
     public override void CreateObject()
     {
         Instantiate(gameObject);
     }
 
+    private void Update()
+    {
+        if(audioTimer - Time.deltaTime <= 0)
+        {
+            PlaySound(noise, volume);
+            audioTimer = resetTimer; 
+        }
+        else
+        {
+            audioTimer -= Time.deltaTime;
+        }
+    }
 }

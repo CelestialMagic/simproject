@@ -13,9 +13,15 @@ public abstract class Animal : ObjectFactory
     [SerializeField]
     protected AudioSource audioSource;
 
-    protected void PlaySound(AudioClip sound)
+    [SerializeField]
+    protected float audioTimer;
+
+    [SerializeField]
+    protected float resetTimer;
+
+    protected void PlaySound(AudioClip sound, float volume)
     {
-        audioSource.PlayOneShot(sound);
+        audioSource.PlayOneShot(sound, volume);
     }
 
 
