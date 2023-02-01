@@ -30,3 +30,6 @@ https://assetstore.unity.com/packages/vfx/shaders/low-poly-wind-182586
 -Low Poly Mini Village Free by Ioan Stan
 https://assetstore.unity.com/packages/3d/environments/low-poly-mini-village-free-131677
 
+-Animals! by Olan
+https://assetstore.unity.com/packages/audio/sound-fx/animals/animals-95444
+
