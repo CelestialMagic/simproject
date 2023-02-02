@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Animal : ObjectFactory
 {
+
     [SerializeField]
     protected AudioClip noise;//An AudioClip representing an animal noise
 
@@ -23,6 +24,23 @@ public abstract class Animal : ObjectFactory
     protected float waitPeriod;//A float representing seconds to vary when
                                //sound is played
 
+
+    [SerializeField] GameObject m_prefab;
+    [SerializeField] int m_cost;
+
+    public GameObject prefab
+    {
+        get { return m_prefab; }
+        set { prefab = m_prefab; }
+    }
+
+    
+    public int cost
+    {
+        get { return m_cost; }
+        set { cost = m_cost; }
+    }
+
     //Plays an audioclip
     protected void PlaySound(AudioClip sound, float volume)
     {
@@ -36,8 +54,8 @@ public abstract class Animal : ObjectFactory
     }
 
     //Update() is used primarily to play animal sound effects
-    //This may be updated for AI
-    private void Update()
+    //This may be overridden for various AI behaviors
+    protected virtual void Update()
     {
         if (audioTimer - Time.deltaTime <= 0)
         {

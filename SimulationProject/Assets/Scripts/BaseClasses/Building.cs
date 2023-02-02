@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Building : MonoBehaviour
+public abstract class Building : ObjectFactory
 {
-    private void Start()
+    
+    
+
+    public override void CreateObject()
     {
-      
+        Instantiate(gameObject);
     }
-  
+
 }
