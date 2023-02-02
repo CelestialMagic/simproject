@@ -57,6 +57,11 @@ public abstract class Animal : ObjectFactory
     //This may be overridden for various AI behaviors
     protected virtual void Update()
     {
+        MakeNoise();
+    }
+
+    protected virtual void MakeNoise()
+    {
         if (audioTimer - Time.deltaTime <= 0)
         {
             PlaySound(noise, volume);
