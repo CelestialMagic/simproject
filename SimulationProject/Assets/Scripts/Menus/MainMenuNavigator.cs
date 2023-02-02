@@ -34,4 +34,20 @@ public class MainMenuNavigator : MonoBehaviour
 #endif
     }
 
+    List<int> resWidths = new List<int>() { 800, 1024, 1280, 1366, 1440, 1920 };
+    List<int> resHeights = new List<int>() { 600, 768, 720, 768, 900, 1080 };
+
+    public void SetScreenRes(int index)
+    {
+        bool isFullscreen = Screen.fullScreen;
+        int width = resWidths[index];
+        int height = resHeights[index];
+        Screen.SetResolution(width, height, isFullscreen);
+    }
+
+    public void SetFullscreen(bool _fullscreen)
+    {
+        Screen.fullScreen = _fullscreen;
+    }
+
 }
