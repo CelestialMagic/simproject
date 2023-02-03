@@ -33,3 +33,6 @@ https://assetstore.unity.com/packages/3d/environments/low-poly-mini-village-free
 -Animals! by Olan
 https://assetstore.unity.com/packages/audio/sound-fx/animals/animals-95444
 
+-Mini Low Poly Pack by Have Fun with Developing
+https://assetstore.unity.com/packages/3d/environments/mini-low-poly-pack-185471
+
