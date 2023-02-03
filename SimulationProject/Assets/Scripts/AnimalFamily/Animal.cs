@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class Animal : ObjectFactory
 {
 
+
+
     [SerializeField]
     protected AudioClip noise;//An AudioClip representing an animal noise
 
@@ -25,17 +27,17 @@ public abstract class Animal : ObjectFactory
                                //sound is played
 
 
-    [SerializeField] GameObject m_prefab;
-    [SerializeField] int m_cost;
+    [SerializeField] GameObject m_prefab;//Animal prefab
+    [SerializeField] int m_cost;//Animal cost
 
-    public GameObject prefab
+    public GameObject prefab//Get and Set established for Interface field prefab
     {
         get { return m_prefab; }
         set { prefab = m_prefab; }
     }
 
     
-    public int cost
+    public int cost//Get and Set established for Interface field cost
     {
         get { return m_cost; }
         set { cost = m_cost; }
@@ -46,6 +48,8 @@ public abstract class Animal : ObjectFactory
     {
         audioSource.PlayOneShot(sound, volume);
     }
+
+
 
     //Code for creating an AnimalObject
     public override void CreateObject()
@@ -63,6 +67,7 @@ public abstract class Animal : ObjectFactory
     //A method used to play a sound after a given time
     protected virtual void MakeNoise(AudioClip noise, float volume)
     {
+
         if (audioTimer - Time.deltaTime <= 0)
         {
             PlaySound(noise, volume);
