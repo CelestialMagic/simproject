@@ -10,15 +10,22 @@ public class TicketBooth : Building, ISpawnableObject
     // Update is called once per frame
     void Update()
     {
-        
+        if (generateTimer - Time.deltaTime <= 0)
+        {
+            GenerateMoney();
+            generateTimer = resetTimer;
+
+        }
+        else
+        {
+            generateTimer -= Time.deltaTime;
+        }
+
     }
 
     protected override void GenerateMoney()
     {
-        if(generateTimer % moneyIncrement == 0)
-        {
-            moneyManager.SetCurrentIncome(generateAmount);
-        }
+        moneyManager.SetCurrentIncome(generateAmount);
     }
 
 

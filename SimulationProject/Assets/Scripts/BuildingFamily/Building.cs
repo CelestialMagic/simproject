@@ -5,8 +5,8 @@ using UnityEngine;
 
 public abstract class Building : ObjectFactory
 {
-    [SerializeField] protected int generateTimer;
-    [SerializeField] protected int resetTimer;
+    [SerializeField] protected float generateTimer;
+    [SerializeField] protected float resetTimer;
     [SerializeField] protected float generateAmount; 
 
     [SerializeField] GameObject m_prefab;
