@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TicketBooth : MonoBehaviour
+public class TicketBooth : Building, ISpawnableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private int moneyIncrement;
+    [SerializeField] private MoneyManager moneyManager;
 
     // Update is called once per frame
     void Update()
     {
         
     }
+
+    protected override void GenerateMoney()
+    {
+        if(generateTimer % moneyIncrement == 0)
+        {
+            moneyManager.SetCurrentIncome(generateAmount);
+        }
+    }
+
+
 }

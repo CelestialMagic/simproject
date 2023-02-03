@@ -5,6 +5,9 @@ using UnityEngine;
 
 public abstract class Building : ObjectFactory
 {
+    [SerializeField] protected int generateTimer;
+    [SerializeField] protected int resetTimer;
+    [SerializeField] protected float generateAmount; 
 
     [SerializeField] GameObject m_prefab;
     [SerializeField] int m_cost;
@@ -27,5 +30,7 @@ public abstract class Building : ObjectFactory
     {
         Instantiate(gameObject);
     }
+
+    protected abstract void GenerateMoney();
 
 }
