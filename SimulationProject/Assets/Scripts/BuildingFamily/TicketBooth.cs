@@ -10,6 +10,7 @@ public class TicketBooth : Building, ISpawnableObject
     [SerializeField]
     private MoneyManager moneyManager;
 
+    
     // Update is called once per frame
     void Update()
     {
@@ -31,11 +32,7 @@ public class TicketBooth : Building, ISpawnableObject
         moneyManager.SetCurrentIncome(generateAmount);
     }
 
-    protected override void SetDisplayText()
-    {
-
-        displayText.text = $"${generateAmount} per {resetTimer} seconds.";
-    }
+ 
 
 
 

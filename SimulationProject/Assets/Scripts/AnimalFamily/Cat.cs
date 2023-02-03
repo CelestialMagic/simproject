@@ -5,7 +5,8 @@ using UnityEngine;
 public class Cat : Animal, ISpawnableObject
 {
     [SerializeField]
-    private List<AudioClip> catNoises;
+    private List<AudioClip> catNoises;//A list of cat noises
+
     protected override void Update()
     {
         if (audioTimer - Time.deltaTime <= 0)
@@ -20,12 +21,11 @@ public class Cat : Animal, ISpawnableObject
 
     }
 
-    
+    //Meow() plays a randomized cat noise
     private void Meow()
     {
         AudioClip meow = catNoises[Random.Range(0, catNoises.Count - 1)];
         PlaySound(meow, volume);
 
-        
     }
 }

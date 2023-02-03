@@ -6,7 +6,7 @@ public abstract class Animal : ObjectFactory
 {
     
     [SerializeField]
-    protected AudioClip noise;//An AudioClip representing an animal noise
+    protected AudioClip defaultSound;//An AudioClip representing an animal noise
 
     [SerializeField]
     protected float volume;//The volume of the animal noise played
@@ -59,7 +59,7 @@ public abstract class Animal : ObjectFactory
     //This may be overridden for various AI behaviors
     protected virtual void Update()
     {
-        MakeNoise(noise, volume);
+        MakeNoise(defaultSound, volume);
     }
 
     //A method used to play a sound after a given time
