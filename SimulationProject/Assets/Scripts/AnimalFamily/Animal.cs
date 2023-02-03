@@ -4,9 +4,7 @@ using UnityEngine;
 
 public abstract class Animal : ObjectFactory
 {
-
-
-
+    
     [SerializeField]
     protected AudioClip noise;//An AudioClip representing an animal noise
 
@@ -72,10 +70,13 @@ public abstract class Animal : ObjectFactory
         {
             PlaySound(noise, volume);
             audioTimer = Random.Range(resetTimer - waitPeriod, resetTimer + waitPeriod);
+         
         }
         else
         {
             audioTimer -= Time.deltaTime;
         }
     }
+
+    
 }
