@@ -24,6 +24,7 @@ public class MoneyManager : MonoBehaviour
     public void SetCurrentIncome(float amount)
     {
         currentIncome += amount;
+
     }
 
     
