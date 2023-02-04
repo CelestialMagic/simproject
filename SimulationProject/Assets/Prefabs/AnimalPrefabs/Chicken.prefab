@@ -337,7 +337,9 @@ MonoBehaviour:
   waitPeriod: 2
   m_prefab: {fileID: 8101637316843772605}
   m_cost: 25
-  cluckTimes: 3
+  chickenNoises:
+  - {fileID: 8300000, guid: 434c7804e19417243a5b3d37edf8f60a, type: 3}
+  - {fileID: 8300000, guid: 55e4205d213e0da4ea0fddeb63df739e, type: 3}
 --- !u!82 &8101637317198216715
 AudioSource:
   m_ObjectHideFlags: 0
