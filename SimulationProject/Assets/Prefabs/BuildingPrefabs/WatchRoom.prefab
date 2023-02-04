@@ -383,4 +383,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayText: {fileID: 617030201}
+  displayImage: {fileID: 0}
   player: {fileID: 0}
