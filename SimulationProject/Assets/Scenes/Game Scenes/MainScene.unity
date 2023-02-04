@@ -3517,26 +3517,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1036486100}
-    - target: {fileID: 1699533615, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699533615, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699533615, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-      propertyPath: m_Color.g
-      value: 0.9731856
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699533615, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-      propertyPath: m_Color.r
-      value: 0.013207495
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699533615, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 2100000, guid: 4717b199010ca4cb3a8a7a465ec457d2, type: 2}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen
