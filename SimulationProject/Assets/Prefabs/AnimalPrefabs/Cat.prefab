@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c1461e01cf4ec39b2edcc5f54a8ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noise: {fileID: 8300000, guid: 3a5ed0e837897ad4b97b69efbb4454cc, type: 3}
+  defaultSound: {fileID: 8300000, guid: b8251b7e35e646448a82798549d206b4, type: 3}
   volume: 0.25
   audioSource: {fileID: 519694271184351770}
   audioTimer: 5

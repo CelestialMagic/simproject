@@ -4,22 +4,30 @@ using UnityEngine;
 
 public class Chicken : Animal, ISpawnableObject
 {
-
     [SerializeField]
-    private int cluckTimes;//An average number to play cluck sound
-
+    private List<AudioClip> chickenNoises;
 
     // Update is called once per frame
     protected override void Update()
     {
-        
+        if (audioTimer - Time.deltaTime <= 0)
+        {
+            Cluck();
+            audioTimer = Random.Range(resetTimer - waitPeriod, resetTimer + waitPeriod);
+
+        }
+        else
+        {
+            audioTimer -= Time.deltaTime;
+        }
     }
+
 
     private void Cluck()
     {
-        for(int i = 0; i < cluckTimes; i++)
+        foreach(AudioClip ac in chickenNoises)
         {
-            PlaySound(defaultSound, cluckTimes);
+            PlaySound(ac, volume);
         }
     }
 }

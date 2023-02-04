@@ -329,13 +329,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba38a54dae4d44bcae687911cfa08e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSound: {fileID: 8300000, guid: 48f6126f92178f74fa97feb4a1ad24c2, type: 3}
+  defaultSound: {fileID: 8300000, guid: 0f1e53428bf4bc94a83804b49f68d47b, type: 3}
   volume: 0.25
-  audioSource: {fileID: 0}
-  audioTimer: 10
-  resetTimer: 10
+  audioSource: {fileID: 8101637317198216715}
+  audioTimer: 5
+  resetTimer: 5
   waitPeriod: 2
-  m_prefab: {fileID: 0}
+  m_prefab: {fileID: 8101637316843772605}
   m_cost: 25
   cluckTimes: 3
 --- !u!82 &8101637317198216715
@@ -349,7 +349,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 857846993973926261, guid: 16eaf992bb3484590886aa06dc86b76b, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
