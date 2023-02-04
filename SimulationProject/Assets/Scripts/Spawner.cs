@@ -13,6 +13,8 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int objListLength = objects.Count;
+
         //user selects choice
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -27,13 +29,19 @@ public class Spawner : MonoBehaviour
         //user cycles left (down in objects list)
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            currentIndex -= 1;
+            if (currentIndex != 0 && currentIndex >= 0 && objListLength > 1)
+            {
+                currentIndex -= 1;
+            }
         }
 
         //user cycles right (up in objects list)
         if (Input.GetKeyDown(KeyCode.C))
         {
-            currentIndex += 1;
+            if (objListLength > (currentIndex + 1) && objListLength > 1)
+            {
+                currentIndex += 1;
+            }
         }
         
     }

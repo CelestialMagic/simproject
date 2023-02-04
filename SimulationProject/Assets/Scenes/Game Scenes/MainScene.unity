@@ -304,6 +304,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objects:
   - {fileID: 1233404657667072784, guid: c7ed9454c8194478ebe7f421351ee72a, type: 3}
+  - {fileID: 8401052145945930122, guid: 4b382efe03c924cf18132ce30eeab129, type: 3}
+  - {fileID: 8101637317198216708, guid: aab65bc10f6864f39bc477056b5afc45, type: 3}
   currentIndex: 0
 --- !u!4 &207963342
 Transform:
@@ -420,7 +422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1487042005408490189, guid: 0aeaba386c09043cfbf4bea2a30808ec, type: 3}
       propertyPath: m_Constraints
-      value: 32
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 1487042005408490190, guid: 0aeaba386c09043cfbf4bea2a30808ec, type: 3}
       propertyPath: moveSpeed
