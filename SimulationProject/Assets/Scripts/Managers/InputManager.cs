@@ -6,8 +6,6 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     private bool inRange = false;
-    [SerializeField]
-    private GameObject player; 
 
     // Update is called once per frame
     private void Update()
@@ -21,7 +19,8 @@ public class InputManager : MonoBehaviour
         //
     }
 
-    private void OnTriggerEnter(Collider other) //building checker
+    private void OnTriggerEnter(Collider other) 
+    //building checker for opening menus
     {
         switch (other.tag)
         {
@@ -44,9 +43,15 @@ public class InputManager : MonoBehaviour
 
     }
 
-    private void OnTriggerExit(Collider other) //resets inRange value if player leaves
+    private void OnTriggerExit(Collider other) 
+     //resets inRange value if player leaves
     {
         inRange = false;
         Debug.Log("player has exited");
+    }
+
+    public void Notify()
+    {
+
     }
 }

@@ -8,7 +8,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private GameObject[] menuTypes;
     [SerializeField]
-    private GameObject inputManager;
+    private GameObject playerToListen;
+
+    public delegate void MenuAction();
 
     private void Awake()
     {
@@ -25,13 +27,16 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        InputManager pInput = playerToListen.GetComponent("InputManager") as InputManager;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (pInput.Notify() != null)
+        {
+            MenuAction open = menuTypes[0].Open();
+        }
     }
 
     public void Open()
