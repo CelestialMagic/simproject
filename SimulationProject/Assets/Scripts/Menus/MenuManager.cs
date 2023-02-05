@@ -7,6 +7,8 @@ public class MenuManager : MonoBehaviour
     public static MenuManager instance;
     [SerializeField]
     private GameObject[] menuTypes;
+    [SerializeField]
+    private GameObject inputManager;
 
     private void Awake()
     {

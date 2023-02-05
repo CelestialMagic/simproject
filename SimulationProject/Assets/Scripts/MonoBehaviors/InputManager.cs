@@ -11,7 +11,7 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         //if X is pressed inside the build zone
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) && inRange)
         {
             Debug.Log("Open build menu");
         }
