@@ -10,6 +10,8 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private int currentIndex;
 
+    private bool isTouchingPen;
+
     // Update is called once per frame
     void Update()
     {
@@ -18,7 +20,7 @@ public class Spawner : MonoBehaviour
         //user selects choice
         if (Input.GetKeyDown(KeyCode.X))
         {
-            if (objects[currentIndex] is Animal)
+            if (objects[currentIndex] is Animal && isTouchingPen)
             {
                 ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
                 ((Animal)objects[currentIndex]).CreateObject();
@@ -42,7 +44,22 @@ public class Spawner : MonoBehaviour
             {
                 currentIndex += 1;
             }
+        } 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            isTouchingPen = true;
+            Debug.Log("Touching pen works.");
         }
-        
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            isTouchingPen = false;
+        }
     }
 }

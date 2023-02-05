@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
     private bool inRange;
+
     // Update is called once per frame
     void Update()
     {
@@ -21,6 +23,16 @@ public class InputManager : MonoBehaviour
         {
             inRange = true;
             Debug.Log("player reached building");
+        }
+        else if (collision.collider.tag == "AnimalPen")
+        {
+            inRange = true;
+            Debug.Log("player reached animal pen");
+        }
+        else if (collision.collider.tag == "WatchRoom")
+        {
+            inRange = true;
+            Debug.Log("player reached watch room");
         }
     }
 }

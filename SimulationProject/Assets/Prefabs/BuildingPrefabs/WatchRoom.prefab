@@ -248,12 +248,12 @@ GameObject:
   - component: {fileID: 3454599888760309784}
   - component: {fileID: 582586141257596114}
   - component: {fileID: 7886585089291987565}
-  - component: {fileID: 3297102902611781816}
   - component: {fileID: 4662191835072457306}
+  - component: {fileID: 3297102902611781816}
   - component: {fileID: 4662191835072457305}
   m_Layer: 0
   m_Name: WatchRoom
-  m_TagString: Building
+  m_TagString: WatchRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -337,6 +337,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.518297, y: 2.161193, z: 5.518297}
   m_Center: {x: 0, y: 1.0890658, z: 0}
+--- !u!135 &4662191835072457306
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375075022071586055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 1.0890657, z: 0}
 --- !u!114 &3297102902611781816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,19 +370,6 @@ MonoBehaviour:
   m_cost: 0
   moneyIncrement: 15
   moneyManager: {fileID: 0}
---- !u!135 &4662191835072457306
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1375075022071586055}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 5
-  m_Center: {x: 0, y: 1.0890657, z: 0}
 --- !u!114 &4662191835072457305
 MonoBehaviour:
   m_ObjectHideFlags: 0
