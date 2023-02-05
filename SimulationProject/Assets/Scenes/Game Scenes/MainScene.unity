@@ -323,6 +323,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1115708754, guid: 0aeaba386c09043cfbf4bea2a30808ec, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1115708752}
     - target: {fileID: 1487042005408490178, guid: 0aeaba386c09043cfbf4bea2a30808ec, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -967,6 +971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuTypes: []
+  inputManager: {fileID: 0}
 --- !u!4 &726759197
 Transform:
   m_ObjectHideFlags: 0

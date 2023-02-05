@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    private bool inRange;
+    private bool inRange = false;
     [SerializeField]
     private GameObject player; 
 
@@ -17,6 +17,8 @@ public class InputManager : MonoBehaviour
         {
             Debug.Log("Open build menu");
         }
+
+        //
     }
 
     private void OnTriggerEnter(Collider other) //building checker
@@ -40,5 +42,11 @@ public class InputManager : MonoBehaviour
                 break;
         }
 
+    }
+
+    private void OnTriggerExit(Collider other) //resets inRange value if player leaves
+    {
+        inRange = false;
+        Debug.Log("player has exited");
     }
 }
