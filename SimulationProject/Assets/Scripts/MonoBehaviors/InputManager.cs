@@ -6,9 +6,11 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     private bool inRange;
+    [SerializeField]
+    private GameObject player; 
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         //if X is pressed inside the build zone
         if (Input.GetKeyDown(KeyCode.X) && inRange)
@@ -17,22 +19,26 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision) //building checker
+    private void OnTriggerEnter(Collider other) //building checker
     {
-        if (collision.collider.tag == "Building")
+        switch (other.tag)
         {
-            inRange = true;
-            Debug.Log("player reached building");
+            case "Building":
+                inRange = true;
+                Debug.Log("player reached building");
+                break;
+            case "AnimalPen":
+                inRange = true;
+                Debug.Log("player reached animal pen");
+                break;
+            case "WatchRoom":
+                inRange = true;
+                Debug.Log("player reached watch room");
+                break;
+
+            default:
+                break;
         }
-        else if (collision.collider.tag == "AnimalPen")
-        {
-            inRange = true;
-            Debug.Log("player reached animal pen");
-        }
-        else if (collision.collider.tag == "WatchRoom")
-        {
-            inRange = true;
-            Debug.Log("player reached watch room");
-        }
+
     }
 }
