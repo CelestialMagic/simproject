@@ -2439,6 +2439,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000091553, y: -116.991}
   m_SizeDelta: {x: 449.17, y: 293.982}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1858318740 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+  m_PrefabInstance: {fileID: 8086608298332466864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1863805293
 GameObject:
   m_ObjectHideFlags: 3
@@ -3381,6 +3386,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1115708752}
+    - target: {fileID: 936093333, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: spawnerToDestroy
+      value: 
+      objectReference: {fileID: 1858318740}
+    - target: {fileID: 936093333, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: objects.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 936093333, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: objects.Array.data[3]
+      value: 
+      objectReference: {fileID: 3297102902611781816, guid: 37fea79e3e84448d0b20e1036a496c02, type: 3}
     - target: {fileID: 1428088900, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Camera
       value: 

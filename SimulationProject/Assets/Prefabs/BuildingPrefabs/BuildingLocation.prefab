@@ -80,8 +80,10 @@ MonoBehaviour:
   - {fileID: 1233404657667072784, guid: c7ed9454c8194478ebe7f421351ee72a, type: 3}
   - {fileID: 8401052145945930122, guid: 4b382efe03c924cf18132ce30eeab129, type: 3}
   - {fileID: 8101637317198216708, guid: aab65bc10f6864f39bc477056b5afc45, type: 3}
+  - {fileID: 3297102902611781816, guid: 37fea79e3e84448d0b20e1036a496c02, type: 3}
   currentIndex: 0
   spawnDisplay: {fileID: 1891469291}
+  spawnerToDestroy: {fileID: 8086608298346589749}
 --- !u!1 &1428088897
 GameObject:
   m_ObjectHideFlags: 0

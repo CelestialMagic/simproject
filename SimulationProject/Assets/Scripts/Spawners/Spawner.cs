@@ -15,6 +15,9 @@ public class Spawner : MonoBehaviour
 
     private bool isTouchingPen;
 
+    [SerializeField]
+    private GameObject spawnerToDestroy;
+
     // Update is called once per frame
     void Update()
     {
@@ -29,6 +32,13 @@ public class Spawner : MonoBehaviour
                 ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
                 ((Animal)objects[currentIndex]).CreateObject();
                 MoneyManager.BuyItem(((Animal)objects[currentIndex]).cost);
+
+            }else if (objects[currentIndex] is Building && isTouchingPen && ((Building)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
+            {
+                ((Building)objects[currentIndex]).transform.position = gameObject.transform.position;
+                Destroy(spawnerToDestroy);
+                ((Building)objects[currentIndex]).CreateObject();
+                MoneyManager.BuyItem(((Building)objects[currentIndex]).cost);
             }
 
         }
@@ -75,6 +85,13 @@ public class Spawner : MonoBehaviour
             spawnDisplay.SetName(((Animal)objects[currentIndex]).name);
             spawnDisplay.SetCost(((Animal)objects[currentIndex]).cost);
             spawnDisplay.SetDescription(((Animal)objects[currentIndex]).description);
+
+        }
+        else if (objects[currentIndex] is Building)
+        {
+            spawnDisplay.SetName(((Building)objects[currentIndex]).name);
+            spawnDisplay.SetCost(((Building)objects[currentIndex]).cost);
+            spawnDisplay.SetDescription(((Building)objects[currentIndex]).description);
 
         }
         
