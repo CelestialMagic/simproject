@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using System;
 
 public class MenuManager : MonoBehaviour
 {
@@ -10,7 +12,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private GameObject playerToListen;
 
-    public delegate void MenuAction();
+    public static Action MenuControl;
+
+    [SerializeField]
+    private InputManager pInput; 
 
     private void Awake()
     {
@@ -24,28 +29,16 @@ public class MenuManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        InputManager pInput = playerToListen.GetComponent("InputManager") as InputManager;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (pInput.Notify() != null)
-        {
-            MenuAction open = menuTypes[0].Open();
-        }
-    }
 
     public void Open()
     {
-
+        gameObject.SetActive(true);
     }
 
     public void Close()
     {
+        gameObject.SetActive(false);
 
     }
 }
