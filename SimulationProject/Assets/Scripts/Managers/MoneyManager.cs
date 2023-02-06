@@ -6,7 +6,6 @@ using TMPro;
 public class MoneyManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI displayText;
-    private static float totalIncome;
     private static float currentIncome; 
 
 
@@ -16,6 +15,7 @@ public class MoneyManager : MonoBehaviour
         displayText.text = "$" + GetCurrentIncome().ToString();
     }
 
+    //Returns the Current Amount of Money
     public static float GetCurrentIncome()
     {
         return currentIncome;

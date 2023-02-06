@@ -11,7 +11,7 @@ public class TicketBooth : Building, ISpawnableObject
 
     
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (generateTimer - Time.deltaTime <= 0)
         {

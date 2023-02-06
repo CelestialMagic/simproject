@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DecorativeBuilding : MonoBehaviour
+public class DecorativeBuilding : Building, ISpawnableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    [SerializeField]
+    private float money; 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        GenerateMoney();
+
+    }
+    protected override void GenerateMoney()
+    {
+        MoneyManager.SetCurrentIncome(money);
     }
 }
