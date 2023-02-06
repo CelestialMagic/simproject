@@ -7,8 +7,7 @@ public class TicketBooth : Building, ISpawnableObject
 {
     [SerializeField]
     private int moneyIncrement;
-    [SerializeField]
-    private MoneyManager moneyManager;
+
 
     
     // Update is called once per frame
@@ -29,7 +28,7 @@ public class TicketBooth : Building, ISpawnableObject
 
     protected override void GenerateMoney()
     {
-        moneyManager.SetCurrentIncome(generateAmount);
+        MoneyManager.SetCurrentIncome(generateAmount);
     }
 
  

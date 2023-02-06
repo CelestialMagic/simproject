@@ -6,30 +6,34 @@ using UnityEngine.UI;
 
 public class SpawnDisplay : MonoBehaviour
 {
+    [SerializeField]
     private TextMeshProUGUI nameText;
+    [SerializeField]
     private TextMeshProUGUI costText;
+    [SerializeField]
     private TextMeshProUGUI description;
+    [SerializeField]
     private Image icon;
 
-    private void SetName(string name)
+    public void SetName(string name)
     {
         nameText.text = name;
 
     }
 
-    private void SetCost(int cost)
+    public void SetCost(int cost)
     {
         costText.text = cost.ToString();
 
     }
 
-    private void SetImage(Image image)
+    public void SetImage(Image image)
     {
         icon = image;
 
     }
 
-    private void SetDescription(string text)
+    public void SetDescription(string text)
     {
         description.text = text;
     }

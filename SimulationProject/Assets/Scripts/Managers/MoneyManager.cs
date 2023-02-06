@@ -6,8 +6,8 @@ using TMPro;
 public class MoneyManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI displayText;
-    private float totalIncome;
-    private float currentIncome; 
+    private static float totalIncome;
+    private static float currentIncome; 
 
 
     // Update is called once per frame
@@ -16,14 +16,20 @@ public class MoneyManager : MonoBehaviour
         displayText.text = "$" + GetCurrentIncome().ToString();
     }
 
-    public float GetCurrentIncome()
+    public static float GetCurrentIncome()
     {
         return currentIncome;
     }
 
-    public void SetCurrentIncome(float amount)
+    public static void SetCurrentIncome(float amount)
     {
         currentIncome += amount;
+
+    }
+
+    public static void BuyItem(float amount)
+    {
+        currentIncome -= amount;
 
     }
 

@@ -10,6 +10,10 @@ public class UITrigger : MonoBehaviour
     private TMP_Text displayText;
     [SerializeField]
     private Image displayImage;
+    [SerializeField]
+    private TMP_Text descriptionText;
+    [SerializeField]
+    private TMP_Text costText;
 
     [SerializeField]
     private GameObject player;
@@ -17,29 +21,42 @@ public class UITrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        displayText.gameObject.SetActive(false);
-        displayImage.gameObject.SetActive(false);
+        CloseUI();
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
-            displayText.gameObject.SetActive(true);
-            displayImage.gameObject.SetActive(true);
+            OpenUI();
         }
         else
         {
-            displayText.gameObject.SetActive(false);
-            displayImage.gameObject.SetActive(false);
+            CloseUI();
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
-            displayText.gameObject.SetActive(false);
-            displayImage.gameObject.SetActive(false);
+            CloseUI();
         }
+    }
+
+    private void OpenUI()
+    {
+        displayText.gameObject.SetActive(true);
+        displayImage.gameObject.SetActive(true);
+        descriptionText.gameObject.SetActive(true);
+        costText.gameObject.SetActive(true);
+
+    }
+    private void CloseUI()
+    {
+        displayText.gameObject.SetActive(false);
+        displayImage.gameObject.SetActive(false);
+        descriptionText.gameObject.SetActive(false);
+        costText.gameObject.SetActive(false);
     }
 }
