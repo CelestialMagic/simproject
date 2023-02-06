@@ -7,7 +7,7 @@ using System;
 
 public class GameStateManager : MonoBehaviour
 {
-    public static Action TempGameOver;  
+    public static Action TempGameOver;//An action to eventually be implemented 
 
     private static GAMESTATE m_State; //The current game state
 
@@ -66,6 +66,12 @@ public class GameStateManager : MonoBehaviour
     {
         m_State = GAMESTATE.MENU;
 
+    }
+
+    //Pause() sets game state to paused
+    public static void Pause()
+    {
+        m_State = GAMESTATE.PAUSED;
     }
 
 
