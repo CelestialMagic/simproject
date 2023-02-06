@@ -5215,6 +5215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMenu: {fileID: 1151629075}
   settingsMenu: {fileID: 1217112709}
+  mainScene: MainScene
   resWidths: 20030000000400000005000056050000a005000080070000
   resHeights: 5802000000030000d0020000000300008403000038040000
 --- !u!4 &1779579579

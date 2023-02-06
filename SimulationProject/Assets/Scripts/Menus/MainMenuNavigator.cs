@@ -7,6 +7,7 @@ public class MainMenuNavigator : MonoBehaviour
 {
     [SerializeField] GameObject baseMenu;
     [SerializeField] GameObject settingsMenu;
+    [SerializeField] string mainScene; 
 
     [SerializeField]
     List<int> resWidths;
@@ -27,7 +28,7 @@ public class MainMenuNavigator : MonoBehaviour
 
     public void OnStartGame()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene(mainScene);
     }
 
     public void OnQuitGame()
@@ -39,7 +40,7 @@ public class MainMenuNavigator : MonoBehaviour
 #endif
     }
 
-
+    //Sets the screensize based on a selected option
     public void SetScreenRes(int index)
     {
         bool isFullscreen = Screen.fullScreen;
