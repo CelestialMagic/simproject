@@ -7,25 +7,25 @@ using TMPro;
 public class UITrigger : MonoBehaviour
 {
     [SerializeField]
-    private TMP_Text displayText;
+    protected TMP_Text displayText;
     [SerializeField]
-    private Image displayImage;
+    protected Image displayImage;
     [SerializeField]
-    private TMP_Text descriptionText;
+    protected TMP_Text descriptionText;
     [SerializeField]
-    private TMP_Text costText;
+    protected TMP_Text costText;
 
     [SerializeField]
     private GameObject player;
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         CloseUI();
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -36,7 +36,7 @@ public class UITrigger : MonoBehaviour
             CloseUI();
         }
     }
-    private void OnTriggerExit(Collider other)
+    protected void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -44,7 +44,7 @@ public class UITrigger : MonoBehaviour
         }
     }
 
-    private void OpenUI()
+    protected virtual void OpenUI()
     {
         displayText.gameObject.SetActive(true);
         displayImage.gameObject.SetActive(true);
@@ -52,7 +52,7 @@ public class UITrigger : MonoBehaviour
         costText.gameObject.SetActive(true);
 
     }
-    private void CloseUI()
+    protected virtual void CloseUI()
     {
         displayText.gameObject.SetActive(false);
         displayImage.gameObject.SetActive(false);
