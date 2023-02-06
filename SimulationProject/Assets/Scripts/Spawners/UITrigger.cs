@@ -4,10 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UITrigger : MonoBehaviour
+public class UITrigger : Trigger
 {
-    [SerializeField]
-    protected TMP_Text displayText;
     [SerializeField]
     protected Image displayImage;
     [SerializeField]
@@ -44,7 +42,7 @@ public class UITrigger : MonoBehaviour
         }
     }
 
-    protected virtual void OpenUI()
+    protected override void OpenUI()
     {
         displayText.gameObject.SetActive(true);
         displayImage.gameObject.SetActive(true);
@@ -52,7 +50,7 @@ public class UITrigger : MonoBehaviour
         costText.gameObject.SetActive(true);
 
     }
-    protected virtual void CloseUI()
+    protected override void CloseUI()
     {
         displayText.gameObject.SetActive(false);
         displayImage.gameObject.SetActive(false);
