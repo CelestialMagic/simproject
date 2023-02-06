@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lion : MonoBehaviour
+public class Lion : Animal, ISpawnableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioSource RoarAudio;
+    public AudioClip LionRoar;
 
-    // Update is called once per frame
-    void Update()
+    //lion roars if the player gets too close
+    void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Player")
+        {
+            RoarAudio.clip = LionRoar;
+            RoarAudio.Play();
+        }
     }
 }
