@@ -404,7 +404,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603205127873992383}
-  m_LocalRotation: {x: -0, y: 0.8632902, z: -0, w: 0.5047079}
+  m_LocalRotation: {x: 0, y: 0.8632899, z: 0, w: 0.5047084}
   m_LocalPosition: {x: 3.617, y: -1.5384508, z: -1.425}
   m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_ConstrainProportionsScale: 0
@@ -557,8 +557,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dcc2cccbaf934270afccd7bf98d15a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoarAudio: {fileID: 601941412732825327}
-  LionRoar: {fileID: 8300000, guid: 45e648a71e6171f4f9ae9e4684c5b14a, type: 3}
+  defaultSound: {fileID: 8300000, guid: 45e648a71e6171f4f9ae9e4684c5b14a, type: 3}
+  volume: 0.25
+  audioSource: {fileID: 601941412732825327}
+  audioTimer: 5
+  resetTimer: 5
+  waitPeriod: 0
+  m_prefab: {fileID: 603205127873992383}
+  m_cost: 150
+  m_name: Lion
+  m_description: Roars when you get close!
 --- !u!1 &603217885494530667
 GameObject:
   m_ObjectHideFlags: 0
