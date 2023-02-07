@@ -3977,10 +3977,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1115708752}
-    - target: {fileID: 936093333, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-      propertyPath: objects.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1428088900, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Camera
       value: 
