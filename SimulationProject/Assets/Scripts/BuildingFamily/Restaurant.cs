@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Restaurant : MonoBehaviour
+public class Restaurant : Building, ISpawnableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //restaurant generates a random amount of money between
+    //x and y
+    [SerializeField]
+    protected float min;
+    [SerializeField]
+    protected float max;
 
-    // Update is called once per frame
-    void Update()
+    protected override void GenerateMoney()
     {
-        
+        //Random rand = new Random();
+        //generateAmount = rand.Next(min, max + 1);
+        MoneyManager.SetCurrentIncome(generateAmount);
     }
 }
