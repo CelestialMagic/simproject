@@ -19,22 +19,5 @@ public class InfoTrigger : Trigger
 
     }
 
-    protected void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            OpenUI();
-        }
-        else
-        {
-            CloseUI();
-        }
-    }
-    protected void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            CloseUI();
-        }
-    }
+ 
 }

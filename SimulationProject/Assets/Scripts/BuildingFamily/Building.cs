@@ -65,4 +65,20 @@ public abstract class Building : ObjectFactory
         displayText.text = $"${generateAmount} per {resetTimer} seconds.";
     }
 
+    protected void Update()
+    {
+        if (generateTimer - Time.deltaTime <= 0)
+        {
+            GenerateMoney();
+            generateTimer = resetTimer;
+
+        }
+        else
+        {
+            generateTimer -= Time.deltaTime;
+        }
+
+    }
+
+
 }
