@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3385,6 +3385,50 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1036486100}
+    - target: {fileID: 1428088901, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440857737, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_margin.x
+      value: 1.0050797
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440857737, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_margin.z
+      value: 1.0050777
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699533614, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2.8067
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699533614, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699533614, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699533614, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705672324, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_margin.x
+      value: 1.6952777
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705672324, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_margin.z
+      value: 1.7533574
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391370086383552440, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_margin.x
+      value: 1.4762568
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391370086383552440, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_margin.z
+      value: 1.4956172
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen
