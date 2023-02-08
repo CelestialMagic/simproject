@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -406,15 +406,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1769504435}
   - {fileID: 8086608298332466865}
+  - {fileID: 1596806889}
   - {fileID: 108837072}
   - {fileID: 601986945}
   - {fileID: 1980903305}
   - {fileID: 52226145}
   - {fileID: 376288442}
   - {fileID: 3297102904155717686}
-  - {fileID: 1596806889}
   - {fileID: 1583178270}
   - {fileID: 1310190524}
   - {fileID: 566559469}
@@ -749,7 +748,7 @@ Transform:
   - {fileID: 869581145}
   - {fileID: 256072335}
   m_Father: {fileID: 121367452}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &579895445 stripped
 Transform:
@@ -2335,7 +2334,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 121367452}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1443259404
 PrefabInstance:
@@ -2623,7 +2622,7 @@ Transform:
   - {fileID: 22476156}
   - {fileID: 970681884}
   m_Father: {fileID: 121367452}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1596806888
 GameObject:
@@ -2655,7 +2654,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 121367452}
-  m_RootOrder: 8
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!108 &1596806890
 Light:
@@ -2992,159 +2991,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 26.334, y: 225, z: 0}
---- !u!1001 &1769504432
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 121367452}
-    m_Modifications:
-    - target: {fileID: 49886782159166063, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.102
-      objectReference: {fileID: 0}
-    - target: {fileID: 152420787181513236, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5454686658887937107, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156851644212055691, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156851644212055691, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8401116916748578382, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_Name
-      value: Restaurant
-      objectReference: {fileID: 0}
-    - target: {fileID: 8759175462455700496, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_margin.x
-      value: -0.3674932
-      objectReference: {fileID: 0}
-    - target: {fileID: 8759175462455700496, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_margin.z
-      value: -0.29665783
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213542401726133492, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213542401726133492, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213542401726133492, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213542401726133492, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213542401726133492, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.8951063
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213542401726133492, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.56375766
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213542401726133492, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -11.222191
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213542401726133492, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213542401726133492, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213542401726133492, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213542401726133492, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213542401726133492, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213542401726133492, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 270
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213542401726133492, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
---- !u!1 &1769504433 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8401116916748578382, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-  m_PrefabInstance: {fileID: 1769504432}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1769504434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769504433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba9c87b9eea36405ea122b0a01e026d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  generateTimer: 15
-  resetTimer: 15
-  generateAmount: 0
-  displayText: {fileID: 1769504436}
-  m_prefab: {fileID: 1769504433}
-  m_cost: 0
-  m_name: Restaurant
-  m_description: Generates a random amount of money over time
-  min: 18
-  max: 25
---- !u!4 &1769504435 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9213542401726133492, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-  m_PrefabInstance: {fileID: 1769504432}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1769504436 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8759175462455700496, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
-  m_PrefabInstance: {fileID: 1769504432}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1769504439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769504433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76e4a59a3bb7a4ccd8a4ff5d78885fbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displayText: {fileID: 1769504436}
 --- !u!1 &1793608728
 GameObject:
   m_ObjectHideFlags: 0
@@ -4141,7 +3987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589750, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589750, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_LocalPosition.x

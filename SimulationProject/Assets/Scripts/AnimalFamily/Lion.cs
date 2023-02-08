@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Lion : Animal, ISpawnableObject
 {
+    //The overridden Update() method is intentionally left blank.
+    //The inherited version will automatically play sound. 
+    protected override void Update()
+    {
+        
+    }
 
     //lion roars if the player gets too close
     void OnTriggerEnter(Collider other)
