@@ -65,6 +65,8 @@ public abstract class Building : ObjectFactory
         displayText.text = $"${generateAmount} per {resetTimer} seconds.";
     }
 
+    //Update() for buildings functions similar to Animals, but it generates
+    //income for the zoo. 
     protected virtual void Update()
     {
         if (generateTimer - Time.deltaTime <= 0)

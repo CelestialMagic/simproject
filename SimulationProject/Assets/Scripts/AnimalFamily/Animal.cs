@@ -76,17 +76,18 @@ public abstract class Animal : ObjectFactory
         MakeNoise(defaultSound, volume);
     }
 
-    //A method used to play a sound after a given time
+    //MakeNoise() is used to play a sound after a given time
     protected virtual void MakeNoise(AudioClip noise, float volume)
     {
-
+        //if statement checks if timer is less than or below 0 to start playing
+        //audio
         if (audioTimer - Time.deltaTime <= 0)
         {
             PlaySound(noise, volume);
             audioTimer = Random.Range(resetTimer - waitPeriod, resetTimer + waitPeriod);
          
         }
-        else
+        else //else statement decrements timer
         {
             audioTimer -= Time.deltaTime;
         }

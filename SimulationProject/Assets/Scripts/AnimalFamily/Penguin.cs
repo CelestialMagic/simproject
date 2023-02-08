@@ -5,12 +5,24 @@ using UnityEngine;
 public class Penguin : Animal, ISpawnableObject
 {
     [SerializeField]
-    private List<AudioClip> penguinSFX;
+    private List<AudioClip> penguinSFX;//A list of penguin AudioClips
 
-    private int currentIndex; 
+    private int currentIndex;//An int representing the current index of penguinSFX
 
-    // Update is called once per frame
-    protected override void Update()
+    //PenguinSounds() cycles through the available penguin audioclips
+    private void PenguinSounds()
+    {
+        if(currentIndex >= penguinSFX.Count)
+        {
+            currentIndex = 0;
+        }
+            PlaySound(penguinSFX[currentIndex], volume);
+            currentIndex++;
+    }
+
+    //Penguin overrides MakeNoise() to account for the unique audio cycling
+    //behavior
+    protected override void MakeNoise(AudioClip noise, float volume)
     {
         if (audioTimer - Time.deltaTime <= 0)
         {
@@ -22,15 +34,7 @@ public class Penguin : Animal, ISpawnableObject
         {
             audioTimer -= Time.deltaTime;
         }
+
     }
-    //PenguinSounds() cycles through the available penguin audioclips
-    private void PenguinSounds()
-    {
-        if(currentIndex >= penguinSFX.Count)
-        {
-            currentIndex = 0;
-        }
-            PlaySound(penguinSFX[currentIndex], volume);
-            currentIndex++;
-    }
+
 }

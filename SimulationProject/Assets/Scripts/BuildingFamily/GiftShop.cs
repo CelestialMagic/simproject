@@ -5,9 +5,9 @@ using UnityEngine;
 public class GiftShop : Building, ISpawnableObject
 {
     [SerializeField]
-    private float generateBuffer;
+    private float generateBuffer;//A float representing a buffer time to generate money
 
-
+    //Overridden Update() sets a random amount of time to generate money next
     protected override void Update()
     {
         if (generateTimer - Time.deltaTime <= 0)

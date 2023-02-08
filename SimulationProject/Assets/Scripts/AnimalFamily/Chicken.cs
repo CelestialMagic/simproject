@@ -7,8 +7,18 @@ public class Chicken : Animal, ISpawnableObject
     [SerializeField]
     private List<AudioClip> chickenNoises;//A list of chicken noises to play
 
-    // Update is called once per frame
-    protected override void Update()
+    //Cluck() cycles through all audioclips and plays them
+    private void Cluck()
+    {
+        foreach(AudioClip ac in chickenNoises)
+        {
+            PlaySound(ac, volume);
+            
+        }
+    }
+
+    //Chicken overrides MakeNoise() to call the Cluck() method
+    protected override void MakeNoise(AudioClip noise, float volume)
     {
         if (audioTimer - Time.deltaTime <= 0)
         {
@@ -19,16 +29,6 @@ public class Chicken : Animal, ISpawnableObject
         else
         {
             audioTimer -= Time.deltaTime;
-        }
-    }
-
-
-    private void Cluck()
-    {
-        foreach(AudioClip ac in chickenNoises)
-        {
-            PlaySound(ac, volume);
-            
         }
     }
 }
