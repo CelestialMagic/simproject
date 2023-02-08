@@ -5,7 +5,7 @@ using UnityEngine;
 public class Chicken : Animal, ISpawnableObject
 {
     [SerializeField]
-    private List<AudioClip> chickenNoises;
+    private List<AudioClip> chickenNoises;//A list of chicken noises to play
 
     // Update is called once per frame
     protected override void Update()
@@ -28,6 +28,7 @@ public class Chicken : Animal, ISpawnableObject
         foreach(AudioClip ac in chickenNoises)
         {
             PlaySound(ac, volume);
+            
         }
     }
 }

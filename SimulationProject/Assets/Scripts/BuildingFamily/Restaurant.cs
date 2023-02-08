@@ -5,20 +5,22 @@ using UnityEngine;
 public class Restaurant : Building, ISpawnableObject
 {
     //restaurant generates a random amount of money between
-    //x and y
+    // min and max
     [SerializeField]
     protected int min;
     [SerializeField]
     protected int max;
 
+    //Overridden GenerateMoney() method generates a random amount
     protected override void GenerateMoney()
     {
         int rand = Random.Range(min, max);
         MoneyManager.SetCurrentIncome(rand);
     }
 
+    //Overridden SetDisplayText()reflects unique behavior of Restaurant
     protected override void SetDisplayText()
     {
-        displayText.text = $"${min} up to ${max} per {resetTimer} seconds.";
+        displayText.text = $"${min} to ${max} per {resetTimer} seconds.";
     }
 }

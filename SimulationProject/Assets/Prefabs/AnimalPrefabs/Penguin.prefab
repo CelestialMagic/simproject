@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41674262483380366}
   m_LocalRotation: {x: -0, y: -0.890276, z: -0, w: -0.45542133}
-  m_LocalPosition: {x: -6.534894, y: -1.4876935, z: -3.8278098}
+  m_LocalPosition: {x: 1.1251059, y: -1.5046935, z: 0.57219076}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -87,6 +87,11 @@ MonoBehaviour:
   m_cost: 60
   m_name: Penguin
   m_description: Naturally cool.
+  penguinSFX:
+  - {fileID: 8300000, guid: 0912143335372e445beb17075f7b51b5, type: 3}
+  - {fileID: 8300000, guid: f1df62739c06add4486d3f3de6ec1b00, type: 3}
+  - {fileID: 8300000, guid: 3c6d3ad402cee294ea5afa6b9759b27a, type: 3}
+  - {fileID: 8300000, guid: e8132ae6a2812f1449e5897f9704780a, type: 3}
 --- !u!82 &41150620379193700
 AudioSource:
   m_ObjectHideFlags: 0
