@@ -65,7 +65,7 @@ public abstract class Building : ObjectFactory
         displayText.text = $"${generateAmount} per {resetTimer} seconds.";
     }
 
-    protected void Update()
+    protected virtual void Update()
     {
         if (generateTimer - Time.deltaTime <= 0)
         {
