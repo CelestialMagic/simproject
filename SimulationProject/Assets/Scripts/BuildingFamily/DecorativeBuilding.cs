@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DecorativeBuilding : Building, ISpawnableObject
 {
-
+    //Decorative Building overrides GenerateMoney() in order to gradually
+    //increase the generateAmount value by 1. 
     protected override void GenerateMoney()
     {
         generateAmount++;

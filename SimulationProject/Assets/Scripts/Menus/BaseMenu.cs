@@ -8,23 +8,13 @@ public abstract class BaseMenu : MonoBehaviour
     [SerializeField]
     private GameObject menu;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void Open()
+    //Opens the menu
+    public void Open()
     {
         menu.SetActive(true);
     }
-
-    void Close()
+    //Closes the menu
+    public void Close()
     {
         menu.SetActive(false);
     }

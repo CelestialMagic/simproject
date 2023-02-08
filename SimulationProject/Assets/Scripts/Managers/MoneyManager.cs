@@ -5,12 +5,12 @@ using TMPro;
 
 public class MoneyManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI displayText;
-    private static float currentIncome; 
+    [SerializeField] TextMeshProUGUI displayText;//Text used to display current money
+    private static float currentIncome;//The player's current income in-game
 
 
-    // Update is called once per frame
-    void Update()
+    // Update() works to display the current amount of money to the screen
+    public void Update()
     {
         displayText.text = "$" + GetCurrentIncome().ToString();
     }
@@ -20,13 +20,13 @@ public class MoneyManager : MonoBehaviour
     {
         return currentIncome;
     }
-
+    //Sets the current amount of money through addition
     public static void SetCurrentIncome(float amount)
     {
         currentIncome += amount;
 
     }
-
+    //Deducts player bought item costs from the currentIncome. 
     public static void BuyItem(float amount)
     {
         currentIncome -= amount;

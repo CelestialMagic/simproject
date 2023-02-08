@@ -5,18 +5,18 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField]
-    private List<ObjectFactory> objects = new List<ObjectFactory>();
+    private List<ObjectFactory> objects;//A list of available objects to buy (buildings and animals)
 
     [SerializeField]
-    private int currentIndex;
+    private int currentIndex;//The currently selected object
 
     [SerializeField]
-    private SpawnDisplay spawnDisplay; 
+    private SpawnDisplay spawnDisplay; //A display card to use
 
-    private bool isTouchingPen;
+    private bool isTouchingPen;//determines if player is touching pen
 
     [SerializeField]
-    private GameObject spawnerToDestroy;
+    private GameObject spawnerToDestroy;//The spawner to destroy when building is placed
 
     // Update is called once per frame
     void Update()
@@ -27,13 +27,16 @@ public class Spawner : MonoBehaviour
         //user selects choice
         if (Input.GetKeyDown(KeyCode.X))
         {
+            //If statement determines if player has enough money to buy an animal and places animal if true
             if (objects[currentIndex] is Animal && isTouchingPen && ((Animal)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
             {
                 ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
                 ((Animal)objects[currentIndex]).CreateObject();
                 MoneyManager.BuyItem(((Animal)objects[currentIndex]).cost);
 
-            }else if (objects[currentIndex] is Building && isTouchingPen && ((Building)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
+            }
+            else if (objects[currentIndex] is Building && isTouchingPen && ((Building)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
+            //Else if statement determines if player has enough money to buy a building and places the building if true, destroying the spawner
             {
                 ((Building)objects[currentIndex]).transform.position = gameObject.transform.position;
                 Destroy(spawnerToDestroy);
@@ -61,7 +64,7 @@ public class Spawner : MonoBehaviour
             }
         } 
     }
-
+    //Checks if player is in radius
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -70,6 +73,7 @@ public class Spawner : MonoBehaviour
             Debug.Log("Touching pen works.");
         }
     }
+    //Checks if player exited radius
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
@@ -77,9 +81,10 @@ public class Spawner : MonoBehaviour
             isTouchingPen = false;
         }
     }
-
+    //Displays the currently selected object
     private void DisplayCurrentObject()
     {
+        //Checks if object is Animal and calls display methods
         if(objects[currentIndex] is Animal)
         {
             spawnDisplay.SetName(((Animal)objects[currentIndex]).name);
@@ -87,6 +92,7 @@ public class Spawner : MonoBehaviour
             spawnDisplay.SetDescription(((Animal)objects[currentIndex]).description);
 
         }
+        //Checks if object is Building and calls display methods
         else if (objects[currentIndex] is Building)
         {
             spawnDisplay.SetName(((Building)objects[currentIndex]).name);

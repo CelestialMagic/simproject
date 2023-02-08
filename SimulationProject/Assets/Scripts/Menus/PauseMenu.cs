@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    private static bool GamePaused = false;
+    private static bool GamePaused = false;//sets initial paused value to false
     [SerializeField]
-    private GameObject PauseMenuUI;
+    private GameObject PauseMenuUI;//The Pause Menu UI object
 
     public void Awake()
     {
@@ -31,13 +31,14 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    //Resumes game
     public void Resume()
     {
         PauseMenuUI.SetActive(false); //closes pause menu
         Time.timeScale = 1f; //unfreezes the game when pause menu is closed
         GamePaused = false;
     }
-
+    //Pauses game
     public void Pause()
     {
         PauseMenuUI.SetActive(true); //opens pause menu
@@ -45,18 +46,12 @@ public class PauseMenu : MonoBehaviour
         GamePaused = true;
     }
 
-    public void Restart()
-    {
-        //Time.timeScale = 1f; //unfreezes the game when restarted
-        //GameStateManager.Restart();
-    }
-
     public void MainMenu()
     {
         Time.timeScale = 1f; //unfreezes the game
         SceneManager.LoadScene(0); //Loads menu scene (build index of 0)
     }
-
+    //Quits game
     public void Quit()
     {
 #if UNITY_EDITOR

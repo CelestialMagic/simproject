@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
+//InputManager is a Work-in-Progress Script that will be developed
+//more in Playtest 2
 public class InputManager : MonoBehaviour
 {
-    private bool inRange = false;
+    private bool inRange = false;//Determines if the player is in-range
 
     // Update is called once per frame
     private void Update()
@@ -16,9 +18,10 @@ public class InputManager : MonoBehaviour
             Debug.Log("Open build menu");
         }
 
-        //
     }
 
+    //OnTriggerEnter is used to detect if player has entered the range of
+    //buildings and pens
     private void OnTriggerEnter(Collider other) 
     //building checker for opening menus
     {
@@ -43,6 +46,7 @@ public class InputManager : MonoBehaviour
 
     }
 
+    //OnTriggerExit determines if the player has left the trigger radius
     private void OnTriggerExit(Collider other) 
      //resets inRange value if player leaves
     {
@@ -50,6 +54,7 @@ public class InputManager : MonoBehaviour
         Debug.Log("player has exited");
     }
 
+    //Notify() is a method to be used in Playtest 2
     public void Notify()
     {
 

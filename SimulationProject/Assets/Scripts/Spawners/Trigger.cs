@@ -6,7 +6,7 @@ using TMPro;
 public abstract class Trigger : MonoBehaviour
 {
     [SerializeField]
-    protected TMP_Text displayText;
+    protected TMP_Text displayText;//A text that displays object info
 
     protected abstract void OpenUI();//Opens UI
     protected abstract void CloseUI();//Closes UI
@@ -17,7 +17,7 @@ public abstract class Trigger : MonoBehaviour
         CloseUI();
 
     }
-
+    //Checks if the player is in range
     protected void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -29,6 +29,7 @@ public abstract class Trigger : MonoBehaviour
             CloseUI();
         }
     }
+    //Checks if the player exited range
     protected void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")

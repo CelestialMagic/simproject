@@ -7,41 +7,16 @@ using TMPro;
 public class UITrigger : Trigger
 {
     [SerializeField]
-    protected Image displayImage;
+    protected Image displayImage;//Displays an icon (unused)
     [SerializeField]
-    protected TMP_Text descriptionText;
+    protected TMP_Text descriptionText;//Object description display
     [SerializeField]
-    protected TMP_Text costText;
+    protected TMP_Text costText;//Object cost display
 
     [SerializeField]
-    private GameObject player;
+    private GameObject player;//A player to check (next playtest)
 
-    // Start is called before the first frame update
-    protected void Start()
-    {
-        CloseUI();
-
-    }
-
-    protected void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            OpenUI();
-        }
-        else
-        {
-            CloseUI();
-        }
-    }
-    protected void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            CloseUI();
-        }
-    }
-
+    //Displays UI
     protected override void OpenUI()
     {
         displayText.gameObject.SetActive(true);
@@ -50,6 +25,7 @@ public class UITrigger : Trigger
         costText.gameObject.SetActive(true);
 
     }
+    //Closes UI
     protected override void CloseUI()
     {
         displayText.gameObject.SetActive(false);
