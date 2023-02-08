@@ -13,8 +13,10 @@ February 8, 2023
 
 
 =Bugs=
+-There are minor collision issues when the player attempts to enter a pen, which can cause the player to endlessly rotate.
 
 =Unity Asset Store Assets=
+
 -5 animated Voxel animals by VoxelGuy
 https://assetstore.unity.com/packages/3d/characters/animals/5-animated-voxel-animals-145754
 
@@ -35,4 +37,10 @@ https://assetstore.unity.com/packages/audio/sound-fx/animals/animals-95444
 
 -Mini Low Poly Pack by Have Fun with Developing
 https://assetstore.unity.com/packages/3d/environments/mini-low-poly-pack-185471
+
+-Low poly City Assets by Paulina Sroka
+https://assetstore.unity.com/packages/3d/environments/urban/low-poly-city-assets-234586
+
+-Low Poly Luna Park by Justiplay
+https://assetstore.unity.com/packages/3d/environments/low-poly-luna-park-191731
 
