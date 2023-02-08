@@ -6,11 +6,16 @@ ICS 167/GDIM 32
 February 8, 2023
 
 =Objective=
-
+The player has the ability to design their own zoo. As the ticket booth accumulates money, the player will have the option to visit empty spots and place animals, decorations, restaurants, shops, and attractions. This game is open-ended, so the player decides how large they want to expand their zoo. For the first playtest, the player can build up to 9 exhibits. 
 
 =Controls=
--Player One Controls
-
+Player 1 Controls: 
+-WASD to Move
+-Z to Cycle Menu Left
+-X to Buy Items
+-C to Cycle Menu Right
+-Escape to Pause
+-Click to select buttons
 
 =Bugs=
 -There are minor collision issues when the player attempts to enter a pen, which can cause the player to endlessly rotate.
