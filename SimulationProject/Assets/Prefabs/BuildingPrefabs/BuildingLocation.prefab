@@ -85,6 +85,7 @@ MonoBehaviour:
   - {fileID: 8215792608950769701, guid: 596ecfe650e9148cbbb8339046857b40, type: 3}
   - {fileID: 6860387711040029044, guid: 48f5af36c18b2437485464c2378a80fb, type: 3}
   - {fileID: 5909713445351734335, guid: a7afcc3005ca242f09725ce892b23c28, type: 3}
+  - {fileID: 7934474740509989293, guid: 34f81dab27c4f439487593f57d2aded0, type: 3}
   currentIndex: 0
   spawnDisplay: {fileID: 1891469291}
   spawnerToDestroy: {fileID: 8086608298346589749}
