@@ -19,6 +19,6 @@ public class Attraction : Building, ISpawnableObject
     //Overridden SetDisplayText()reflects unique behavior of Restaurant
     protected override void SetDisplayText()
     {
-        displayText.text = $"${generateAmount} x multiplier";
+        displayText.text = $"${generateAmount}+ per {resetTimer} seconds";
     }
 }
