@@ -13,8 +13,7 @@ public class Restaurant : Building, ISpawnableObject
 
     protected override void GenerateMoney()
     {
-        //Random rand = new Random();
-        //generateAmount = rand.Next(min, max + 1);
-        MoneyManager.SetCurrentIncome(generateAmount);
+        float rand = Random.Range(min, max);
+        MoneyManager.SetCurrentIncome(rand);
     }
 }

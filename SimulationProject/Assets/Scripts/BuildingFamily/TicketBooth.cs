@@ -5,14 +5,9 @@ using TMPro;
 
 public class TicketBooth : Building, ISpawnableObject
 {
-   
     protected override void GenerateMoney()
     {
         MoneyManager.SetCurrentIncome(generateAmount);
     }
-
- 
-
-
 
 }
