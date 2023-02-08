@@ -3114,7 +3114,7 @@ MonoBehaviour:
   m_cost: 0
   m_name: Restaurant
   m_description: Generates a random amount of money over time
-  min: 5
+  min: 18
   max: 25
 --- !u!4 &1769504435 stripped
 Transform:

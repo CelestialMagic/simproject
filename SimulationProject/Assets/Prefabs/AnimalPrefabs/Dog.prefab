@@ -440,7 +440,7 @@ MonoBehaviour:
   m_prefab: {fileID: 1233404657667106231}
   m_cost: 10
   m_name: Dog
-  m_description: Barks often
+  m_description: Your best friend.
 --- !u!82 &1233404657667072791
 AudioSource:
   m_ObjectHideFlags: 0

@@ -7,13 +7,13 @@ public class Restaurant : Building, ISpawnableObject
     //restaurant generates a random amount of money between
     //x and y
     [SerializeField]
-    protected float min;
+    protected int min;
     [SerializeField]
-    protected float max;
+    protected int max;
 
     protected override void GenerateMoney()
     {
-        float rand = Random.Range(min, max);
+        int rand = Random.Range(min, max);
         MoneyManager.SetCurrentIncome(rand);
     }
 
