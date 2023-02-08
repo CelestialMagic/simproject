@@ -3001,7 +3001,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 49886782159166063, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 0.102
       objectReference: {fileID: 0}
     - target: {fileID: 152420787181513236, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
       propertyPath: m_Material
@@ -3022,6 +3022,14 @@ PrefabInstance:
     - target: {fileID: 8401116916748578382, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
       propertyPath: m_Name
       value: Restaurant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759175462455700496, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
+      propertyPath: m_margin.x
+      value: -0.3674932
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759175462455700496, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
+      propertyPath: m_margin.z
+      value: -0.29665783
       objectReference: {fileID: 0}
     - target: {fileID: 9213542401726133492, guid: c04ebc8acc31d9b4c9493dd1fff3b465, type: 3}
       propertyPath: m_RootOrder

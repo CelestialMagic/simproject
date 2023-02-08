@@ -16,4 +16,9 @@ public class Restaurant : Building, ISpawnableObject
         float rand = Random.Range(min, max);
         MoneyManager.SetCurrentIncome(rand);
     }
+
+    protected override void SetDisplayText()
+    {
+        displayText.text = $"${min} up to ${max} per {resetTimer} seconds.";
+    }
 }
