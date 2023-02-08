@@ -388,8 +388,8 @@ GameObject:
   - component: {fileID: 597814800707729107}
   - component: {fileID: 619870812540272013}
   - component: {fileID: 626709588873109433}
-  - component: {fileID: 601941412732825327}
   - component: {fileID: 601941412732825320}
+  - component: {fileID: 601941412732825327}
   m_Layer: 0
   m_Name: Lion
   m_TagString: Untagged
@@ -449,6 +449,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1.72}
   m_Center: {x: 0, y: 0.52, z: 0.15}
+--- !u!114 &601941412732825320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603205127873992383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dcc2cccbaf934270afccd7bf98d15a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSound: {fileID: 8300000, guid: 45e648a71e6171f4f9ae9e4684c5b14a, type: 3}
+  volume: 0.25
+  audioSource: {fileID: 601941412732825327}
+  audioTimer: 5
+  resetTimer: 5
+  waitPeriod: 0
+  m_prefab: {fileID: 603205127873992383}
+  m_cost: 150
+  m_name: Lion
+  m_description: Roars when you get close!
 --- !u!82 &601941412732825327
 AudioSource:
   m_ObjectHideFlags: 0
@@ -458,7 +480,7 @@ AudioSource:
   m_GameObject: {fileID: 603205127873992383}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 1a3bd249fd251af4db63ab279010e056, type: 2}
   m_audioClip: {fileID: 8300000, guid: 45e648a71e6171f4f9ae9e4684c5b14a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.502
@@ -545,28 +567,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &601941412732825320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603205127873992383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dcc2cccbaf934270afccd7bf98d15a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultSound: {fileID: 8300000, guid: 45e648a71e6171f4f9ae9e4684c5b14a, type: 3}
-  volume: 0.25
-  audioSource: {fileID: 601941412732825327}
-  audioTimer: 5
-  resetTimer: 5
-  waitPeriod: 0
-  m_prefab: {fileID: 603205127873992383}
-  m_cost: 150
-  m_name: Lion
-  m_description: Roars when you get close!
 --- !u!1 &603217885494530667
 GameObject:
   m_ObjectHideFlags: 0

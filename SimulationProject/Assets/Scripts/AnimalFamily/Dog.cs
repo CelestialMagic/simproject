@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Dog : Animal, ISpawnableObject
 {
-
     public override void CreateObject()
     {
         Instantiate(gameObject);

@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Penguin : MonoBehaviour
+public class Penguin : Animal, ISpawnableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void CreateObject()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Instantiate(gameObject);
     }
 }
