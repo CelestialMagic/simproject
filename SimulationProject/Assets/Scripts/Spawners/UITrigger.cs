@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+//Code by Jessie Archer
 public class UITrigger : Trigger
 {
     [SerializeField]

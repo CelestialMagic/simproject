@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Code by Jessie Archer, Brandon Lo, and Noel Paredes
 public class Spawner : MonoBehaviour
 {
     [SerializeField]

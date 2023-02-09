@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
 
+//Code by Brandon Lo
 //MenuManager is a work-in-progress script to be developed in Playtest 2
 public class MenuManager : MonoBehaviour
 {

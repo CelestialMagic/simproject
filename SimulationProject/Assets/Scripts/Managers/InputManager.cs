@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
+//Code by Brandon Lo
 //InputManager is a Work-in-Progress Script that will be developed
 //more in Playtest 2
 public class InputManager : MonoBehaviour

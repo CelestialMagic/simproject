@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//Cdoe by Jessie Archer
 public class InfoTrigger : Trigger
 {
     //Opens only display text

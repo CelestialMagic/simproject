@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Code by Jessie Archer
 //ISpawnableObject is used by both Animal and Building subclasses
 public interface ISpawnableObject
 {

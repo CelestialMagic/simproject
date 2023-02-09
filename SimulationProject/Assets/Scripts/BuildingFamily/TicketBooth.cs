@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//Code by Jessie Archer
 public class TicketBooth : Building, ISpawnableObject
 {
     //TicketBooth uses GenerateMoney() to generate a constant amount of money
