@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Penguin : Animal, ISpawnableObject
 {
+    //Instantiated by Noel Paredes
+    //Major Refinements/Additions by Jessie Archer
     [SerializeField]
     private List<AudioClip> penguinSFX;//A list of penguin AudioClips
 

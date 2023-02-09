@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuNavigator : MonoBehaviour
 {
+    //Coded by Noel Paredes
+    //Polished by Brandon Lo and Jessie Archer
     [SerializeField] GameObject baseMenu;//A game object representing the base menu
     [SerializeField] GameObject settingsMenu;//A game object representing the 
     [SerializeField] string mainScene; //A string representing the main scene
