@@ -33,5 +33,11 @@ public class MoneyManager : MonoBehaviour
 
     }
 
+    //Resets the amount of money earned by the player
+    public static void ResetMoney()
+    {
+        currentIncome = 0;
+    }
+
     
 }
