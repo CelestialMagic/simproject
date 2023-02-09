@@ -24,7 +24,7 @@ public class SpawnDisplay : MonoBehaviour
     //Sets cost text
     public void SetCost(int cost)
     {
-        costText.text = cost.ToString();
+        costText.text = "$" + cost.ToString();
 
     }
     //Sets image 
