@@ -21,6 +21,11 @@ Player 1 Controls:
 =Bugs=
 -There are minor collision issues when the player attempts to enter a pen, which can cause the player to endlessly rotate.
 
+="Features Not Bugs"=
+-Standing inside of a pen while spawning a building causes the player to be popped upwards.
+-Loading a pen full of animals and spawning a building launches all animals in every direction.
+-All animals currently spawn in the same spot in a pen, resulting in stacks of animals that may overflow.
+
 =Unity Asset Store Assets=
 
 -5 animated Voxel animals by VoxelGuy
