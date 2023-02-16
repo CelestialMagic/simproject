@@ -26,17 +26,22 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private InputAction forwardMovement;//A forward movement binding unique to player
 
+    [SerializeField]
+    private InputAction menuCycle; 
+
 
     private void OnEnable()
     {
         sideMovement.Enable();
         forwardMovement.Enable();
+        menuCycle.Enable();
     }
 
     private void OnDisable()
     {
         sideMovement.Disable();
         forwardMovement.Disable();
+        menuCycle.Disable();
     }
 
     // Update is called once per frame
