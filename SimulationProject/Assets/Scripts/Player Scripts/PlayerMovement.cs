@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 //Code by Jessie Archer
 public class PlayerMovement : MonoBehaviour
@@ -19,24 +20,23 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 m_ToApplyMove;//A Vector3 representing the player movement force
 
-    private Input input; //To be used with Input system.
+    [SerializeField]
+    private InputAction sideMovement;//An side movement binding unique to player
 
     [SerializeField]
-    private PlayerInput playerInput;//Player Input System to be used by certain player
+    private InputAction forwardMovement;//A forward movement binding unique to player
 
-    private void Awake()
-    {
-        playerInput = new PlayerInput();
-    }
 
     private void OnEnable()
     {
-        playerInput.Enable();
+        sideMovement.Enable();
+        forwardMovement.Enable();
     }
 
     private void OnDisable()
     {
-        playerInput.Disable();
+        sideMovement.Disable();
+        forwardMovement.Disable();
     }
 
     // Update is called once per frame
@@ -44,8 +44,8 @@ public class PlayerMovement : MonoBehaviour
     {
 
         //Reads movement value from input system
-        float sideInput = playerInput.Movement.Sides.ReadValue<float>();
-        float forwardInput = playerInput.Movement.Forward.ReadValue<float>();
+        float sideInput = sideMovement.ReadValue<float>();
+        float forwardInput = forwardMovement.ReadValue<float>();
 
 
         float horizontalInput = Input.GetAxis("Horizontal");

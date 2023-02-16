@@ -116,6 +116,72 @@ MonoBehaviour:
   rotationSpeed: 720
   rb: {fileID: 6372581183293435051}
   renderer: {fileID: 6372581183293435046}
+  sideMovement:
+    m_Name: Side Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 06c58997-50fa-4061-9861-6c494f1c4fd5
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Side
+      m_Id: 864c8cb6-bebd-4fdf-944a-045427561474
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Side Movement
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 1a2741bb-fe23-4326-80c6-366494651c4e
+      m_Path: <Keyboard>/j
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Side Movement
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 681e6799-2d08-46d2-b481-13935a60d1d1
+      m_Path: <Keyboard>/l
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Side Movement
+      m_Flags: 8
+    m_Flags: 0
+  forwardMovement:
+    m_Name: Forward Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 89a9695d-3bd4-4102-be6e-ef2883d88868
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Forward
+      m_Id: b20e8cf1-e6cb-4ddf-845a-9491fda15b80
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward Movement
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 71213db4-8560-4c74-a408-f58fe29ebcec
+      m_Path: <Keyboard>/i
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward Movement
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 4e436349-8484-48c1-a94f-53a577210a08
+      m_Path: <Keyboard>/k
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward Movement
+      m_Flags: 8
+    m_Flags: 0
 --- !u!54 &6372581183293435051
 Rigidbody:
   m_ObjectHideFlags: 0
