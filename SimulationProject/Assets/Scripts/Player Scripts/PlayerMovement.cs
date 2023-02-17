@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private InputAction forwardMovement;//A forward movement binding unique to player
 
     [SerializeField]
-    private InputAction menuCycle; 
+    private InputAction menuCycle;//
 
 
     private void OnEnable()
@@ -75,6 +75,11 @@ public class PlayerMovement : MonoBehaviour
     public void Initialize(Color color)
     {
         renderer.material.color = color;
+    }
+
+    public float GetMenuValue()
+    {
+        return menuCycle.ReadValue<float>();
     }
 
 }

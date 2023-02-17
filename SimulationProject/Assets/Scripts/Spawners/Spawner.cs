@@ -19,6 +19,7 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private GameObject spawnerToDestroy;//The spawner to destroy when building is placed
 
+    private PlayerMovement currentPlayer;
     // Update is called once per frame
     void Update()
     {
@@ -48,22 +49,24 @@ public class Spawner : MonoBehaviour
         }
 
         //user cycles left (down in objects list)
-        if (Input.GetKeyDown(KeyCode.Z))
+        if(currentPlayer != null)
         {
-            if (currentIndex != 0 && currentIndex >= 0 && objListLength > 1)
+            if (currentPlayer.GetMenuValue() < 0.01)
             {
-                currentIndex -= 1;
+                if (currentIndex != 0 && currentIndex >= 0 && objListLength > 1)
+                {
+                    currentIndex -= 1;
+                }
+            }
+            else if (currentPlayer.GetMenuValue() > 0.01)
+            {
+                if (objListLength > (currentIndex + 1) && objListLength > 1)
+                {
+                    currentIndex += 1;
+                }
             }
         }
-
-        //user cycles right (up in objects list)
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            if (objListLength > (currentIndex + 1) && objListLength > 1)
-            {
-                currentIndex += 1;
-            }
-        } 
+        
     }
     //Checks if player is in radius
     private void OnTriggerEnter(Collider other)
@@ -72,6 +75,7 @@ public class Spawner : MonoBehaviour
         {
             isTouchingPen = true;
             Debug.Log("Touching pen works.");
+            currentPlayer = other.GetComponent<PlayerMovement>();
         }
     }
     //Checks if player exited radius

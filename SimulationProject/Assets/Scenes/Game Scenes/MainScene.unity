@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2669,7 +2669,7 @@ Camera:
     height: 1
   near clip plane: 0.001
   far clip plane: 5000
-  field of view: 41.929955
+  field of view: 41.92996
   orthographic: 0
   orthographic size: 20
   m_Depth: -1
@@ -2695,7 +2695,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036486097}
   m_LocalRotation: {x: -0.08717142, y: 0.8995911, z: -0.21045054, w: -0.3726226}
-  m_LocalPosition: {x: 11.41302, y: 2.0195508, z: 5.3317924}
+  m_LocalPosition: {x: 11.413021, y: 2.019552, z: 5.3317943}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4136,7 +4136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734438841}
   m_LocalRotation: {x: -0.08717142, y: 0.8995911, z: -0.21045054, w: -0.3726226}
-  m_LocalPosition: {x: 11.41302, y: 2.0195508, z: 5.3317924}
+  m_LocalPosition: {x: 11.413021, y: 2.019552, z: 5.3317943}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4694,6 +4694,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2014014231836175301, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
   m_PrefabInstance: {fileID: 1103451825259637915}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1487042005811218273 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+  m_PrefabInstance: {fileID: 1103451825259637915}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487042005811218270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9665f8bbc1686416596b2ee010df252b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1487042005891962077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6372581183293435044, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
@@ -5521,6 +5532,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1487042005811218270}
+    - target: {fileID: 936093333, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: currentPlayer
+      value: 
+      objectReference: {fileID: 1487042005811218273}
     - target: {fileID: 1428088900, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Camera
       value: 
