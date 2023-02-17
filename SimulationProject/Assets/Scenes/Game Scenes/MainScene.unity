@@ -459,6 +459,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1487042005811218270}
+    - target: {fileID: 936093333, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: countdown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen (1)
@@ -2669,7 +2673,7 @@ Camera:
     height: 1
   near clip plane: 0.001
   far clip plane: 5000
-  field of view: 41.92996
+  field of view: 41.92997
   orthographic: 0
   orthographic size: 20
   m_Depth: -1
@@ -2695,7 +2699,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036486097}
   m_LocalRotation: {x: -0.08717142, y: 0.8995911, z: -0.21045054, w: -0.3726226}
-  m_LocalPosition: {x: 11.413021, y: 2.019552, z: 5.3317943}
+  m_LocalPosition: {x: 11.413019, y: 2.0195506, z: 5.3317943}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4136,7 +4140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734438841}
   m_LocalRotation: {x: -0.08717142, y: 0.8995911, z: -0.21045054, w: -0.3726226}
-  m_LocalPosition: {x: 11.413021, y: 2.019552, z: 5.3317943}
+  m_LocalPosition: {x: 11.413019, y: 2.0195506, z: 5.3317943}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

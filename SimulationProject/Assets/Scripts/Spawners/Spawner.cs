@@ -20,10 +20,18 @@ public class Spawner : MonoBehaviour
     private GameObject spawnerToDestroy;//The spawner to destroy when building is placed
 
     private PlayerMovement currentPlayer;
+
+    private bool canCycle;
+
+    [SerializeField]
+    private float countdown;
+
+    [SerializeField]
+    private float resetCounter;
     // Update is called once per frame
     void Update()
     {
-        DisplayCurrentObject(); 
+        DisplayCurrentObject();
         int objListLength = objects.Count;
 
         //user selects choice
@@ -49,24 +57,29 @@ public class Spawner : MonoBehaviour
         }
 
         //user cycles left (down in objects list)
-        if(currentPlayer != null)
+        if (currentPlayer != null)
         {
-            if (currentPlayer.GetMenuValue() < 0.01)
+            CycleCooldown();
+
+            if (currentPlayer.GetMenuValue() < 0.01 && canCycle == true)
             {
                 if (currentIndex != 0 && currentIndex >= 0 && objListLength > 1)
                 {
                     currentIndex -= 1;
+                    canCycle = false; 
                 }
             }
-            else if (currentPlayer.GetMenuValue() > 0.01)
+            if (currentPlayer.GetMenuValue() > 0.01 && canCycle == true)
             {
                 if (objListLength > (currentIndex + 1) && objListLength > 1)
                 {
                     currentIndex += 1;
+                    canCycle = false;
                 }
             }
         }
-        
+
+
     }
     //Checks if player is in radius
     private void OnTriggerEnter(Collider other)
@@ -90,7 +103,7 @@ public class Spawner : MonoBehaviour
     private void DisplayCurrentObject()
     {
         //Checks if object is Animal and calls display methods
-        if(objects[currentIndex] is Animal)
+        if (objects[currentIndex] is Animal)
         {
             spawnDisplay.SetName(((Animal)objects[currentIndex]).name);
             spawnDisplay.SetCost(((Animal)objects[currentIndex]).cost);
@@ -105,6 +118,23 @@ public class Spawner : MonoBehaviour
             spawnDisplay.SetDescription(((Building)objects[currentIndex]).description);
 
         }
-        
+
     }
-}
+
+    private void CycleCooldown()
+    {
+            if (countdown - Time.deltaTime <= 0)
+            {
+                countdown = resetCounter;
+                canCycle = true;
+            }
+            else
+            {
+                countdown -= Time.deltaTime;
+
+            }
+
+        }
+        
+
+    }

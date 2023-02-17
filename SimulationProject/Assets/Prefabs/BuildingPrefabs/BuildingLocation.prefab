@@ -89,7 +89,8 @@ MonoBehaviour:
   currentIndex: 0
   spawnDisplay: {fileID: 1891469291}
   spawnerToDestroy: {fileID: 8086608298346589749}
-  currentPlayer: {fileID: 0}
+  countdown: 1
+  resetCounter: 1
 --- !u!1 &1428088897
 GameObject:
   m_ObjectHideFlags: 0
