@@ -60,21 +60,21 @@ public class Spawner : MonoBehaviour
         if (currentPlayer != null)
         {
             CycleCooldown();
-
             if (currentPlayer.GetMenuValue() < 0.01 && canCycle == true)
             {
                 if (currentIndex != 0 && currentIndex >= 0 && objListLength > 1)
                 {
+                    canCycle = false;
                     currentIndex -= 1;
-                    canCycle = false; 
+                    
                 }
             }
-            if (currentPlayer.GetMenuValue() > 0.01 && canCycle == true)
+            else if (currentPlayer.GetMenuValue() > 0.01 && canCycle == true)
             {
                 if (objListLength > (currentIndex + 1) && objListLength > 1)
                 {
-                    currentIndex += 1;
                     canCycle = false;
+                    currentIndex += 1;
                 }
             }
         }
