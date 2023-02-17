@@ -29,6 +29,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private InputAction menuCycle;//
 
+    [SerializeField]
+    private InputAction rightCycle;
+
+    [SerializeField]
+    private InputAction leftCycle;
+
 
     private void OnEnable()
     {
@@ -81,5 +87,15 @@ public class PlayerMovement : MonoBehaviour
     {
         return menuCycle.ReadValue<float>();
     }
+
+    public bool GetRightCycle()
+    {
+        return rightCycle.ReadValue<bool>();
+    }
+    public bool GetLeftCycle()
+    {
+        return leftCycle.ReadValue<bool>();
+    }
+
 
 }
