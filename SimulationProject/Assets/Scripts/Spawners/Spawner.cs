@@ -58,11 +58,11 @@ public class Spawner : MonoBehaviour
                     MoneyManager.BuyItem(((Building)objects[currentIndex]).cost);
                     placeIsHeld = true;
                 }
-                else
-                {
-                    placeIsHeld = false; 
-                }
+               
 
+            }else if (place == 0 && placeIsHeld == true)
+            {
+                placeIsHeld = false;
             }
            
 
