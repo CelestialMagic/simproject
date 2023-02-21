@@ -29,12 +29,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private InputAction menuCycle;//A set of pos/neg inputs that track each player's menu inputs
 
+    [SerializeField]
+    private InputAction menuPlace;//A single binding representing placing an object
+
 
     private void OnEnable()
     {
         sideMovement.Enable();
         forwardMovement.Enable();
         menuCycle.Enable();
+        menuPlace.Enable();
+
     }
 
     private void OnDisable()
@@ -42,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         sideMovement.Disable();
         forwardMovement.Disable();
         menuCycle.Disable();
+        menuPlace.Disable();
     }
 
     // Update is called once per frame
@@ -67,7 +73,8 @@ public class PlayerMovement : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
-        
+
+       
 
     }
 
@@ -80,6 +87,11 @@ public class PlayerMovement : MonoBehaviour
     public float GetMenuValue()
     {
         return menuCycle.ReadValue<float>();
+    }
+
+    public float GetMenuPlace()
+    {
+        return menuPlace.ReadValue<float>();
     }
 
 }

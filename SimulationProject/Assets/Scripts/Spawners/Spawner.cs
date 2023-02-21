@@ -22,6 +22,7 @@ public class Spawner : MonoBehaviour
     private PlayerMovement currentPlayer;//The current player character being controlled
 
     private bool isHeld;//A boolean that checks if a menu input is held down
+    private bool placeIsHeld;
 
     [SerializeField]
     private float resetCounter;
@@ -31,40 +32,46 @@ public class Spawner : MonoBehaviour
         DisplayCurrentObject();
         int objListLength = objects.Count;
 
+        
         //user selects choice
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            //If statement determines if player has enough money to buy an animal and places animal if true
-            if (objects[currentIndex] is Animal && isTouchingPen && ((Animal)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
-            {
-                ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
-                ((Animal)objects[currentIndex]).CreateObject();
-                MoneyManager.BuyItem(((Animal)objects[currentIndex]).cost);
-
-            }
-            else if (objects[currentIndex] is Building && isTouchingPen && ((Building)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
-            //Else if statement determines if player has enough money to buy a building and places the building if true, destroying the spawner
-            {
-                ((Building)objects[currentIndex]).transform.position = gameObject.transform.position;
-                Destroy(spawnerToDestroy);
-                ((Building)objects[currentIndex]).CreateObject();
-                MoneyManager.BuyItem(((Building)objects[currentIndex]).cost);
-            }
-
-        }
-
-        //user cycles left (down in objects list)
         if (currentPlayer != null)
         {
-
+            float place = currentPlayer.GetMenuPlace();
             float scrollSelect = currentPlayer.GetMenuValue();
+            if(place == 1 && placeIsHeld == false)
+            {
+                //If statement determines if player has enough money to buy an animal and places animal if true
+                if (objects[currentIndex] is Animal && isTouchingPen && ((Animal)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
+                {
+                    ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
+                    ((Animal)objects[currentIndex]).CreateObject();
+                    MoneyManager.BuyItem(((Animal)objects[currentIndex]).cost);
+                    placeIsHeld = true;
+
+                }
+                else if (objects[currentIndex] is Building && isTouchingPen && ((Building)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
+                //Else if statement determines if player has enough money to buy a building and places the building if true, destroying the spawner
+                {
+                    ((Building)objects[currentIndex]).transform.position = gameObject.transform.position;
+                    Destroy(spawnerToDestroy);
+                    ((Building)objects[currentIndex]).CreateObject();
+                    MoneyManager.BuyItem(((Building)objects[currentIndex]).cost);
+                    placeIsHeld = true;
+                }
+                else
+                {
+                    placeIsHeld = false; 
+                }
+
+            }
+           
 
             if (scrollSelect == -1 && isHeld == false)
             {
                 if (currentIndex != 0 && currentIndex >= 0 && objListLength > 1)
                 {
                     isHeld = true;
-                    currentIndex -= 1;
+                    currentIndex --;
 
                 }
             }
@@ -73,7 +80,7 @@ public class Spawner : MonoBehaviour
                 if (objListLength > (currentIndex + 1) && objListLength > 1)
                 {
                     isHeld = true;
-                    currentIndex += 1;
+                    currentIndex ++;
                 }
             }
             else if (scrollSelect == 0 && isHeld == true)

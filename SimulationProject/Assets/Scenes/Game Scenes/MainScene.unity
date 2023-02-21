@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2673,7 +2673,7 @@ Camera:
     height: 1
   near clip plane: 0.001
   far clip plane: 5000
-  field of view: 45.592487
+  field of view: 45.592472
   orthographic: 0
   orthographic size: 20
   m_Depth: -1
@@ -2699,7 +2699,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036486097}
   m_LocalRotation: {x: -0.16107172, y: 0.6885178, z: -0.16107199, w: -0.6885165}
-  m_LocalPosition: {x: 12.187589, y: 1.7833037, z: 0.24501097}
+  m_LocalPosition: {x: 12.187589, y: 1.7833037, z: 0.24501288}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4140,7 +4140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734438841}
   m_LocalRotation: {x: -0.16107172, y: 0.6885178, z: -0.16107199, w: -0.6885165}
-  m_LocalPosition: {x: 12.187589, y: 1.7833037, z: 0.24501097}
+  m_LocalPosition: {x: 12.187589, y: 1.7833037, z: 0.24501288}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4559,6 +4559,10 @@ PrefabInstance:
       value: bd958dff-f513-4504-84e1-d1a582976baa
       objectReference: {fileID: 0}
     - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: menuPlace.m_Id
+      value: f91071ef-0d90-4a0b-8665-3f1e51353b18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: rightCycle.m_Id
       value: c99e2ce4-24c1-4a6b-b124-cfcfdc88c933
       objectReference: {fileID: 0}
@@ -4573,6 +4577,10 @@ PrefabInstance:
     - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: menuCycle.m_Name
       value: Menu Cycle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: menuPlace.m_Name
+      value: Menu Place
       objectReference: {fileID: 0}
     - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: rightCycle.m_Name
@@ -4615,6 +4623,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: menuPlace.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: rightCycle.m_SingletonActionBindings.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4633,6 +4645,10 @@ PrefabInstance:
     - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[2].m_Id
       value: e000ea94-3392-4c66-b4ff-711ff318cd12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: menuPlace.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 08e2d991-3788-42c0-8d54-332c3b8049b6
       objectReference: {fileID: 0}
     - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: rightCycle.m_SingletonActionBindings.Array.data[0].m_Id
@@ -4667,6 +4683,10 @@ PrefabInstance:
       value: <Keyboard>/c
       objectReference: {fileID: 0}
     - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: menuPlace.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/x
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[0].m_Flags
       value: 4
       objectReference: {fileID: 0}
@@ -4697,6 +4717,10 @@ PrefabInstance:
     - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[2].m_Action
       value: Menu Cycle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: menuPlace.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Menu Place
       objectReference: {fileID: 0}
     - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: rightCycle.m_SingletonActionBindings.Array.data[0].m_Action
@@ -5536,6 +5560,10 @@ PrefabInstance:
       value: 3116c0bf-5258-4da9-afad-097b7a3e386b
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: menuPlace.m_Id
+      value: 62f8c284-2906-464c-8cd9-80039886d731
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: rightCycle.m_Id
       value: eb8407c1-c8e2-4ead-9b5f-01fb339f08de
       objectReference: {fileID: 0}
@@ -5550,6 +5578,10 @@ PrefabInstance:
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: menuCycle.m_Name
       value: Menu Cycle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: menuPlace.m_Name
+      value: Menu Place
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: rightCycle.m_Name
@@ -5584,6 +5616,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: menuPlace.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: rightCycle.m_SingletonActionBindings.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -5602,6 +5638,10 @@ PrefabInstance:
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[2].m_Id
       value: 49eb87bc-6c56-4ad8-9068-356f55d0f788
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: menuPlace.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 37982ae9-f646-4fe6-bfac-8b56695e1b4d
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: rightCycle.m_SingletonActionBindings.Array.data[0].m_Id
@@ -5636,6 +5676,10 @@ PrefabInstance:
       value: <Keyboard>/period
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: menuPlace.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/comma
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[0].m_Flags
       value: 4
       objectReference: {fileID: 0}
@@ -5666,6 +5710,10 @@ PrefabInstance:
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[2].m_Action
       value: Menu Cycle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: menuPlace.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Menu Place
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: rightCycle.m_SingletonActionBindings.Array.data[0].m_Action
