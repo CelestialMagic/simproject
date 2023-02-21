@@ -211,6 +211,7 @@ MonoBehaviour:
   costText: {fileID: 1440857737}
   description: {fileID: 2391370086383552440}
   icon: {fileID: 0}
+  iconColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1440857735
 GameObject:
   m_ObjectHideFlags: 0

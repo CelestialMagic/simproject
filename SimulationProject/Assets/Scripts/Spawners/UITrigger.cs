@@ -8,12 +8,11 @@ using TMPro;
 public class UITrigger : Trigger
 {
     [SerializeField]
-    protected Image displayImage;//Displays an icon (unused)
+    protected Image displayImage;//Displays an icon 
     [SerializeField]
     protected TMP_Text descriptionText;//Object description display
     [SerializeField]
     protected TMP_Text costText;//Object cost display
-
     [SerializeField]
     private GameObject player;//A player to check (next playtest)
 

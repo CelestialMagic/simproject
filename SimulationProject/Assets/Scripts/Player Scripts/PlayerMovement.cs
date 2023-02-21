@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     private InputAction menuPlace;//A single binding representing placing an object
 
 
+
     private void OnEnable()
     {
         sideMovement.Enable();
@@ -93,5 +94,6 @@ public class PlayerMovement : MonoBehaviour
     {
         return menuPlace.ReadValue<float>();
     }
+
 
 }

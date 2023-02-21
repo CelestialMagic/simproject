@@ -16,6 +16,7 @@ public class SpawnDisplay : MonoBehaviour
     [SerializeField]
     private Image icon;//Icon to display (currently unused)
 
+
     //Sets name text
     public void SetName(string name)
     {
