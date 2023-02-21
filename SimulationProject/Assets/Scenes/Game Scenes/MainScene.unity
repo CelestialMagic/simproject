@@ -2673,7 +2673,7 @@ Camera:
     height: 1
   near clip plane: 0.001
   far clip plane: 5000
-  field of view: 45.592472
+  field of view: 45.592487
   orthographic: 0
   orthographic size: 20
   m_Depth: -1
@@ -2699,7 +2699,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036486097}
   m_LocalRotation: {x: -0.16107172, y: 0.6885178, z: -0.16107199, w: -0.6885165}
-  m_LocalPosition: {x: 12.18759, y: 1.7833033, z: 0.24501103}
+  m_LocalPosition: {x: 12.187589, y: 1.7833037, z: 0.24501097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4140,7 +4140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734438841}
   m_LocalRotation: {x: -0.16107172, y: 0.6885178, z: -0.16107199, w: -0.6885165}
-  m_LocalPosition: {x: 12.18759, y: 1.7833033, z: 0.24501103}
+  m_LocalPosition: {x: 12.187589, y: 1.7833037, z: 0.24501097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4567,6 +4567,10 @@ PrefabInstance:
       value: Left Cycle
       objectReference: {fileID: 0}
     - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: leftCycle.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: menuCycle.m_Name
       value: Menu Cycle
       objectReference: {fileID: 0}
@@ -4575,8 +4579,48 @@ PrefabInstance:
       value: Right Cycle
       objectReference: {fileID: 0}
     - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: rightCycle.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: rightCycle.m_Flags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: leftCycle.m_Interactions
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: rightCycle.m_Interactions
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: leftCycle.m_ExpectedControlType
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: menuCycle.m_ExpectedControlType
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: rightCycle.m_ExpectedControlType
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: leftCycle.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: rightCycle.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: leftCycle.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 69036e88-4922-4056-b505-91e15caad7e9
       objectReference: {fileID: 0}
     - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[0].m_Id
@@ -4589,6 +4633,14 @@ PrefabInstance:
     - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[2].m_Id
       value: e000ea94-3392-4c66-b4ff-711ff318cd12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: rightCycle.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 194c86f1-d6ae-4625-a5e2-f36bdee4e29b
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: leftCycle.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/z
       objectReference: {fileID: 0}
     - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[0].m_Name
@@ -4627,6 +4679,14 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: rightCycle.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/c
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: leftCycle.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Left Cycle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[0].m_Action
       value: Menu Cycle
       objectReference: {fileID: 0}
@@ -4637,6 +4697,10 @@ PrefabInstance:
     - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[2].m_Action
       value: Menu Cycle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014014231836175303, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+      propertyPath: rightCycle.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Right Cycle
       objectReference: {fileID: 0}
     - target: {fileID: 2014014231836175307, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: m_RootOrder
@@ -5464,16 +5528,68 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: leftCycle.m_Id
+      value: f4f21da2-c968-4587-b429-9e9a490ddd3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: menuCycle.m_Id
       value: 3116c0bf-5258-4da9-afad-097b7a3e386b
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: rightCycle.m_Id
+      value: eb8407c1-c8e2-4ead-9b5f-01fb339f08de
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: leftCycle.m_Name
+      value: Left Cycle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: leftCycle.m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: menuCycle.m_Name
       value: Menu Cycle
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: rightCycle.m_Name
+      value: Right Cycle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: rightCycle.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: leftCycle.m_Interactions
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: rightCycle.m_Interactions
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: leftCycle.m_ExpectedControlType
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: rightCycle.m_ExpectedControlType
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: leftCycle.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: rightCycle.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: leftCycle.m_SingletonActionBindings.Array.data[0].m_Id
+      value: b72c9f2c-a442-4044-9498-2ddf12bf8717
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[0].m_Id
@@ -5486,6 +5602,14 @@ PrefabInstance:
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[2].m_Id
       value: 49eb87bc-6c56-4ad8-9068-356f55d0f788
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: rightCycle.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 377cea05-efe6-43de-8c30-82ad5c688b8f
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: leftCycle.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/m
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[0].m_Name
@@ -5501,7 +5625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Keyboard>/n
+      value: <Keyboard>/m
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[2].m_Name
@@ -5509,7 +5633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[2].m_Path
-      value: <Keyboard>/comma
+      value: <Keyboard>/period
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[0].m_Flags
@@ -5524,6 +5648,14 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: rightCycle.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/period
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: leftCycle.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Left Cycle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[0].m_Action
       value: Menu Cycle
       objectReference: {fileID: 0}
@@ -5535,9 +5667,17 @@ PrefabInstance:
       propertyPath: menuCycle.m_SingletonActionBindings.Array.data[2].m_Action
       value: Menu Cycle
       objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435048, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: rightCycle.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Right Cycle
+      objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435050, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: m_Name
       value: Player Two
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372581183293435050, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f82fde5bf4167499d885c940db30b07d, type: 3}

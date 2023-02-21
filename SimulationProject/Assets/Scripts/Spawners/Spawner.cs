@@ -19,12 +19,9 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private GameObject spawnerToDestroy;//The spawner to destroy when building is placed
 
-    private PlayerMovement currentPlayer;
+    private PlayerMovement currentPlayer;//The current player character being controlled
 
-    private bool canCycle;
-
-    [SerializeField]
-    private float countdown;
+    private bool isHeld;//A boolean that checks if a menu input is held down
 
     [SerializeField]
     private float resetCounter;
@@ -59,26 +56,32 @@ public class Spawner : MonoBehaviour
         //user cycles left (down in objects list)
         if (currentPlayer != null)
         {
-            CycleCooldown();
-            if (currentPlayer.GetMenuValue() < 0.01 && canCycle == true)
+
+            float scrollSelect = currentPlayer.GetMenuValue();
+
+            if (scrollSelect == -1 && isHeld == false)
             {
                 if (currentIndex != 0 && currentIndex >= 0 && objListLength > 1)
                 {
-                    canCycle = false;
+                    isHeld = true;
                     currentIndex -= 1;
-                    
+
                 }
             }
-            else if (currentPlayer.GetMenuValue() > 0.01 && canCycle == true)
+            else if (scrollSelect == 1 && isHeld == false)
             {
                 if (objListLength > (currentIndex + 1) && objListLength > 1)
                 {
-                    canCycle = false;
+                    isHeld = true;
                     currentIndex += 1;
                 }
             }
-        }
+            else if (scrollSelect == 0 && isHeld == true)
+            {
+                isHeld = false;
+            }
 
+        }
 
     }
     //Checks if player is in radius
@@ -120,21 +123,5 @@ public class Spawner : MonoBehaviour
         }
 
     }
-
-    private void CycleCooldown()
-    {
-            if (countdown - Time.deltaTime <= 0)
-            {
-                countdown = resetCounter;
-                canCycle = true;
-            }
-            else
-            {
-                countdown -= Time.deltaTime;
-
-            }
-
-        }
         
-
     }

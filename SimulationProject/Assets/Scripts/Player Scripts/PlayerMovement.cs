@@ -27,13 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private InputAction forwardMovement;//A forward movement binding unique to player
 
     [SerializeField]
-    private InputAction menuCycle;//
-
-    [SerializeField]
-    private InputAction rightCycle;
-
-    [SerializeField]
-    private InputAction leftCycle;
+    private InputAction menuCycle;//A set of pos/neg inputs that track each player's menu inputs
 
 
     private void OnEnable()
@@ -87,15 +81,5 @@ public class PlayerMovement : MonoBehaviour
     {
         return menuCycle.ReadValue<float>();
     }
-
-    public bool GetRightCycle()
-    {
-        return rightCycle.ReadValue<bool>();
-    }
-    public bool GetLeftCycle()
-    {
-        return leftCycle.ReadValue<bool>();
-    }
-
 
 }
