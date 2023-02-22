@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(m_ToApplyMove, Space.World);
 
         //Determines when to rotate the player character
-        if(m_ToApplyMove != Vector3.zero)
+        if(m_ToApplyMove != Vector3.zero && movementDirection != Vector3.zero)
         {
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
