@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;//RigidBody
 
     [SerializeField]
-    private MeshRenderer renderer;//Player meshrenderer
+    private MeshRenderer pRenderer;//Player meshrenderer
 
     private Vector3 m_ToApplyMove;//A Vector3 representing the player movement force
 
@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
     //To be used with potential scriptableobjects
     public void Initialize(Color color)
     {
-        renderer.material.color = color;
+        pRenderer.material.color = color;
     }
 
     public float GetMenuValue()
