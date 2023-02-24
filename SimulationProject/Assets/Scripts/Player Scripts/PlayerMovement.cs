@@ -54,16 +54,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //Reads movement value from input system
         float sideInput = sideMovement.ReadValue<float>();
         float forwardInput = forwardMovement.ReadValue<float>();
 
-
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-        Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
+        Vector3 movementDirection = new Vector3(forwardInput, 0, sideInput);
 
         m_ToApplyMove = new Vector3(forwardInput * moveSpeed * Time.deltaTime, 0, sideInput * moveSpeed * Time.deltaTime);
         transform.Translate(m_ToApplyMove, Space.World);
@@ -74,8 +69,6 @@ public class PlayerMovement : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
-
-       
 
     }
 
