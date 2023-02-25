@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private List<ObjectFactory> objects;//A list of available objects to buy (buildings and animals)
 
-    private List<GameObject> spawnedAnimals = new List<GameObject>();
+    private List<GameObject> spawnedAnimals;//A list of game objects that hold animals
 
     [SerializeField]
     private int currentIndex;//The currently selected object
@@ -24,15 +24,14 @@ public class Spawner : MonoBehaviour
     private PlayerMovement currentPlayer;//The current player character being controlled
 
     private bool isHeld;//A boolean that checks if a menu input is held down
-    private bool placeIsHeld;
-    private int objListLength;
+    private bool placeIsHeld;//A boolean that checks if place button is held down
+    private int objListLength;//An integer representing the length of the 
 
-    [SerializeField]
-    private float resetCounter;
-    //Start() initializes the objListLength
+    //Start() initializes the objListLength and spawnedAnimals list
     private void Start()
     {
         objListLength = objects.Count;
+        spawnedAnimals = new List<GameObject>();
     }
     // Update is called once per frame
     void Update()
@@ -85,30 +84,34 @@ public class Spawner : MonoBehaviour
     //SpawnObject() allows players to place an object
     private void SpawnObject()
     {
+        //Null check for play er
         if (currentPlayer != null)
         {
             float place = currentPlayer.GetMenuPlace();
+            //Switch statement executes based on input
             switch (place)
             {
+                //No key press
                 case 0:
                     if (placeIsHeld)
                         placeIsHeld = false;
                     break;
 
+                //Player presses button to place object
                 case 1:
                     if (!placeIsHeld && isTouchingPen)
                     {
+                        //Animal Object Code
                         if (objects[currentIndex] is Animal && ((Animal)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
                         {
                             
                             ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
                             GameObject animal = ((Animal)objects[currentIndex]).ReturnSpawnedObject();
                             spawnedAnimals.Add(animal);
-                            Debug.Log(spawnedAnimals.Count);
-                            //((Animal)objects[currentIndex]).CreateObject();
                             MoneyManager.BuyItem(((Animal)objects[currentIndex]).cost);
                             placeIsHeld = true;
                         }
+                        //Building Object Code
                         else if (objects[currentIndex] is Building && ((Building)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
                         {
                             ((Building)objects[currentIndex]).transform.position = gameObject.transform.position;
@@ -138,6 +141,7 @@ public class Spawner : MonoBehaviour
             float scrollSelect = currentPlayer.GetMenuValue();
             switch (scrollSelect)
             {
+                //Scroll Left Code
                 case -1:
                     if ((!isHeld) && currentIndex != 0 && currentIndex >= 0 && objListLength > 1)
                     {
@@ -145,10 +149,12 @@ public class Spawner : MonoBehaviour
                         currentIndex--;
                     }
                         break;
+                //No Scroll Code
                 case 0:
                     if (isHeld)
                         isHeld = false;
                     break;
+                //Scroll Right Code
                 case 1:
                     if ((!isHeld) && objListLength > (currentIndex + 1) && objListLength > 1)
                     {
@@ -163,6 +169,8 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    //DestroySpawnedAnimals() destroys any animals spawned by the players
+    //This is used to allow for buildings to be placed. 
     private void DestroySpawnedAnimals()
     {
         foreach(GameObject animal in spawnedAnimals)
