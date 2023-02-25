@@ -23,72 +23,22 @@ public class Spawner : MonoBehaviour
 
     private bool isHeld;//A boolean that checks if a menu input is held down
     private bool placeIsHeld;
+    private int objListLength;
 
     [SerializeField]
     private float resetCounter;
+    //Start() initializes the objListLength
+    private void Start()
+    {
+        objListLength = objects.Count;
+    }
     // Update is called once per frame
     void Update()
     {
         DisplayCurrentObject();
-        int objListLength = objects.Count;
-
+        SpawnObject();
+        ScrollObjects();
         
-        //user selects choice
-        if (currentPlayer != null)
-        {
-            float place = currentPlayer.GetMenuPlace();
-            float scrollSelect = currentPlayer.GetMenuValue();
-            if(place == 1 && placeIsHeld == false)
-            {
-                //If statement determines if player has enough money to buy an animal and places animal if true
-                if (objects[currentIndex] is Animal && isTouchingPen && ((Animal)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
-                {
-                    ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
-                    ((Animal)objects[currentIndex]).CreateObject();
-                    MoneyManager.BuyItem(((Animal)objects[currentIndex]).cost);
-                    placeIsHeld = true;
-
-                }
-                else if (objects[currentIndex] is Building && isTouchingPen && ((Building)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
-                //Else if statement determines if player has enough money to buy a building and places the building if true, destroying the spawner
-                {
-                    ((Building)objects[currentIndex]).transform.position = gameObject.transform.position;
-                    Destroy(spawnerToDestroy);
-                    ((Building)objects[currentIndex]).CreateObject();
-                    MoneyManager.BuyItem(((Building)objects[currentIndex]).cost);
-                    placeIsHeld = true;
-                }
-               
-
-            }else if (place == 0 && placeIsHeld == true)
-            {
-                placeIsHeld = false;
-            }
-           
-
-            if (scrollSelect == -1 && isHeld == false)
-            {
-                if (currentIndex != 0 && currentIndex >= 0 && objListLength > 1)
-                {
-                    isHeld = true;
-                    currentIndex --;
-
-                }
-            }
-            else if (scrollSelect == 1 && isHeld == false)
-            {
-                if (objListLength > (currentIndex + 1) && objListLength > 1)
-                {
-                    isHeld = true;
-                    currentIndex ++;
-                }
-            }
-            else if (scrollSelect == 0 && isHeld == true)
-            {
-                isHeld = false;
-            }
-
-        }
 
     }
     //Checks if player is in radius
@@ -130,5 +80,81 @@ public class Spawner : MonoBehaviour
         }
 
     }
-        
+    //SpawnObject() allows players to place an object
+    private void SpawnObject()
+    {
+        if (currentPlayer != null)
+        {
+            float place = currentPlayer.GetMenuPlace();
+            switch (place)
+            {
+                case 0:
+                    if (placeIsHeld)
+                        placeIsHeld = false;
+                    break;
+
+                case 1:
+                    if (!placeIsHeld && isTouchingPen)
+                    {
+                        if (objects[currentIndex] is Animal && ((Animal)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
+                        {
+                            ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
+                            ((Animal)objects[currentIndex]).CreateObject();
+                            MoneyManager.BuyItem(((Animal)objects[currentIndex]).cost);
+                            placeIsHeld = true;
+                        }
+                        else if (objects[currentIndex] is Building && ((Building)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
+                        {
+                            ((Building)objects[currentIndex]).transform.position = gameObject.transform.position;
+                            Destroy(spawnerToDestroy);
+                            ((Building)objects[currentIndex]).CreateObject();
+                            MoneyManager.BuyItem(((Building)objects[currentIndex]).cost);
+                            placeIsHeld = true;
+
+                        }
+                    }
+                    break;
+
+                default:
+                    break;
+            } 
+        }
+        }
+
+    //ScrollObjects() allows users to scroll through objects by tracking the index
+    //of the list. 
+    private void ScrollObjects()
+    {
+        //user selects choice
+        if (currentPlayer != null)
+        {
+            float scrollSelect = currentPlayer.GetMenuValue();
+            switch (scrollSelect)
+            {
+                case -1:
+                    if ((!isHeld) && currentIndex != 0 && currentIndex >= 0 && objListLength > 1)
+                    {
+                        isHeld = true;
+                        currentIndex--;
+                    }
+                        break;
+                case 0:
+                    if (isHeld)
+                        isHeld = false;
+                    break;
+                case 1:
+                    if ((!isHeld) && objListLength > (currentIndex + 1) && objListLength > 1)
+                    {
+                        isHeld = true;
+                        currentIndex++;
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+        }
+    }
+
+    
     }
