@@ -210,7 +210,7 @@ MonoBehaviour:
   nameText: {fileID: 1705672324}
   costText: {fileID: 1440857737}
   description: {fileID: 2391370086383552440}
-  icon: {fileID: 0}
+  icon: {fileID: 1699533615}
 --- !u!1 &1440857735
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,7 +888,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 1417d399a072b2a4b9a794bc410e11da, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 987a7ef7e4f444d9689354ce7c6ad1fc, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1001 &8086608298069408248
 PrefabInstance:

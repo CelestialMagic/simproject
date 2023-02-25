@@ -57,6 +57,7 @@ public abstract class Building : ObjectFactory
         Instantiate(gameObject);
     }
 
+
     //GenerateMoney() is defined by each individual building
     protected abstract void GenerateMoney();
 

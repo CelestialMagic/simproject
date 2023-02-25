@@ -8,6 +8,8 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private List<ObjectFactory> objects;//A list of available objects to buy (buildings and animals)
 
+    private List<GameObject> spawnedAnimals = new List<GameObject>();
+
     [SerializeField]
     private int currentIndex;//The currently selected object
 
@@ -98,14 +100,19 @@ public class Spawner : MonoBehaviour
                     {
                         if (objects[currentIndex] is Animal && ((Animal)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
                         {
+                            
                             ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
-                            ((Animal)objects[currentIndex]).CreateObject();
+                            GameObject animal = ((Animal)objects[currentIndex]).ReturnSpawnedObject();
+                            spawnedAnimals.Add(animal);
+                            Debug.Log(spawnedAnimals.Count);
+                            //((Animal)objects[currentIndex]).CreateObject();
                             MoneyManager.BuyItem(((Animal)objects[currentIndex]).cost);
                             placeIsHeld = true;
                         }
                         else if (objects[currentIndex] is Building && ((Building)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
                         {
                             ((Building)objects[currentIndex]).transform.position = gameObject.transform.position;
+                            DestroySpawnedAnimals();
                             Destroy(spawnerToDestroy);
                             ((Building)objects[currentIndex]).CreateObject();
                             MoneyManager.BuyItem(((Building)objects[currentIndex]).cost);
@@ -153,6 +160,14 @@ public class Spawner : MonoBehaviour
                     break;
             }
 
+        }
+    }
+
+    private void DestroySpawnedAnimals()
+    {
+        foreach(GameObject animal in spawnedAnimals)
+        {
+            Destroy(animal);
         }
     }
 

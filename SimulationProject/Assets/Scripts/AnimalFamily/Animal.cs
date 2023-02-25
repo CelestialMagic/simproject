@@ -70,6 +70,13 @@ public abstract class Animal : ObjectFactory
         Instantiate(gameObject);
     }
 
+    //ReturnSpawnedObject() is unique to Animals and is used by Spawner class
+    public GameObject ReturnSpawnedObject()
+    {
+        GameObject a = Instantiate(gameObject);
+        return a; 
+    }
+
     //Update() is used primarily to play animal sound effects
     //This may be overridden for various AI behaviors
     protected virtual void Update()
