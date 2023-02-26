@@ -130,9 +130,6 @@ public abstract class Animal : ObjectFactory
 
         if (waitingTime - Time.deltaTime <= 0)
         {
-            float wanderRadius = 0.5f;
-            float wanderDistance = 0.3f;
-            float wanderVariance = 0.5f;
 
             moveTarget += new Vector3(Random.Range(-0.5f, 0.5f) * wanderVariance,
                 0, Random.Range(-0.5f, 0.5f) * wanderVariance);
