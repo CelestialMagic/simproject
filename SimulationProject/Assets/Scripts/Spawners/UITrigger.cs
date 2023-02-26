@@ -13,8 +13,6 @@ public class UITrigger : Trigger
     protected TMP_Text descriptionText;//Object description display
     [SerializeField]
     protected TMP_Text costText;//Object cost display
-    [SerializeField]
-    private GameObject player;//A player to check (next playtest)
 
     //Displays UI
     protected override void OpenUI()
