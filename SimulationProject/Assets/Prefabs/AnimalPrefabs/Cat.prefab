@@ -422,12 +422,15 @@ MonoBehaviour:
   resetTimer: 5
   waitPeriod: 2
   agent: {fileID: -731922800323158558}
-  waitingTime: 3
-  resettingTime: 3
+  waitingTime: 1.5
+  resettingTime: 1.5
   m_prefab: {fileID: 2956760048888244568}
   m_cost: 15
   m_name: Cat
   m_description: Seen in your favorite game montages.
+  wanderRadius: 0.5
+  wanderDistance: 0.3
+  wanderVariance: 0.5
   catNoises:
   - {fileID: 8300000, guid: db9784ac8883e2444846eb1ae803b203, type: 3}
   - {fileID: 8300000, guid: 3e967d53ba0b2374d920042613712fb8, type: 3}

@@ -40,6 +40,15 @@ public abstract class Animal : ObjectFactory
     [SerializeField] string m_name;//Animal name
     [SerializeField] string m_description;//Animal description
 
+    [SerializeField]
+    protected float wanderRadius;
+
+    [SerializeField]
+    protected float wanderDistance;
+
+    [SerializeField]
+    protected float wanderVariance;
+
     public GameObject prefab//Get and Set established for Interface field prefab
     {
         get { return m_prefab; }
