@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 //Code by Jessie Archer
 public abstract class Animal : ObjectFactory
@@ -25,6 +26,14 @@ public abstract class Animal : ObjectFactory
     protected float waitPeriod;//A float representing seconds to vary when
                                //sound is played
 
+    [SerializeField]
+    protected NavMeshAgent agent;//The navmesh agent of the animal
+
+    [SerializeField]
+    protected float waitingTime;
+
+    [SerializeField]
+    protected float resettingTime;
 
     [SerializeField] GameObject m_prefab;//Animal prefab
     [SerializeField] int m_cost;//Animal cost
@@ -62,8 +71,6 @@ public abstract class Animal : ObjectFactory
         audioSource.PlayOneShot(sound, volume);
     }
 
-
-
     //Code for creating an AnimalObject
     public override void CreateObject()
     {
@@ -77,11 +84,17 @@ public abstract class Animal : ObjectFactory
         return a; 
     }
 
+    protected void Start()
+    {
+        agent = this.GetComponent<NavMeshAgent>();
+    }
+
     //Update() is used primarily to play animal sound effects
     //This may be overridden for various AI behaviors
     protected virtual void Update()
     {
         MakeNoise(defaultSound, volume);
+        LocateNextSpot();
     }
 
     //MakeNoise() is used to play a sound after a given time
@@ -98,6 +111,36 @@ public abstract class Animal : ObjectFactory
         else //else statement decrements timer
         {
             audioTimer -= Time.deltaTime;
+        }
+    }
+
+    //For now, allows AnimalObjects to wander inside pens, which contain NavMeshes
+    Vector3 moveTarget = Vector3.zero;
+    protected void LocateNextSpot()
+    {
+
+        if (waitingTime - Time.deltaTime <= 0)
+        {
+            float wanderRadius = 0.5f;
+            float wanderDistance = 0.3f;
+            float wanderVariance = 0.5f;
+
+            moveTarget += new Vector3(Random.Range(-0.5f, 0.5f) * wanderVariance,
+                0, Random.Range(-0.5f, 0.5f) * wanderVariance);
+
+            moveTarget.Normalize();
+            moveTarget *= wanderRadius;
+
+            Vector3 targetLocal = moveTarget + new Vector3(0, 0, wanderDistance);
+            Vector3 targetGlobal = this.gameObject.transform.InverseTransformVector(targetLocal);
+
+            agent.SetDestination(targetGlobal);
+
+            waitingTime = resettingTime;
+        }
+        else
+        {
+            waitingTime -= Time.deltaTime;
         }
     }
 
