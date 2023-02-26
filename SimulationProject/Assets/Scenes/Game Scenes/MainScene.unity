@@ -8907,18 +8907,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cat
       objectReference: {fileID: 0}
-    - target: {fileID: 8401052145945930122, guid: 4b382efe03c924cf18132ce30eeab129, type: 3}
-      propertyPath: waitingTime
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8401052145945930122, guid: 4b382efe03c924cf18132ce30eeab129, type: 3}
-      propertyPath: wanderRadius
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8401052145945930122, guid: 4b382efe03c924cf18132ce30eeab129, type: 3}
-      propertyPath: resettingTime
-      value: 1.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b382efe03c924cf18132ce30eeab129, type: 3}
 --- !u!1001 &1956173534
@@ -10866,10 +10854,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 121367452}
     m_Modifications:
-    - target: {fileID: 265103903, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1487042005811218270}
     - target: {fileID: 1428088900, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Camera
       value: 
