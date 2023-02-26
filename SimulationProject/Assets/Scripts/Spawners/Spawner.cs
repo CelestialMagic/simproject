@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Code by Jessie Archer, Brandon Lo, and Noel Paredes
-public class Spawner : MonoBehaviour
+public class Spawner : PurchaseObject
 {
     [SerializeField]
     private List<ObjectFactory> objects;//A list of available objects to buy (buildings and animals)
@@ -14,17 +14,11 @@ public class Spawner : MonoBehaviour
     private int currentIndex;//The currently selected object
 
     [SerializeField]
-    private SpawnDisplay spawnDisplay; //A display card to use
-
-    private bool isTouchingPen;//determines if player is touching pen
-
-    [SerializeField]
     private GameObject spawnerToDestroy;//The spawner to destroy when building is placed
 
-    private PlayerMovement currentPlayer;//The current player character being controlled
+
 
     private bool isHeld;//A boolean that checks if a menu input is held down
-    private bool placeIsHeld;//A boolean that checks if place button is held down
     private int objListLength;//An integer representing the length of the 
 
     //Start() initializes the objListLength and spawnedAnimals list
@@ -42,24 +36,7 @@ public class Spawner : MonoBehaviour
         
 
     }
-    //Checks if player is in radius
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            isTouchingPen = true;
-            Debug.Log("Touching pen works.");
-            currentPlayer = other.GetComponent<PlayerMovement>();
-        }
-    }
-    //Checks if player exited radius
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            isTouchingPen = false;
-        }
-    }
+
     //Displays the currently selected object
     private void DisplayCurrentObject()
     {
@@ -82,7 +59,7 @@ public class Spawner : MonoBehaviour
 
     }
     //SpawnObject() allows players to place an object
-    private void SpawnObject()
+    protected override void SpawnObject()
     {
         //Null check for play er
         if (currentPlayer != null)
