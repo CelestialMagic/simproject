@@ -34,7 +34,6 @@ public class Spawner : PurchaseObject
         SpawnObject();
         ScrollObjects();
         
-
     }
 
     //Displays the currently selected object
@@ -66,45 +65,25 @@ public class Spawner : PurchaseObject
         {
             float place = currentPlayer.GetMenuPlace();
             //Switch statement executes based on input
-            switch (place)
+
+            if (placeIsHeld && place == 0)
             {
-                //No key press
-                case 0:
-                    if (placeIsHeld)
-                        placeIsHeld = false;
-                    break;
+                placeIsHeld = false;
 
-                //Player presses button to place object
-                case 1:
-                    if (!placeIsHeld && isTouchingPen)
-                    {
-                        //Animal Object Code
-                        if (objects[currentIndex] is Animal && ((Animal)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
-                        {
-                            
-                            ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
-                            GameObject animal = ((Animal)objects[currentIndex]).ReturnSpawnedObject();
-                            spawnedAnimals.Add(animal);
-                            MoneyManager.BuyItem(((Animal)objects[currentIndex]).cost);
-                            placeIsHeld = true;
-                        }
-                        //Building Object Code
-                        else if (objects[currentIndex] is Building && ((Building)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
-                        {
-                            ((Building)objects[currentIndex]).transform.position = gameObject.transform.position;
-                            DestroySpawnedAnimals();
-                            Destroy(spawnerToDestroy);
-                            ((Building)objects[currentIndex]).CreateObject();
-                            MoneyManager.BuyItem(((Building)objects[currentIndex]).cost);
-                            placeIsHeld = true;
+            }else if (!placeIsHeld && isTouchingPen && place == 1)
+            {
+                if (objects[currentIndex] is Animal && ((Animal)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
+                {
+                    SpawnAnimal();
+                }
+                //Building Object Code
+                else if (objects[currentIndex] is Building && ((Building)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
+                {
+                    SpawnBuilding(); 
 
-                        }
-                    }
-                    break;
-
-                default:
-                    break;
-            } 
+                }
+            }
+            
         }
         }
 
@@ -155,6 +134,27 @@ public class Spawner : PurchaseObject
             Destroy(animal);
         }
     }
+    //SpawnAnimals() spawns an animal object and adds it to a list of spawnedAnimals,
+    
+    private void SpawnAnimal()
+    {
+        ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
+        GameObject animal = ((Animal)objects[currentIndex]).ReturnSpawnedObject();
+        spawnedAnimals.Add(animal);
+        MoneyManager.BuyItem(((Animal)objects[currentIndex]).cost);
+        placeIsHeld = true;
 
+    }
+    //SpawnBuilding() destroys the existing animals at a pen, destroys the spawner,
+    //and places the pen at the previous location
+    private void SpawnBuilding()
+    {
+        ((Building)objects[currentIndex]).transform.position = gameObject.transform.position;
+        DestroySpawnedAnimals();
+        Destroy(spawnerToDestroy);
+        ((Building)objects[currentIndex]).CreateObject();
+        MoneyManager.BuyItem(((Building)objects[currentIndex]).cost);
+        placeIsHeld = true;
+    }
     
     }

@@ -5,9 +5,13 @@ using UnityEngine.AI;
 
 public class VisitorBehavior : MonoBehaviour
 {
-    BehaviorTree tree;
-    NavMeshAgent agent;
-    public List<GameObject> visitable = new List<GameObject>();
+    private BehaviorTree tree;
+    private NavMeshAgent agent;
+    [SerializeField]
+    private List<GameObject> visitable;
+
+    [SerializeField]
+    private int locationNumber;
 
     //ActionStates for idling and executing an action
     public enum ActionState { IDLE, WORKING };
@@ -18,14 +22,14 @@ public class VisitorBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        agent = this.GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         tree = new BehaviorTree();
 
 
     }
 
     //Sends the agent to the specified location
-    Node.Status GoToLocation(Vector3 destination)
+    private Node.Status GoToLocation(Vector3 destination)
     {
         float distanceToTarget = Vector3.Distance(destination, this.transform.position);
         if (state == ActionState.IDLE)
@@ -33,14 +37,14 @@ public class VisitorBehavior : MonoBehaviour
             agent.SetDestination(destination);
             state = ActionState.WORKING;
         }
-        else if (Vector3.Distance(agent.pathEndPosition, destination) >= 4)
+        else if (Vector3.Distance(agent.pathEndPosition, destination) >= locationNumber)
         {
             //haven't made it to destination, agent failed
             state = ActionState.IDLE;
             Debug.Log("FAILED");
             return Node.Status.FAILURE;
         }
-        else if (distanceToTarget < 4)
+        else if (distanceToTarget < locationNumber)
         {
             //successful!
             state = ActionState.IDLE;
@@ -51,7 +55,7 @@ public class VisitorBehavior : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
 
     }

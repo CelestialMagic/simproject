@@ -448,6 +448,7 @@ MonoBehaviour:
   wanderRadius: 0.6
   wanderDistance: 0.3
   wanderVariance: 0.5
+  findDestination: 1
 --- !u!82 &1233404657667072791
 AudioSource:
   m_ObjectHideFlags: 0
