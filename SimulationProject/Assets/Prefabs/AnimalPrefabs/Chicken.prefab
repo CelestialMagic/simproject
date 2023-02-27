@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 8101637317198216713}
   - component: {fileID: 8101637317198216708}
   - component: {fileID: 8101637317198216715}
+  - component: {fileID: 7695962528756804573}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -335,10 +336,16 @@ MonoBehaviour:
   audioTimer: 5
   resetTimer: 5
   waitPeriod: 2
+  agent: {fileID: 7695962528756804573}
+  waitingTime: 2
+  resettingTime: 2
   m_prefab: {fileID: 8101637316843772605}
   m_cost: 25
   m_name: Chicken
   m_description: Plucky and has feathers, too.
+  wanderRadius: 0.5
+  wanderDistance: 0.3
+  wanderVariance: 0.5
   chickenNoises:
   - {fileID: 8300000, guid: 434c7804e19417243a5b3d37edf8f60a, type: 3}
   - {fileID: 8300000, guid: 55e4205d213e0da4ea0fddeb63df739e, type: 3}
@@ -438,6 +445,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!195 &7695962528756804573
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101637316843772605}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.56
+  m_Speed: 2
+  m_Acceleration: 6
+  avoidancePriority: 50
+  m_AngularSpeed: 90
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.7
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 2
 --- !u!1 &8101637316843772607
 GameObject:
   m_ObjectHideFlags: 0

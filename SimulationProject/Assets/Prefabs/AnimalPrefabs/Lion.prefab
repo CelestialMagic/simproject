@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 626709588873109433}
   - component: {fileID: 601941412732825320}
   - component: {fileID: 601941412732825327}
+  - component: {fileID: 3927154835909102908}
   m_Layer: 0
   m_Name: Lion
   m_TagString: Untagged
@@ -467,10 +468,16 @@ MonoBehaviour:
   audioTimer: 0
   resetTimer: 0
   waitPeriod: 0
+  agent: {fileID: 3927154835909102908}
+  waitingTime: 6
+  resettingTime: 6
   m_prefab: {fileID: 603205127873992383}
   m_cost: 150
   m_name: Lion
   m_description: Roars when you get close!
+  wanderRadius: 1
+  wanderDistance: 0.4
+  wanderVariance: 1
 --- !u!82 &601941412732825327
 AudioSource:
   m_ObjectHideFlags: 0
@@ -567,6 +574,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!195 &3927154835909102908
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603205127873992383}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.56
+  m_Speed: 2.5
+  m_Acceleration: 6
+  avoidancePriority: 50
+  m_AngularSpeed: 90
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.7
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 2
 --- !u!1 &603217885494530667
 GameObject:
   m_ObjectHideFlags: 0

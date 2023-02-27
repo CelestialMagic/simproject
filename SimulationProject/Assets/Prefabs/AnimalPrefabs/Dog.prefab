@@ -438,16 +438,16 @@ MonoBehaviour:
   audioTimer: 5
   resetTimer: 5
   waitPeriod: 2
-  agent: {fileID: 0}
-  waitingTime: 0
-  resettingTime: 0
+  agent: {fileID: 5492508144105591822}
+  waitingTime: 3
+  resettingTime: 3
   m_prefab: {fileID: 1233404657667106231}
   m_cost: 10
   m_name: Dog
   m_description: Your best friend.
-  wanderRadius: 0
-  wanderDistance: 0
-  wanderVariance: 0
+  wanderRadius: 0.6
+  wanderDistance: 0.3
+  wanderVariance: 0.5
 --- !u!82 &1233404657667072791
 AudioSource:
   m_ObjectHideFlags: 0
@@ -553,19 +553,19 @@ NavMeshAgent:
   m_GameObject: {fileID: 1233404657667106231}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Radius: 0.56
+  m_Speed: 1.8
+  m_Acceleration: 6
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 80
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.7
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 2
 --- !u!1 &1233404657667106233
 GameObject:
   m_ObjectHideFlags: 0
