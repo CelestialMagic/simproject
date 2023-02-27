@@ -125,9 +125,13 @@ public abstract class Animal : ObjectFactory
 
     //For now, allows AnimalObjects to wander inside pens, which contain NavMeshes
     Vector3 moveTarget = Vector3.zero;
+    //In case the position is outside the navmesh bounds, this value will check for nearby valid destinations.
+    [SerializeField]
+    protected float findDestination = 1.0f;
+
     protected void LocateNextSpot()
     {
-
+        NavMeshHit hit;
         if (waitingTime - Time.deltaTime <= 0)
         {
 
@@ -140,7 +144,17 @@ public abstract class Animal : ObjectFactory
             Vector3 targetLocal = moveTarget + new Vector3(0, 0, wanderDistance);
             Vector3 targetGlobal = this.gameObject.transform.InverseTransformVector(targetLocal);
 
-            agent.SetDestination(targetGlobal);
+            if (NavMesh.SamplePosition(targetGlobal, out hit, findDestination, NavMesh.AllAreas))
+            {
+                agent.SetDestination(targetGlobal);
+            }
+            else if (!NavMesh.SamplePosition(targetGlobal, out hit, findDestination, NavMesh.AllAreas))
+            {
+                Vector3 tLocal = moveTarget + new Vector3(0, 0, -wanderDistance);
+                Vector3 tGlobal = this.gameObject.transform.InverseTransformVector(tLocal);
+
+                agent.SetDestination(tGlobal);
+            }
 
             waitingTime = resettingTime;
         }
