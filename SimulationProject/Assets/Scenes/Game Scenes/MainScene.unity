@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -468,10 +468,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 121367452}
     m_Modifications:
-    - target: {fileID: 265103903, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1487042005811218270}
     - target: {fileID: 1428088900, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Camera
       value: 
@@ -4980,7 +4976,7 @@ Camera:
     height: 1
   near clip plane: 0.001
   far clip plane: 5000
-  field of view: 45.592476
+  field of view: 45.592472
   orthographic: 0
   orthographic size: 20
   m_Depth: -1
@@ -5006,7 +5002,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036486097}
   m_LocalRotation: {x: -0.16107172, y: 0.6885178, z: -0.16107199, w: -0.6885165}
-  m_LocalPosition: {x: 12.187589, y: 1.783304, z: 0.24501194}
+  m_LocalPosition: {x: 12.18759, y: 1.7833042, z: 0.24501097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7957,7 +7953,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734438841}
   m_LocalRotation: {x: -0.16107172, y: 0.6885178, z: -0.16107199, w: -0.6885165}
-  m_LocalPosition: {x: 12.187589, y: 1.783304, z: 0.24501194}
+  m_LocalPosition: {x: 12.18759, y: 1.7833042, z: 0.24501097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10645,6 +10641,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 121367452}
     m_Modifications:
+    - target: {fileID: 99493920060299016, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.511
+      objectReference: {fileID: 0}
+    - target: {fileID: 99493920060299016, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.439
+      objectReference: {fileID: 0}
+    - target: {fileID: 274072414416454285, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 289959802227466135, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 4604985179622821527, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 5069336654863424650, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.523
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069336654863424650, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.471
+      objectReference: {fileID: 0}
+    - target: {fileID: 7496227398603801666, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 7967876977758589352, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen (9)

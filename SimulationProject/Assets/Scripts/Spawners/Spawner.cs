@@ -21,7 +21,6 @@ public class Spawner : PurchaseObject
     private GameObject spawnerToDestroy;//The spawner to destroy when building is placed
 
 
-
     private bool isHeld;//A boolean that checks if a menu input is held down
     private int objListLength;//An integer representing the length of the 
 
