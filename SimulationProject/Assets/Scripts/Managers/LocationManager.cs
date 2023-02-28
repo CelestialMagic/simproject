@@ -43,5 +43,11 @@ public class LocationManager : MonoBehaviour
     {
         return accessibleLocations; 
     }
+
+    public static void ResetLists()
+    {
+        activeLocations = new List<GameObject>();
+        accessibleLocations = new List<GameObject>();
+    }
  
 }
