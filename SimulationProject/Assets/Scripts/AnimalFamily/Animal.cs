@@ -86,12 +86,7 @@ public abstract class Animal : ObjectFactory
         Instantiate(gameObject);
     }
 
-    //ReturnSpawnedObject() is unique to Animals and is used by Spawner class
-    public GameObject ReturnSpawnedObject()
-    {
-        GameObject a = Instantiate(gameObject);
-        return a; 
-    }
+ 
 
     protected void Start()
     {

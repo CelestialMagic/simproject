@@ -24,6 +24,8 @@ public class Spawner : PurchaseObject
     //Start() initializes the objListLength and spawnedAnimals list
     private void Start()
     {
+        LocationManager.AddLocation(spawnerToDestroy);
+        Debug.Log("Added location");
         objListLength = objects.Count;
         spawnedAnimals = new List<GameObject>();
     }
@@ -135,7 +137,6 @@ public class Spawner : PurchaseObject
         }
     }
     //SpawnAnimals() spawns an animal object and adds it to a list of spawnedAnimals,
-    
     private void SpawnAnimal()
     {
         ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
@@ -151,8 +152,11 @@ public class Spawner : PurchaseObject
     {
         ((Building)objects[currentIndex]).transform.position = gameObject.transform.position;
         DestroySpawnedAnimals();
+        LocationManager.RemoveLocation(spawnerToDestroy);
+        Debug.Log("Removed Object");
         Destroy(spawnerToDestroy);
-        ((Building)objects[currentIndex]).CreateObject();
+        GameObject building = ((Building)objects[currentIndex]).ReturnSpawnedObject();
+        LocationManager.AddLocation(building);
         MoneyManager.BuyItem(((Building)objects[currentIndex]).cost);
         placeIsHeld = true;
     }

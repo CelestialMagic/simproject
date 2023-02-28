@@ -8,7 +8,7 @@ public class VisitorBehavior : MonoBehaviour
     private BehaviorTree tree;
     private NavMeshAgent agent;
     [SerializeField]
-    private List<GameObject> visitable;
+    private List<GameObject> visitable = new List<GameObject>();
 
     [SerializeField]
     private int locationNumber;
@@ -57,6 +57,11 @@ public class VisitorBehavior : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        RefreshVisitableLocations();
+    }
 
+    private void RefreshVisitableLocations()
+    {
+        visitable = LocationManager.GetActiveLocations();
     }
 }
