@@ -158,14 +158,13 @@ public class Spawner : PurchaseObject
         ((Building)objects[currentIndex]).transform.position = gameObject.transform.position;
         DestroySpawnedAnimals();
         LocationManager.RemoveLocation(spawnerToDestroy);
-        Debug.Log("Removed Object");
         Destroy(spawnerToDestroy);
         GameObject building = ((Building)objects[currentIndex]).ReturnSpawnedObject();
         LocationManager.AddLocation(building);
         MoneyManager.BuyItem(((Building)objects[currentIndex]).cost);
         placeIsHeld = true;
     }
-    //Returns the pen's spots to the animal. 
+    //Returns the pen's spots to the animal.
     public List<Transform> GetAllSpots()
     {
         return penSpots;

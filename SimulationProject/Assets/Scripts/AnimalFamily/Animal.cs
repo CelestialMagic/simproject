@@ -162,7 +162,9 @@ public abstract class Animal : ObjectFactory
             waitingTime -= Time.deltaTime;
         }
     }
-    //Sets up a spawner for the animals
+    //Sets up a spawner for the animals and updates the availableLocations
+    //for the animal to travel to. These locations are native to the pen
+    //the animal is spawned in to avoid the animal seeking other spots. 
     public void SetAnimalLocation(Spawner location)
     {
         animalLocation = location;
