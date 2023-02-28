@@ -49,6 +49,10 @@ public abstract class Animal : ObjectFactory
     [SerializeField]
     protected float wanderVariance;
 
+    private Spawner animalLocation;
+
+    private List<Transform> availableLocations = new List<Transform>();
+
     public GameObject prefab//Get and Set established for Interface field prefab
     {
         get { return m_prefab; }
@@ -158,6 +162,13 @@ public abstract class Animal : ObjectFactory
             waitingTime -= Time.deltaTime;
         }
     }
+    //Sets up a spawner for the animals
+    public void SetAnimalLocation(Spawner location)
+    {
+        animalLocation = location;
+        availableLocations = location.GetAllSpots();
+    }
+
 
 
 }

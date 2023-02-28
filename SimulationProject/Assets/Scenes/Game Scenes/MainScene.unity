@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4980,7 +4980,7 @@ Camera:
     height: 1
   near clip plane: 0.001
   far clip plane: 5000
-  field of view: 45.592472
+  field of view: 45.592476
   orthographic: 0
   orthographic size: 20
   m_Depth: -1
@@ -5006,7 +5006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036486097}
   m_LocalRotation: {x: -0.16107172, y: 0.6885178, z: -0.16107199, w: -0.6885165}
-  m_LocalPosition: {x: 12.187589, y: 1.7833037, z: 0.24501288}
+  m_LocalPosition: {x: 12.187589, y: 1.783304, z: 0.24501194}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7957,7 +7957,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734438841}
   m_LocalRotation: {x: -0.16107172, y: 0.6885178, z: -0.16107199, w: -0.6885165}
-  m_LocalPosition: {x: 12.187589, y: 1.7833037, z: 0.24501288}
+  m_LocalPosition: {x: 12.187589, y: 1.783304, z: 0.24501194}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8641,6 +8641,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1487042005811218270}
+    - target: {fileID: 936093333, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: penSpawner
+      value: 
+      objectReference: {fileID: 2023157969}
     - target: {fileID: 1428088900, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Camera
       value: 
@@ -9278,6 +9282,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013515460}
   m_CullTransparentMesh: 1
+--- !u!114 &2023157969 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 936093333, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+  m_PrefabInstance: {fileID: 1876375134}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f919756443994c1686c1c680d86d263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2035004522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10630,10 +10645,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 121367452}
     m_Modifications:
-    - target: {fileID: 265103903, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1487042005811218270}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen (9)

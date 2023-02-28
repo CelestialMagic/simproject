@@ -5,6 +5,10 @@ using UnityEngine;
 //Code by Jessie Archer, Brandon Lo, and Noel Paredes
 public class Spawner : PurchaseObject
 {
+
+    [SerializeField] private List<Transform> penSpots;
+
+    [SerializeField] private Spawner penSpawner; 
     [SerializeField]
     private List<ObjectFactory> objects;//A list of available objects to buy (buildings and animals)
 
@@ -142,6 +146,7 @@ public class Spawner : PurchaseObject
         ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
         GameObject animal = ((Animal)objects[currentIndex]).ReturnSpawnedObject();
         spawnedAnimals.Add(animal);
+        animal.GetComponent<Animal>().SetAnimalLocation(penSpawner);
         MoneyManager.BuyItem(((Animal)objects[currentIndex]).cost);
         placeIsHeld = true;
 
@@ -160,5 +165,10 @@ public class Spawner : PurchaseObject
         MoneyManager.BuyItem(((Building)objects[currentIndex]).cost);
         placeIsHeld = true;
     }
-    
+    //Returns the pen's spots to the animal. 
+    public List<Transform> GetAllSpots()
+    {
+        return penSpots;
     }
+
+}
