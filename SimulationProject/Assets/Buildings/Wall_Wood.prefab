@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 158176071802387744}
   - component: {fileID: 158176071800142288}
-  - component: {fileID: 158176071804166424}
   - component: {fileID: 8103098408102518565}
   m_Layer: 0
   m_Name: Fence
@@ -27,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158176071802157892}
   m_LocalRotation: {x: 0.0000000218557, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.37, y: 0, z: 0}
+  m_LocalPosition: {x: -2.26, y: 0, z: 0.00000062049355}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,20 +75,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &158176071804166424
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158176071802157892}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: e004c3c6d0ca04944ad39f9de61d9606, type: 3}
 --- !u!33 &8103098408102518565
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -125,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 350973725000973093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 25.73, y: -1.63, z: -3.79}
-  m_LocalScale: {x: 0.20000002, y: 0.2, z: 0.20000002}
+  m_LocalScale: {x: 0.20000003, y: 0.2, z: 0.20000003}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3827822003652270771}
@@ -143,8 +128,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.76, y: 2.75, z: 0.6}
-  m_Center: {x: -4.3, y: 0.69, z: 0}
+  m_Size: {x: 9.1, y: 2.99, z: 1.21}
+  m_Center: {x: 0, y: 0.69, z: 0}
 --- !u!208 &4503274824805521061
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -155,11 +140,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 4.38, y: 1.375, z: 0.51}
+  m_Extents: {x: 4.38, y: 1.375, z: 0.3}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
-  m_Center: {x: -4.3, y: 0.69, z: 0}
+  m_Center: {x: 0, y: 0.69, z: -0.34}
   m_TimeToStationary: 0.5
 --- !u!1 &1650361727242610261
 GameObject:
@@ -171,7 +156,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6122747383836948069}
   - component: {fileID: 6009284525387513592}
-  - component: {fileID: 7884278188566142024}
   - component: {fileID: 7316764166851250431}
   m_Layer: 0
   m_Name: Fence (1)
@@ -188,7 +172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650361727242610261}
   m_LocalRotation: {x: 0.0000000218557, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.2, y: 0, z: 0}
+  m_LocalPosition: {x: -0.09, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -237,20 +221,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7884278188566142024
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650361727242610261}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: e004c3c6d0ca04944ad39f9de61d9606, type: 3}
 --- !u!33 &7316764166851250431
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -269,7 +239,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1849047743301031489}
   - component: {fileID: 8638284764887501466}
-  - component: {fileID: 7829344166917276890}
   - component: {fileID: 111793206297091767}
   m_Layer: 0
   m_Name: Fence (2)
@@ -286,7 +255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902535962082380138}
   m_LocalRotation: {x: 0.0000000218557, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.05, y: 0, z: 0}
+  m_LocalPosition: {x: 2.06, y: 0, z: 0.00000062049355}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -335,20 +304,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7829344166917276890
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1902535962082380138}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: e004c3c6d0ca04944ad39f9de61d9606, type: 3}
 --- !u!33 &111793206297091767
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -367,7 +322,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9117668659933113097}
   - component: {fileID: 9184174219618864910}
-  - component: {fileID: 4494939840076494784}
   - component: {fileID: 1940785992070923009}
   m_Layer: 0
   m_Name: Fence (3)
@@ -384,7 +338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4047679284697935448}
   m_LocalRotation: {x: 0.0000000218557, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0, z: -0}
+  m_LocalPosition: {x: 4.0899997, y: 0, z: 0.00000062049355}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -433,20 +387,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4494939840076494784
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4047679284697935448}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: e004c3c6d0ca04944ad39f9de61d9606, type: 3}
 --- !u!33 &1940785992070923009
 MeshFilter:
   m_ObjectHideFlags: 0
