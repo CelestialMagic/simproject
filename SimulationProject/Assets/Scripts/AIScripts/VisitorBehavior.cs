@@ -36,7 +36,7 @@ public class VisitorBehavior : MonoBehaviour
     {
         //randomizing interest and starting visit location
         interest = Random.Range(minInterest, maxInterest);
-        RefreshVisitableLocations();
+        SetVisitableLocations();
         toVisit = Random.Range(0, visitable.Count);
         Debug.Log(toVisit);
 
@@ -118,6 +118,12 @@ public class VisitorBehavior : MonoBehaviour
 
     private void RefreshVisitableLocations()
     {
-        visitable = LocationManager.GetActiveLocations();
+        visitable = LocationManager.GetAccessibleLocations();
+    }
+
+    private void SetVisitableLocations()
+    {
+        LocationManager.SetAccessibleLocations(false);
+        RefreshVisitableLocations();
     }
 }
