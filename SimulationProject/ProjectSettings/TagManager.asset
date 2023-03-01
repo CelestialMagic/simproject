@@ -8,11 +8,12 @@ TagManager:
   - AnimalPen
   - WatchRoom
   - ExpansionPen
+  - Visitor
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 

@@ -1100,6 +1100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Wood
       objectReference: {fileID: 0}
+    - target: {fileID: 4503274824805521061, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
+      propertyPath: m_Carve
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4833496730652630056, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1161,6 +1165,10 @@ PrefabInstance:
     - target: {fileID: 350973725000973093, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
       propertyPath: m_Name
       value: Wall_Wood (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503274824805521061, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
+      propertyPath: m_Carve
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4833496730652630056, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
       propertyPath: m_RootOrder
@@ -1243,6 +1251,10 @@ PrefabInstance:
     - target: {fileID: 4047679284697935448, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503274824805521061, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
+      propertyPath: m_Carve
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4503274824805521061, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
       propertyPath: m_Extents.z
@@ -1337,6 +1349,10 @@ PrefabInstance:
     - target: {fileID: 350973725000973093, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
       propertyPath: m_Name
       value: Wall_Wood (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503274824805521061, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
+      propertyPath: m_Carve
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4503274824805521061, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
       propertyPath: m_Extents.z

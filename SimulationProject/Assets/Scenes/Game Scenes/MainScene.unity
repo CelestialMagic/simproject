@@ -4488,7 +4488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 960706588}
   - component: {fileID: 960706589}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: NavMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4528,7 +4528,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
@@ -4942,7 +4942,7 @@ Camera:
     height: 1
   near clip plane: 0.001
   far clip plane: 5000
-  field of view: 45.592472
+  field of view: 45.592487
   orthographic: 0
   orthographic size: 20
   m_Depth: -1
@@ -4968,7 +4968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036486097}
   m_LocalRotation: {x: -0.16107172, y: 0.6885178, z: -0.16107199, w: -0.6885165}
-  m_LocalPosition: {x: 12.18759, y: 1.7833033, z: 0.24501103}
+  m_LocalPosition: {x: 12.187589, y: 1.7833037, z: 0.24501097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5828,7 +5828,7 @@ GameObject:
   - component: {fileID: 1310190523}
   - component: {fileID: 1310190522}
   - component: {fileID: 1310190521}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GrassFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7928,7 +7928,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734438841}
   m_LocalRotation: {x: -0.16107172, y: 0.6885178, z: -0.16107199, w: -0.6885165}
-  m_LocalPosition: {x: 12.18759, y: 1.7833033, z: 0.24501103}
+  m_LocalPosition: {x: 12.187589, y: 1.7833037, z: 0.24501097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10931,6 +10931,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Visitor
       objectReference: {fileID: 0}
+    - target: {fileID: 6911978957391612712, guid: b33c84b7f6d82aa4ebfb74d6ad1b00cd, type: 3}
+      propertyPath: m_TagString
+      value: Visitor
+      objectReference: {fileID: 0}
     - target: {fileID: 6911978957391612724, guid: b33c84b7f6d82aa4ebfb74d6ad1b00cd, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -10974,6 +10978,14 @@ PrefabInstance:
     - target: {fileID: 6911978957391612724, guid: b33c84b7f6d82aa4ebfb74d6ad1b00cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911978957391612725, guid: b33c84b7f6d82aa4ebfb74d6ad1b00cd, type: 3}
+      propertyPath: maxInterest
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911978957391612725, guid: b33c84b7f6d82aa4ebfb74d6ad1b00cd, type: 3}
+      propertyPath: minInterest
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6911978957391612725, guid: b33c84b7f6d82aa4ebfb74d6ad1b00cd, type: 3}
       propertyPath: ticketBooth
