@@ -840,7 +840,7 @@ GameObject:
   - component: {fileID: 8505713927762876274}
   - component: {fileID: 3860798659075531037}
   - component: {fileID: 4459989790513700846}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -943,7 +943,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
@@ -953,7 +953,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.05666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: de063c254e24632468e43d2badaad664, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: c544b9742abbfad419d74346913c682c, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &7496227398603801666
 GameObject:
@@ -1026,7 +1026,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8086608298346589750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LandPlot
   m_TagString: AnimalPen
   m_Icon: {fileID: 0}
@@ -1102,7 +1102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4503274824805521061, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
       propertyPath: m_Carve
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4833496730652630056, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
       propertyPath: m_RootOrder
@@ -1168,7 +1168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4503274824805521061, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
       propertyPath: m_Carve
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4833496730652630056, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
       propertyPath: m_RootOrder
@@ -1254,7 +1254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4503274824805521061, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
       propertyPath: m_Carve
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4503274824805521061, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
       propertyPath: m_Extents.z
@@ -1352,7 +1352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4503274824805521061, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
       propertyPath: m_Carve
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4503274824805521061, guid: 6a5368ddd8ba37140b873267676b6ac9, type: 3}
       propertyPath: m_Extents.z

@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: eb0c88df93bb29c4a9f1911c510c65ea, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &10459483
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +472,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1036486100}
+    - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen (4)
@@ -710,9 +714,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 121367452}
     m_Modifications:
+    - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: b7683dd2b3e07764abd123d138283041, type: 2}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589750, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_RootOrder
@@ -1368,9 +1380,17 @@ PrefabInstance:
       propertyPath: countdown
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: ExpansionAnimalPen1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_TagString
@@ -1812,7 +1832,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365733466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4499993, y: -1.409, z: -0.13580495}
+  m_LocalPosition: {x: 6.6089425, y: -1.409, z: -0.13542621}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2167,9 +2187,17 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1487042005811218270}
+    - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589750, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_RootOrder
@@ -2483,14 +2511,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 121367452}
     m_Modifications:
-    - target: {fileID: 265103903, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1487042005811218270}
     - target: {fileID: 1428088900, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1036486100}
+    - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen (6)
@@ -2656,9 +2684,17 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1036486100}
+    - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589750, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_RootOrder
@@ -3314,7 +3350,7 @@ GameObject:
   - component: {fileID: 778576000}
   - component: {fileID: 778575999}
   - component: {fileID: 778575998}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GrassFloor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3958,7 +3994,7 @@ GameObject:
   - component: {fileID: 878212563}
   - component: {fileID: 878212562}
   - component: {fileID: 878212561}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GrassFloor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4478,68 +4514,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6867262823394542941, guid: 1adbcb98343d24a51aa22e4d1c4e1b28, type: 3}
   m_PrefabInstance: {fileID: 1224463967}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &960706587
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 960706588}
-  - component: {fileID: 960706589}
-  m_Layer: 3
-  m_Name: NavMesh
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &960706588
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 960706587}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1310190524}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &960706589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 960706587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 1479372276
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 8
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
-  m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 14937c7df895fbf4588020a53aa90832, type: 2}
-  m_BuildHeightMesh: 0
 --- !u!1001 &970681883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4942,7 +4916,7 @@ Camera:
     height: 1
   near clip plane: 0.001
   far clip plane: 5000
-  field of view: 45.592487
+  field of view: 45.87346
   orthographic: 0
   orthographic size: 20
   m_Depth: -1
@@ -4968,7 +4942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036486097}
   m_LocalRotation: {x: -0.16107172, y: 0.6885178, z: -0.16107199, w: -0.6885165}
-  m_LocalPosition: {x: 12.187589, y: 1.7833037, z: 0.24501097}
+  m_LocalPosition: {x: 12.413724, y: 1.7930696, z: 0.2560716}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5828,6 +5802,7 @@ GameObject:
   - component: {fileID: 1310190523}
   - component: {fileID: 1310190522}
   - component: {fileID: 1310190521}
+  - component: {fileID: 1310190525}
   m_Layer: 3
   m_Name: GrassFloor
   m_TagString: Untagged
@@ -5909,11 +5884,40 @@ Transform:
   m_LocalPosition: {x: -9.8197, y: -1.0637574, z: -4.7941113}
   m_LocalScale: {x: 20.606, y: 1, z: 20}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 960706588}
+  m_Children: []
   m_Father: {fileID: 121367452}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1310190525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310190520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 1479372276
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 63
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: cbfc4738470bb4240bdc5798ed9564ae, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &1314162711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6053,9 +6057,17 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1036486100}
+    - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: ExpansionAnimalPen2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_TagString
@@ -6507,9 +6519,17 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1036486100}
+    - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: ExpansionAnimalPen3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_TagString
@@ -7928,7 +7948,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734438841}
   m_LocalRotation: {x: -0.16107172, y: 0.6885178, z: -0.16107199, w: -0.6885165}
-  m_LocalPosition: {x: 12.187589, y: 1.7833037, z: 0.24501097}
+  m_LocalPosition: {x: 12.413724, y: 1.7930696, z: 0.2560716}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7948,7 +7968,7 @@ GameObject:
   - component: {fileID: 1736654846}
   - component: {fileID: 1736654845}
   - component: {fileID: 1736654844}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GrassFloor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8620,9 +8640,17 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1036486100}
+    - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589750, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_RootOrder
@@ -9057,9 +9085,17 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1036486100}
+    - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589750, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_RootOrder
@@ -9801,7 +9837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2014014231836175307, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8610308
+      value: 3.003
       objectReference: {fileID: 0}
     - target: {fileID: 2014014231836175307, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9871,6 +9907,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2014014231836175301, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
   m_PrefabInstance: {fileID: 1103451825259637915}
   m_PrefabAsset: {fileID: 0}
+--- !u!208 &1487042005811218271
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487042005811218270}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!4 &1487042005891962077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6372581183293435044, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
@@ -10616,6 +10668,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 121367452}
     m_Modifications:
+    - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen (9)
@@ -10692,7 +10748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435044, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8610308
+      value: 3.092
       objectReference: {fileID: 0}
     - target: {fileID: 6372581183293435044, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10920,6 +10976,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+--- !u!1 &5534075127581210746 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6372581183293435050, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+  m_PrefabInstance: {fileID: 5534075127581210745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &5534075127581210747
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5534075127581210746}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &6911978958152727302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11004,9 +11081,17 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1036486100}
+    - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589750, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_RootOrder
