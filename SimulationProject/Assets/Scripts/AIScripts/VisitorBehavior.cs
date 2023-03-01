@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+//Code by Brandon Lo
+
 public class VisitorBehavior : MonoBehaviour
 {
     private BehaviorTree tree;
@@ -38,15 +40,17 @@ public class VisitorBehavior : MonoBehaviour
         interest = Random.Range(minInterest, maxInterest);
         SetVisitableLocations();
         toVisit = Random.Range(0, visitable.Count);
-        Debug.Log(toVisit);
+        //Debug.Log(toVisit);
 
         agent = GetComponent<NavMeshAgent>();
         tree = new BehaviorTree();
 
         Sequence visitPark = new Sequence("Visit the Park");
-        //Select attraction to visit: animal or building
-        Selector visitAttraction = new Selector("Visit an Attraction");
         Leaf leavePark = new Leaf("Exit the Park", ExitPark);
+        //Select attraction to visit: animal or building
+        /*Selector visitAttraction = new Selector("Visit an Attraction");
+        
+        Leaf visitorInterest = new Leaf("Visitor Interest", HasInterest);
 
         //Setting up behavior tree branch for visiting a building
         Sequence visitBuilding = new Sequence("Visit Building");
@@ -57,11 +61,37 @@ public class VisitorBehavior : MonoBehaviour
         //Sequence visitAnimal = new Sequence("Visit Animal");
 
         visitAttraction.AddChild(visitBuilding);
+        visitAttraction.AddChild(visitorInterest);
         //visitAttraction.AddChild(visitAnimal);
-
-        visitPark.AddChild(visitAttraction);
+        */
+        visitPark.AddChild(VisitAttractionSetup());
         visitPark.AddChild(leavePark);
         tree.AddChild(visitPark);
+    }
+
+    public Selector VisitAttractionSetup()
+    {
+        Selector visitAttraction = new Selector("Visit an Attraction");
+        Leaf visitorInterest = new Leaf("Visitor Interest", HasInterest);
+
+        Sequence visitBuilding = new Sequence("Visit Building");
+        Leaf goToBuilding = new Leaf("Go To Building", GoToBuilding);
+        //Leaf enterBuilding = new Leaf("Enter Into Building", EnterIntoBuilding);
+        visitBuilding.AddChild(goToBuilding);
+
+        visitAttraction.AddChild(visitBuilding);
+        visitAttraction.AddChild(visitorInterest);
+
+        return visitAttraction;
+    }
+
+    public Node.Status HasInterest()
+    {
+        if (interest <= 0)
+        {
+            tree.currentChild++;
+        }
+        return Node.Status.SUCCESS;
     }
 
     public Node.Status GoToBuilding()
