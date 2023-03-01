@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visitable: []
   ticketBooth: {fileID: 0}
-  locationDistance: 2
+  locationDistance: 1.5
   minInterest: 2
   maxInterest: 5
 --- !u!195 &6911978957391612722

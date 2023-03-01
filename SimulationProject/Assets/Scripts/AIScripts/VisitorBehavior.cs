@@ -15,7 +15,7 @@ public class VisitorBehavior : MonoBehaviour
     private GameObject ticketBooth;
 
     [SerializeField]
-    private int locationDistance;
+    private float locationDistance;
 
     //each visitor will spawn with a random interest between min and max
     [SerializeField]
@@ -40,70 +40,87 @@ public class VisitorBehavior : MonoBehaviour
         interest = Random.Range(minInterest, maxInterest);
         SetVisitableLocations();
         toVisit = Random.Range(0, visitable.Count);
-        //Debug.Log(toVisit);
 
         agent = GetComponent<NavMeshAgent>();
         tree = new BehaviorTree();
 
         Sequence visitPark = new Sequence("Visit the Park");
         Leaf leavePark = new Leaf("Exit the Park", ExitPark);
-        //Select attraction to visit: animal or building
-        /*Selector visitAttraction = new Selector("Visit an Attraction");
         
-        Leaf visitorInterest = new Leaf("Visitor Interest", HasInterest);
+        for (int i = 0; i < interest; i++)
+        {
+            visitPark.AddChild(VisitAttractionSetup());
+        }
+        visitPark.AddChild(leavePark);
+        tree.AddChild(visitPark);
 
-        //Setting up behavior tree branch for visiting a building
+        tree.PrintTree();
+    }
+
+    //Cleaning up Start() by separating VisitAttraction node setup into its own function
+    public Selector VisitAttractionSetup()
+    {
+        Selector visitAttraction = new Selector("Visit an Attraction");
+        Leaf findNewLocation = new Leaf("Find New Building", FindNewLocation);
+
+        // VisitBuilding setup
         Sequence visitBuilding = new Sequence("Visit Building");
         Leaf goToBuilding = new Leaf("Go To Building", GoToBuilding);
+        Leaf decreaseInterest = new Leaf("Decrease Interest", DecreaseInterest);
         //Leaf enterBuilding = new Leaf("Enter Into Building", EnterIntoBuilding);
         visitBuilding.AddChild(goToBuilding);
+        visitBuilding.AddChild(decreaseInterest);
+        visitBuilding.AddChild(findNewLocation);
 
         //Sequence visitAnimal = new Sequence("Visit Animal");
 
         visitAttraction.AddChild(visitBuilding);
-        visitAttraction.AddChild(visitorInterest);
-        //visitAttraction.AddChild(visitAnimal);
-        */
-        visitPark.AddChild(VisitAttractionSetup());
-        visitPark.AddChild(leavePark);
-        tree.AddChild(visitPark);
-    }
-
-    public Selector VisitAttractionSetup()
-    {
-        Selector visitAttraction = new Selector("Visit an Attraction");
-        Leaf visitorInterest = new Leaf("Visitor Interest", HasInterest);
-
-        Sequence visitBuilding = new Sequence("Visit Building");
-        Leaf goToBuilding = new Leaf("Go To Building", GoToBuilding);
-        //Leaf enterBuilding = new Leaf("Enter Into Building", EnterIntoBuilding);
-        visitBuilding.AddChild(goToBuilding);
-
-        visitAttraction.AddChild(visitBuilding);
-        visitAttraction.AddChild(visitorInterest);
 
         return visitAttraction;
     }
 
-    public Node.Status HasInterest()
+    public Node.Status FindNewLocation()
     {
-        if (interest <= 0)
+        if (interest > 0)
         {
-            tree.currentChild++;
+            int newToVisit = Random.Range(0, visitable.Count);
+            //in the event that the same index is picked again
+            while (newToVisit == toVisit)
+            {
+                newToVisit = Random.Range(0, visitable.Count);
+            }
+            toVisit = newToVisit;
+            Debug.Log("new index:" + toVisit);
         }
         return Node.Status.SUCCESS;
     }
 
-    public Node.Status GoToBuilding()
+    //WILL BE UTILIZED IN NEXT PLAYTEST
+    //Checks if the visitor still has interest in visiting other locations
+    public Node.Status HasInterest()
     {
-        Node.Status s = GoToLocation(visitable[toVisit].transform.position);
-        if (s == Node.Status.SUCCESS)
+        if (interest > 0)
         {
-            interest--;
+            return VisitAttractionSetup().Process();
         }
-        return s;
+        return ExitPark();
     }
 
+    //Sends the agent to the building according to the index toVisit
+    public Node.Status GoToBuilding()
+    {
+        return GoToLocation(visitable[toVisit].transform.position);
+    }
+
+    //increases or decreases interest based on input
+    public Node.Status DecreaseInterest()
+    {
+        interest--;
+        Debug.Log(interest);
+        return Node.Status.SUCCESS;
+    }
+
+    //Exits the park
     public Node.Status ExitPark()
     {
         return GoToLocation(ticketBooth.transform.position);
