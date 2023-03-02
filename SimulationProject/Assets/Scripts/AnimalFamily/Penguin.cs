@@ -29,7 +29,7 @@ public class Penguin : Animal, ISpawnableObject
         if (audioTimer - Time.deltaTime <= 0)
         {
             PenguinSounds();
-            audioTimer = Random.Range(resetTimer - waitPeriod, resetTimer + waitPeriod);
+            audioTimer = Random.Range(resetAudioTimer - waitPeriod, resetAudioTimer + waitPeriod);
 
         }
         else

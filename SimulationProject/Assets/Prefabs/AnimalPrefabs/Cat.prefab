@@ -346,6 +346,7 @@ GameObject:
   - component: {fileID: 8401052145945930122}
   - component: {fileID: 519694271184351770}
   - component: {fileID: -731922800323158558}
+  - component: {fileID: -7175297228234360439}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -361,7 +362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2956760048888244568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.345106, y: -1.5246935, z: 0.57219076}
+  m_LocalPosition: {x: 4.345106, y: -1.5046935, z: 0.57219076}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -419,18 +420,13 @@ MonoBehaviour:
   volume: 0.25
   audioSource: {fileID: 519694271184351770}
   audioTimer: 5
-  resetTimer: 5
+  resetAudioTimer: 5
   waitPeriod: 2
   agent: {fileID: -731922800323158558}
-  waitingTime: 1.5
-  resettingTime: 1.5
   m_prefab: {fileID: 2956760048888244568}
   m_cost: 15
   m_name: Cat
   m_description: Seen in your favorite game montages.
-  wanderRadius: 0.5
-  wanderDistance: 0.3
-  wanderVariance: 0.5
   catNoises:
   - {fileID: 8300000, guid: db9784ac8883e2444846eb1ae803b203, type: 3}
   - {fileID: 8300000, guid: 3e967d53ba0b2374d920042613712fb8, type: 3}
@@ -553,6 +549,30 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
+--- !u!114 &-7175297228234360439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2956760048888244568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8996dce4fe29a478e7769e10a13fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penSpots:
+  - {fileID: 946427230868880189, guid: c3a8895a8705abf478ceeb219853c401, type: 3}
+  - {fileID: 8902217557350261316, guid: ef36aeadb319fb5408e43abc45679d9f, type: 3}
+  - {fileID: 8759716534496880947, guid: 5894f7d918ba478429fc9eba6d1be2ac, type: 3}
+  - {fileID: 6387534904577557676, guid: b0f376ffaa63b564b83c670b1af1ef32, type: 3}
+  - {fileID: 8183589756320708367, guid: 96b1da42b8cf47e4eb04ed4bc74f68ca, type: 3}
+  players:
+  - {fileID: 2014014231836175301, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+  - {fileID: 6372581183293435050, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+  locationDistance: 0.5
+  waitingTime: 10
+  resetTimer: 10
 --- !u!1 &2956760048888244570
 GameObject:
   m_ObjectHideFlags: 0

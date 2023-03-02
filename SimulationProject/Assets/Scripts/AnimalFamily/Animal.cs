@@ -20,7 +20,7 @@ public abstract class Animal : ObjectFactory
     protected float audioTimer;//The countdown variable to play audio
 
     [SerializeField]
-    protected float resetTimer;//A float to reset the timer to a given time
+    protected float resetAudioTimer;//A float to reset the timer to a given time
 
     [SerializeField]
     protected float waitPeriod;//A float representing seconds to vary when
@@ -29,25 +29,16 @@ public abstract class Animal : ObjectFactory
     [SerializeField]
     protected NavMeshAgent agent;//The navmesh agent of the animal
 
-    [SerializeField]
-    protected float waitingTime;
+    //[SerializeField]
+    //protected float waitingTime;
 
-    [SerializeField]
-    protected float resettingTime;
+    //[SerializeField]
+    //protected float resettingTime;
 
     [SerializeField] GameObject m_prefab;//Animal prefab
     [SerializeField] int m_cost;//Animal cost
     [SerializeField] string m_name;//Animal name
     [SerializeField] string m_description;//Animal description
-
-    [SerializeField]
-    protected float wanderRadius;
-
-    [SerializeField]
-    protected float wanderDistance;
-
-    [SerializeField]
-    protected float wanderVariance;
 
     private Spawner animalLocation;
 
@@ -102,7 +93,7 @@ public abstract class Animal : ObjectFactory
     protected virtual void Update()
     {
         MakeNoise(defaultSound, volume);
-        LocateNextSpot();
+        //LocateNextSpot();
     }
 
     //MakeNoise() is used to play a sound after a given time
@@ -113,7 +104,7 @@ public abstract class Animal : ObjectFactory
         if (audioTimer - Time.deltaTime <= 0)
         {
             PlaySound(noise, volume);
-            audioTimer = Random.Range(resetTimer - waitPeriod, resetTimer + waitPeriod);
+            audioTimer = Random.Range(resetAudioTimer - waitPeriod, resetAudioTimer + waitPeriod);
          
         }
         else //else statement decrements timer
@@ -123,6 +114,7 @@ public abstract class Animal : ObjectFactory
     }
 
     //Destination for AnimalObjects to use as NavMeshAgents
+    /*
     Vector3 moveTarget = Vector3.zero;
 
     protected void LocateNextSpot()
@@ -143,6 +135,8 @@ public abstract class Animal : ObjectFactory
             waitingTime -= Time.deltaTime;
         }
     }
+    */
+
     //Sets up a spawner for the animals and updates the availableLocations
     //for the animal to travel to. These locations are native to the pen
     //the animal is spawned in to avoid the animal seeking other spots. 

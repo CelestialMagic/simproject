@@ -8,7 +8,7 @@ public class Lion : Animal, ISpawnableObject
     //The inherited version will automatically play sound. 
     protected override void Update()
     {
-        LocateNextSpot();
+        //LocateNextSpot();
     }
 
     //lion roars if the player gets too close
@@ -25,7 +25,7 @@ public class Lion : Animal, ISpawnableObject
     {
         if (other.tag == "Player")
         {
-            audioTimer = resetTimer;
+            audioTimer = resetAudioTimer;
         }
     }
 }

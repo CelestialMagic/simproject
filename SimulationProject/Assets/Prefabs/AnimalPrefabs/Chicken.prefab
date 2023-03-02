@@ -334,18 +334,13 @@ MonoBehaviour:
   volume: 0.25
   audioSource: {fileID: 8101637317198216715}
   audioTimer: 5
-  resetTimer: 5
+  resetAudioTimer: 5
   waitPeriod: 2
   agent: {fileID: 7695962528756804573}
-  waitingTime: 2
-  resettingTime: 2
   m_prefab: {fileID: 8101637316843772605}
   m_cost: 25
   m_name: Chicken
   m_description: Plucky and has feathers, too.
-  wanderRadius: 0.5
-  wanderDistance: 0.3
-  wanderVariance: 0.5
   chickenNoises:
   - {fileID: 8300000, guid: 434c7804e19417243a5b3d37edf8f60a, type: 3}
   - {fileID: 8300000, guid: 55e4205d213e0da4ea0fddeb63df739e, type: 3}

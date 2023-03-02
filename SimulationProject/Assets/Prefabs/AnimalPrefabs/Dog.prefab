@@ -436,18 +436,13 @@ MonoBehaviour:
   volume: 0.25
   audioSource: {fileID: 1233404657667072791}
   audioTimer: 5
-  resetTimer: 5
+  resetAudioTimer: 5
   waitPeriod: 2
   agent: {fileID: 5492508144105591822}
-  waitingTime: 3
-  resettingTime: 3
   m_prefab: {fileID: 1233404657667106231}
   m_cost: 10
   m_name: Dog
   m_description: Your best friend.
-  wanderRadius: 0.6
-  wanderDistance: 0.3
-  wanderVariance: 0.5
 --- !u!82 &1233404657667072791
 AudioSource:
   m_ObjectHideFlags: 0

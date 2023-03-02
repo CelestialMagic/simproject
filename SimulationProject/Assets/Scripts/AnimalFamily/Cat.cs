@@ -23,7 +23,7 @@ public class Cat : Animal, ISpawnableObject
         if (audioTimer - Time.deltaTime <= 0)
         {
             Meow();
-            audioTimer = Random.Range(resetTimer - waitPeriod, resetTimer + waitPeriod);
+            audioTimer = Random.Range(resetAudioTimer - waitPeriod, resetAudioTimer + waitPeriod);
         }
         else
         {

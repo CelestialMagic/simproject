@@ -24,7 +24,7 @@ public class Chicken : Animal, ISpawnableObject
         if (audioTimer - Time.deltaTime <= 0)
         {
             Cluck();
-            audioTimer = Random.Range(resetTimer - waitPeriod, resetTimer + waitPeriod);
+            audioTimer = Random.Range(resetAudioTimer - waitPeriod, resetAudioTimer + waitPeriod);
 
         }
         else

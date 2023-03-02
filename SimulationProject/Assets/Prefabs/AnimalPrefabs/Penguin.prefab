@@ -82,18 +82,13 @@ MonoBehaviour:
   volume: 0.25
   audioSource: {fileID: 41150620379193700}
   audioTimer: 6
-  resetTimer: 6
+  resetAudioTimer: 6
   waitPeriod: 5
   agent: {fileID: 2007435872976976098}
-  waitingTime: 4
-  resettingTime: 4
   m_prefab: {fileID: 41674262483380366}
   m_cost: 60
   m_name: Penguin
   m_description: Naturally cool.
-  wanderRadius: 0.5
-  wanderDistance: 0.3
-  wanderVariance: 0.5
   penguinSFX:
   - {fileID: 8300000, guid: 0912143335372e445beb17075f7b51b5, type: 3}
   - {fileID: 8300000, guid: f1df62739c06add4486d3f3de6ec1b00, type: 3}
