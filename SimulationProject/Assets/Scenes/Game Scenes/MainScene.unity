@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4926,7 +4926,7 @@ Camera:
     height: 1
   near clip plane: 0.001
   far clip plane: 5000
-  field of view: 45.87346
+  field of view: 45.87345
   orthographic: 0
   orthographic size: 20
   m_Depth: -1
@@ -4952,7 +4952,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036486097}
   m_LocalRotation: {x: -0.16107172, y: 0.6885178, z: -0.16107199, w: -0.6885165}
-  m_LocalPosition: {x: 12.413723, y: 1.7930714, z: 0.25607145}
+  m_LocalPosition: {x: 12.413722, y: 1.7930717, z: 0.2560724}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7963,7 +7963,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734438841}
   m_LocalRotation: {x: -0.16107172, y: 0.6885178, z: -0.16107199, w: -0.6885165}
-  m_LocalPosition: {x: 12.413723, y: 1.7930714, z: 0.25607145}
+  m_LocalPosition: {x: 12.413722, y: 1.7930717, z: 0.2560724}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9935,7 +9935,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.5, y: 0.5, z: 0.5}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!4 &1487042005891962077 stripped
@@ -11009,7 +11009,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.5, y: 0.5, z: 0.5}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1001 &6911978958152727302

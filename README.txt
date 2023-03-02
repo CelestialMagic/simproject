@@ -7,24 +7,24 @@ ICS 167/GDIM 32
 February 8, 2023
 
 =Objective=
-The player has the ability to design their own zoo. As the ticket booth accumulates money, the player will have the option to visit empty spots and place animals, decorations, restaurants, shops, and attractions. This game is open-ended, so the player decides how large they want to expand their zoo. For the first playtest, the player can build up to 9 exhibits. 
+The player has the ability to design their own zoo. As the ticket booth accumulates money, the player will have the option to visit empty spots and place animals, decorations, restaurants, shops, and attractions. This game is open-ended, so the player decides how large they want to expand their zoo. 
 
 =Controls=
-Player 1 Controls: 
--WASD to Move
--Z to Cycle Menu Left
--X to Buy Items
--C to Cycle Menu Right
--Escape to Pause
--Click to select buttons
+Player 1: 
+WASD - movement (forward-sideways)
+X - open menu
+Z - cycle left
+C - cycle right
+
+Player 2:
+IJKL - movement (forward-sideways)
+COMMA - open menu
+M - cycle left
+PERIOD - cycle right
+
 
 =Bugs=
--There are minor collision issues when the player attempts to enter a pen, which can cause the player to endlessly rotate.
-
-="Features Not Bugs"=
--Standing inside of a pen while spawning a building causes the player to be popped upwards.
--Loading a pen full of animals and spawning a building launches all animals in every direction.
--All animals currently spawn in the same spot in a pen, resulting in stacks of animals that may overflow.
+-The visitor occasionally jitters if it hits a corner of a pen. We believe this was fixed, but it may occur. 
 
 =Unity Asset Store Assets=
 
