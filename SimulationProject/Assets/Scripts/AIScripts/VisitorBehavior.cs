@@ -156,6 +156,7 @@ public class VisitorBehavior : MonoBehaviour
     private void Update()
     {
         RefreshVisitableLocations();
+        SetVisitableLocations();
         if (treeStatus != Node.Status.SUCCESS)
         {
             treeStatus = tree.Process();
@@ -165,7 +166,17 @@ public class VisitorBehavior : MonoBehaviour
 
     private void RefreshVisitableLocations()
     {
-        visitable = LocationManager.GetAccessibleLocations();
+        List<GameObject> locations = LocationManager.GetAccessibleLocations();
+        if (locations != null)
+        {
+            foreach (GameObject l in locations)
+            {
+                if (visitable.IndexOf(l) < 0)
+                    visitable.Add(l);
+            }
+
+        }
+
     }
 
     private void SetVisitableLocations()
