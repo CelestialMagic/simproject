@@ -11,11 +11,17 @@ public class VisitorBehavior : MonoBehaviour
     private NavMeshAgent agent;
     [SerializeField]
     private List<GameObject> visitable = new List<GameObject>();
+
     [SerializeField]
     private GameObject ticketBooth;
+    
 
     [SerializeField]
     private float locationDistance;
+
+    [SerializeField]
+    private float idleDuration;
+    private float idleCount = 0;
 
     //each visitor will spawn with a random interest between min and max
     [SerializeField]
@@ -67,10 +73,12 @@ public class VisitorBehavior : MonoBehaviour
         Sequence visitBuilding = new Sequence("Visit Building");
         Leaf goToBuilding = new Leaf("Go To Building", GoToBuilding);
         Leaf decreaseInterest = new Leaf("Decrease Interest", DecreaseInterest);
+        Leaf idle = new Leaf("Idle in Place", Idle);
         //Leaf enterBuilding = new Leaf("Enter Into Building", EnterIntoBuilding);
         visitBuilding.AddChild(goToBuilding);
         visitBuilding.AddChild(decreaseInterest);
         visitBuilding.AddChild(findNewLocation);
+        visitBuilding.AddChild(idle);
 
         //Sequence visitAnimal = new Sequence("Visit Animal");
 
@@ -90,7 +98,7 @@ public class VisitorBehavior : MonoBehaviour
                 newToVisit = Random.Range(0, visitable.Count);
             }
             toVisit = newToVisit;
-            Debug.Log("new index:" + toVisit);
+            //Debug.Log("new index:" + toVisit);
         }
         return Node.Status.SUCCESS;
     }
@@ -106,6 +114,25 @@ public class VisitorBehavior : MonoBehaviour
         return ExitPark();
     }
 
+    //Stops the agent in its place
+    public Node.Status Idle()
+    {
+        if (idleCount >= idleDuration)
+        {
+            agent.Resume();
+            idleCount = 0;
+            Debug.Log("finished idling");
+            return Node.Status.SUCCESS;
+        }
+        else
+        {
+            idleCount+=Time.deltaTime;
+            this.gameObject.transform.Rotate(0.0f, 1.0f, 0.0f);
+        }
+        return Node.Status.RUNNING;
+
+    }
+
     //Sends the agent to the building according to the index toVisit
     public Node.Status GoToBuilding()
     {
@@ -116,7 +143,7 @@ public class VisitorBehavior : MonoBehaviour
     public Node.Status DecreaseInterest()
     {
         interest--;
-        Debug.Log(interest);
+        //Debug.Log(interest);
         return Node.Status.SUCCESS;
     }
 
@@ -139,14 +166,14 @@ public class VisitorBehavior : MonoBehaviour
         {
             //haven't made it to destination, agent failed
             state = ActionState.IDLE;
-            Debug.Log("FAILED");
+            //Debug.Log("FAILED");
             return Node.Status.FAILURE;
         }
         else if (distanceToTarget < locationDistance)
         {
             //successful!
             state = ActionState.IDLE;
-            Debug.Log("SUCCESS!!!");
+            //Debug.Log("SUCCESS!!!");
             return Node.Status.SUCCESS;
         }
         return Node.Status.RUNNING;

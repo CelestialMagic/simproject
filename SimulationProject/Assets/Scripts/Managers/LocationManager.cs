@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Code by Jessie Archer and Brandon Lo
 public class LocationManager : MonoBehaviour
 {
+    
     private static List<GameObject> activeLocations = new List<GameObject>();//The player's current income in-game
     private static List<GameObject> accessibleLocations = new List<GameObject>();
 
