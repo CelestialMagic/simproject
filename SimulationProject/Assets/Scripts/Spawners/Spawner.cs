@@ -6,7 +6,7 @@ using UnityEngine;
 public class Spawner : PurchaseObject
 {
 
-    [SerializeField] private List<Transform> penSpots;
+    [SerializeField] public List<Transform> penSpots;
 
     [SerializeField] private Spawner penSpawner; 
     [SerializeField]

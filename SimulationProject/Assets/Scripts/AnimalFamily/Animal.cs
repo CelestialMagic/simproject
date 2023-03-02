@@ -29,6 +29,9 @@ public abstract class Animal : ObjectFactory
     [SerializeField]
     protected NavMeshAgent agent;//The navmesh agent of the animal
 
+    [SerializeField]
+    protected Transform spawnPos;//The animal's spawned position
+
     //[SerializeField]
     //protected float waitingTime;
 
@@ -86,6 +89,7 @@ public abstract class Animal : ObjectFactory
     protected void Start()
     {
         agent = this.GetComponent<NavMeshAgent>();
+        spawnPos = this.GetComponent<Transform>();
     }
 
     //Update() is used primarily to play animal sound effects
