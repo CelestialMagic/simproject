@@ -47,7 +47,8 @@ public class LandExpansion : PurchaseObject
                     if (!placeIsHeld && isTouchingPen && landCost <= MoneyManager.GetCurrentIncome())
                     {
                         MoneyManager.BuyItem(landCost);
-                        LocationManager.SetAccessibleLocations(true);
+                        LocationManager.ToggleExpansionPurchased();
+                        LocationManager.SetAccessibleLocations();
                         Destroy(purchaseGate);
                     }
                     break;

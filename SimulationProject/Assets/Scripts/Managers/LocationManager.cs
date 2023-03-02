@@ -5,7 +5,8 @@ using UnityEngine;
 //Code by Jessie Archer and Brandon Lo
 public class LocationManager : MonoBehaviour
 {
-    
+    private static bool expansionPurchased = false;
+
     private static List<GameObject> activeLocations = new List<GameObject>();//The player's current income in-game
     private static List<GameObject> accessibleLocations = new List<GameObject>();
 
@@ -17,18 +18,25 @@ public class LocationManager : MonoBehaviour
     //Sets the current amount of money through addition
     public static void RemoveLocation(GameObject location)
     {
-        activeLocations.Remove(location);
+        Debug.Log(location.name);
+        Debug.Log(activeLocations.Remove(location));
+        Debug.Log(accessibleLocations.Remove(location));
 
     }
 
-    public static void SetAccessibleLocations(bool expansionPurchased)
+    public static void ToggleExpansionPurchased()
+    {
+        expansionPurchased = true;
+    }
+
+    public static void SetAccessibleLocations()
     {
         //Before the expansion is purchased, only make the pens in the starting area accessible
         if (!expansionPurchased)
         {
             for (int i = 0; i < activeLocations.Count; i++)
             {
-                if (activeLocations[i].tag != "ExpansionPen")
+                if (activeLocations[i].tag != "ExpansionPen" && accessibleLocations.IndexOf(activeLocations[i]) < 0)
                 {
                     accessibleLocations.Add(activeLocations[i]);
                 }

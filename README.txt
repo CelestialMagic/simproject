@@ -26,7 +26,8 @@ PERIOD - cycle right
 
 
 =Bugs=
--The visitor occasionally jitters if it hits a corner of a pen. We believe this was fixed, but it may occur. 
+-The visitor occasionally jitters if it hits a corner of a pen. We believe this was fixed, but it may occur.
+-The visitor also may appear to "float" due to jagged parts of the NavMesh pushing it off the ground. 
 
 =Unity Asset Store Assets=
 

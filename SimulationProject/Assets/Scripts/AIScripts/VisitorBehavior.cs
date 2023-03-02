@@ -33,6 +33,8 @@ public class VisitorBehavior : MonoBehaviour
     //stores the index of the area to visit
     private int toVisit;
 
+    private bool visitableInstantiated = false;
+
     //ActionStates for idling and executing an action
     public enum ActionState { IDLE, WORKING };
     ActionState state = ActionState.IDLE;
@@ -44,15 +46,15 @@ public class VisitorBehavior : MonoBehaviour
     {
         //randomizing interest and starting visit location
         interest = Random.Range(minInterest, maxInterest);
-        SetVisitableLocations();
-        toVisit = Random.Range(0, visitable.Count);
 
         agent = GetComponent<NavMeshAgent>();
         tree = new BehaviorTree();
 
         Sequence visitPark = new Sequence("Visit the Park");
         Leaf leavePark = new Leaf("Exit the Park", ExitPark);
-        
+        Leaf getTicket = new Leaf("Getting a Ticket", GetTicket);
+
+        visitPark.AddChild(getTicket);
         for (int i = 0; i < interest; i++)
         {
             visitPark.AddChild(VisitAttractionSetup());
@@ -85,6 +87,14 @@ public class VisitorBehavior : MonoBehaviour
         visitAttraction.AddChild(visitBuilding);
 
         return visitAttraction;
+    }
+
+    public Node.Status GetTicket()
+    {
+        SetVisitableLocations();
+        //Debug.Log(visitable.Count);
+        toVisit = Random.Range(0, visitable.Count);
+        return Idle();
     }
 
     public Node.Status FindNewLocation()
@@ -183,32 +193,25 @@ public class VisitorBehavior : MonoBehaviour
     private void Update()
     {
         RefreshVisitableLocations();
-        SetVisitableLocations();
+        //SetVisitableLocations();
         if (treeStatus != Node.Status.SUCCESS)
         {
             treeStatus = tree.Process();
         }
-        
+     
     }
 
     private void RefreshVisitableLocations()
     {
-        List<GameObject> locations = LocationManager.GetAccessibleLocations();
-        if (locations != null)
-        {
-            foreach (GameObject l in locations)
-            {
-                if (visitable.IndexOf(l) < 0)
-                    visitable.Add(l);
-            }
-
-        }
+        
+        visitable = LocationManager.GetAccessibleLocations();
 
     }
 
+    //this should only get used when accessible locations NEED to be updated bc of purchases!!!
     private void SetVisitableLocations()
     {
-        LocationManager.SetAccessibleLocations(false);
+        LocationManager.SetAccessibleLocations();
         RefreshVisitableLocations();
     }
 }

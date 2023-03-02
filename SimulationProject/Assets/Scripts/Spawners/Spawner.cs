@@ -156,10 +156,12 @@ public class Spawner : PurchaseObject
     {
         ((Building)objects[currentIndex]).transform.position = gameObject.transform.position;
         DestroySpawnedAnimals();
-        LocationManager.RemoveLocation(spawnerToDestroy);
+        //LocationManager.RemoveLocation(spawnerToDestroy);
+        LocationManager.RemoveLocation(this.transform.parent.gameObject);
         Destroy(spawnerToDestroy);
         GameObject building = ((Building)objects[currentIndex]).ReturnSpawnedObject();
         LocationManager.AddLocation(building);
+        LocationManager.SetAccessibleLocations();
         MoneyManager.BuyItem(((Building)objects[currentIndex]).cost);
         placeIsHeld = true;
     }
