@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 41150620379193701}
   - component: {fileID: 41150620379193700}
   - component: {fileID: 2007435872976976098}
+  - component: {fileID: 1779934526583230402}
   m_Layer: 0
   m_Name: Penguin
   m_TagString: Untagged
@@ -85,6 +86,7 @@ MonoBehaviour:
   resetAudioTimer: 6
   waitPeriod: 5
   agent: {fileID: 2007435872976976098}
+  spawnPos: {fileID: 0}
   m_prefab: {fileID: 41674262483380366}
   m_cost: 60
   m_name: Penguin
@@ -212,6 +214,25 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
+--- !u!114 &1779934526583230402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41674262483380366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8996dce4fe29a478e7769e10a13fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 2014014231836175301, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+  - {fileID: 6372581183293435050, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+  tempPenSpots: []
+  locationDistance: 0.4
+  waitingTime: 10
+  resetTimer: 10
 --- !u!1 &41713865659614562
 GameObject:
   m_ObjectHideFlags: 0

@@ -347,6 +347,7 @@ GameObject:
   - component: {fileID: 1233404657667072784}
   - component: {fileID: 1233404657667072791}
   - component: {fileID: 5492508144105591822}
+  - component: {fileID: -1530792384898164996}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -562,6 +563,25 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
+--- !u!114 &-1530792384898164996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233404657667106231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8996dce4fe29a478e7769e10a13fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 2014014231836175301, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+  - {fileID: 6372581183293435050, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+  tempPenSpots: []
+  locationDistance: 0.4
+  waitingTime: 10
+  resetTimer: 10
 --- !u!1 &1233404657667106233
 GameObject:
   m_ObjectHideFlags: 0

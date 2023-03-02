@@ -391,6 +391,7 @@ GameObject:
   - component: {fileID: 601941412732825320}
   - component: {fileID: 601941412732825327}
   - component: {fileID: 3927154835909102908}
+  - component: {fileID: 3095471209513106161}
   m_Layer: 0
   m_Name: Lion
   m_TagString: Untagged
@@ -466,18 +467,14 @@ MonoBehaviour:
   volume: 0.25
   audioSource: {fileID: 601941412732825327}
   audioTimer: 0
-  resetTimer: 0
+  resetAudioTimer: 0
   waitPeriod: 0
   agent: {fileID: 3927154835909102908}
-  waitingTime: 6
-  resettingTime: 6
+  spawnPos: {fileID: 0}
   m_prefab: {fileID: 603205127873992383}
   m_cost: 150
   m_name: Lion
   m_description: Roars when you get close!
-  wanderRadius: 1
-  wanderDistance: 0.4
-  wanderVariance: 1
 --- !u!82 &601941412732825327
 AudioSource:
   m_ObjectHideFlags: 0
@@ -596,6 +593,25 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
+--- !u!114 &3095471209513106161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603205127873992383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8996dce4fe29a478e7769e10a13fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 2014014231836175301, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+  - {fileID: 6372581183293435050, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
+  tempPenSpots: []
+  locationDistance: 0.4
+  waitingTime: 10
+  resetTimer: 10
 --- !u!1 &603217885494530667
 GameObject:
   m_ObjectHideFlags: 0

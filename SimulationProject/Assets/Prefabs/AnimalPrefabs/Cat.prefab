@@ -423,6 +423,7 @@ MonoBehaviour:
   resetAudioTimer: 5
   waitPeriod: 2
   agent: {fileID: -731922800323158558}
+  spawnPos: {fileID: 0}
   m_prefab: {fileID: 2956760048888244568}
   m_cost: 15
   m_name: Cat
@@ -561,16 +562,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f8996dce4fe29a478e7769e10a13fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  penSpots:
-  - {fileID: 946427230868880189, guid: c3a8895a8705abf478ceeb219853c401, type: 3}
-  - {fileID: 8902217557350261316, guid: ef36aeadb319fb5408e43abc45679d9f, type: 3}
-  - {fileID: 8759716534496880947, guid: 5894f7d918ba478429fc9eba6d1be2ac, type: 3}
-  - {fileID: 6387534904577557676, guid: b0f376ffaa63b564b83c670b1af1ef32, type: 3}
-  - {fileID: 8183589756320708367, guid: 96b1da42b8cf47e4eb04ed4bc74f68ca, type: 3}
   players:
   - {fileID: 2014014231836175301, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
   - {fileID: 6372581183293435050, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
-  locationDistance: 0.5
+  tempPenSpots: []
+  locationDistance: 0.4
   waitingTime: 10
   resetTimer: 10
 --- !u!1 &2956760048888244570
