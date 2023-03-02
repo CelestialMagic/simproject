@@ -4,7 +4,9 @@ Brandon Lo
 Noel M. Paredes 
 Group 9
 ICS 167/GDIM 32
-February 8, 2023
+Zoo Boss
+Second Playtest
+March 1, 2023
 
 =Objective=
 The player has the ability to design their own zoo. As the ticket booth accumulates money, the player will have the option to visit empty spots and place animals, decorations, restaurants, shops, and attractions. This game is open-ended, so the player decides how large they want to expand their zoo. 
