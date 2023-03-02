@@ -6,9 +6,9 @@ using UnityEngine.AI;
 
 public class AnimalBehavior : MonoBehaviour
 {
-    private BehaviorTree tree;
-    private NavMeshAgent agent;
-    private Transform spawnPos;
+    private BehaviorTree tree;//The Animal Behavior Tree
+    private NavMeshAgent agent;//The Animal NavMesh Agent
+    private Transform spawnPos;//The Animal Spawn Position
 
     [SerializeField]
     private List<GameObject> players = new List<GameObject>();
@@ -25,6 +25,17 @@ public class AnimalBehavior : MonoBehaviour
     [SerializeField]
     private float resetTimer;
 
+ 
+    private Vector3 zxNeg;
+
+    private Vector3 zNegXPos;
+
+    private Vector3 zxPos;
+
+    private Vector3 zPosXNeg;
+
+    private List<Vector3> penCorners;
+
     //ActionStates for idling and executing an action
     public enum ActionState { IDLE, WANDER, FOLLOW };
     ActionState state = ActionState.IDLE;
@@ -38,29 +49,25 @@ public class AnimalBehavior : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         spawnPos = GetComponent<Transform>();
 
-        Vector3 zxNeg = new Vector3(-0.5f, 0, -0.5f);
-        Vector3 zNegXPos = new Vector3(0.5f, 0, -0.5f);
-        Vector3 zxPos = new Vector3(0.5f, 0, 0.5f);
-        Vector3 zPosXNeg = new Vector3(-0.5f, 0, 0.5f);
+        SetTempSpots();
+        penCorners = new List<Vector3>() { zxNeg, zNegXPos, zxPos, zPosXNeg};
 
-        tempPenSpots.Add(spawnPos.position + zxNeg);
-        tempPenSpots.Add(spawnPos.position + zNegXPos);
-        tempPenSpots.Add(spawnPos.position + zxPos);
-        tempPenSpots.Add(spawnPos.position + zPosXNeg);
+        foreach(Vector3 corner in penCorners)
+        {
+            tempPenSpots.Add(spawnPos.position + corner);
+        }
+
 
         tree = new BehaviorTree();
 
         Sequence walk = new Sequence("Walk Around Pen");
         
-        //Selector standIdle = new Selector("Stand Idle");
-        Leaf isIdle = new Leaf("Is Idle", IsIdle);
-        //Leaf mvmtTime = new Leaf("Movement Time", MovementTime);
 
+        Leaf isIdle = new Leaf("Is Idle", IsIdle);
         Leaf wanderAround = new Leaf("Wander Around", WanderAround);
         Leaf followPlayer = new Leaf("Follow Player", FollowPlayer);
 
-        //standIdle.AddChild(isIdle);
-        //standIdle.AddChild(mvmtTime);
+      
         
         walk.AddChild(isIdle);
         walk.AddChild(wanderAround);
@@ -82,21 +89,6 @@ public class AnimalBehavior : MonoBehaviour
         }
     }
 
-    /*
-    public Node.Status MovementTime()
-    {
-        int spotsPerPen = spawner.penSpots.Count;
-        int randomSpot = Random.Range(0, spotsPerPen);
-
-        if (waitingTime - Time.deltaTime <= 0)
-            return GoToLocation(spawner.penSpots[randomSpot].transform.position);
-        else
-        {
-            waitingTime -= Time.deltaTime;
-            return Node.Status.RUNNING;
-        }
-    }
-    */
 
     public Node.Status WanderAround()
     {
@@ -153,5 +145,14 @@ public class AnimalBehavior : MonoBehaviour
         treeStatus = tree.Process();
     }
 
+    //SetTempSpots() is used as a "const" method for the four corners of the pen
+    //Vector3 can not be a const, so this is one place to set these Vector3s. 
+    private void SetTempSpots()
+    {
+        zxNeg = new Vector3(-0.5f, 0, -0.5f);
+        zNegXPos = new Vector3(0.5f, 0, -0.5f);
+        zxPos = new Vector3(0.5f, 0, 0.5f);
+        zPosXNeg = new Vector3(-0.5f, 0, 0.5f);
+    }
 
 }

@@ -569,6 +569,10 @@ MonoBehaviour:
   locationDistance: 0.4
   waitingTime: 10
   resetTimer: 10
+  zxNeg: {x: -0.5, y: 0, z: 0}
+  zNegXPos: {x: 0, y: 0, z: 0}
+  zxPos: {x: 0, y: 0, z: 0}
+  zPosXNeg: {x: 0, y: 0, z: 0}
 --- !u!1 &2956760048888244570
 GameObject:
   m_ObjectHideFlags: 0
