@@ -12,8 +12,9 @@ public class Spawner : PurchaseObject
     [SerializeField]
     private List<ObjectFactory> objects;//A list of available objects to buy (buildings and animals)
 
-    private List<GameObject> spawnedAnimals;//A list of game objects that hold animals
+    private List<GameObject> spawnedAnimals = new List<GameObject>();//A list of game objects that hold animals
 
+    private List<Animal> animalComponents = new List<Animal>(); //A list of animal components
     [SerializeField]
     private int currentIndex;//The currently selected object
 
@@ -30,11 +31,12 @@ public class Spawner : PurchaseObject
         LocationManager.AddLocation(spawnerToDestroy);
         Debug.Log("Added location");
         objListLength = objects.Count;
-        spawnedAnimals = new List<GameObject>();
+    
     }
     // Update is called once per frame
     void Update()
     {
+        UpdateAnimals();
         DisplayCurrentObject();
         SpawnObject();
         ScrollObjects();
@@ -145,8 +147,10 @@ public class Spawner : PurchaseObject
         ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
         GameObject animal = ((Animal)objects[currentIndex]).ReturnSpawnedObject();
         Animal animalComp = animal.GetComponent<Animal>();
+
         if(currentPlayer != null)
         animalComp.GetBehavior().SetCurrentPlayer(currentPlayer);
+        animalComponents.Add(animalComp);
         spawnedAnimals.Add(animal);
 
         animalComp.SetAnimalLocation(penSpawner);
@@ -180,5 +184,13 @@ public class Spawner : PurchaseObject
         return isTouchingPen; 
     }
         
-    
+    private void UpdateAnimals()
+    {
+        foreach(Animal a in animalComponents)
+        {
+            if(currentPlayer != null)
+            a.GetBehavior().SetCurrentPlayer(currentPlayer);
+            a.GetBehavior().SetCanFollowPlayer(isTouchingPen);
+        }
+    }
 }

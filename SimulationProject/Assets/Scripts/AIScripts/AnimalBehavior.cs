@@ -25,21 +25,11 @@ public class AnimalBehavior : MonoBehaviour
     [SerializeField]
     private float resetTimer;
 
- 
-    private Vector3 zxNeg;
-
-    private Vector3 zNegXPos;
-
-    private Vector3 zxPos;
-
-    private Vector3 zPosXNeg;
-
-    private List<Vector3> penCorners;
-
     private List<Vector3> moveLocations = new List<Vector3>();
 
-    private PlayerMovement currentPlayer; 
+    private PlayerMovement currentPlayer;
 
+    private bool canFollowPlayer; 
 
     //ActionStates for idling and executing an action
     public enum ActionState { IDLE, WANDER, FOLLOW };
@@ -53,14 +43,6 @@ public class AnimalBehavior : MonoBehaviour
 
         agent = GetComponent<NavMeshAgent>();
         spawnPos = GetComponent<Transform>();
-
-        SetTempSpots();
-        penCorners = new List<Vector3>() { zxNeg, zNegXPos, zxPos, zPosXNeg};
-
-        foreach(Vector3 corner in penCorners)
-        {
-            tempPenSpots.Add(spawnPos.position + corner);
-        }
 
 
         tree = new BehaviorTree();
@@ -109,7 +91,7 @@ public class AnimalBehavior : MonoBehaviour
 
         Debug.Log("FIND PLAYER NOW");
         
-        if (currentPlayer != null)
+        if (canFollowPlayer)
             return GoToLocation(currentPlayer.transform.position);
         else
             return Node.Status.FAILURE;
@@ -148,15 +130,6 @@ public class AnimalBehavior : MonoBehaviour
         treeStatus = tree.Process();
     }
 
-    //SetTempSpots() is used as a "const" method for the four corners of the pen
-    //Vector3 can not be a const, so this is one place to set these Vector3s. 
-    private void SetTempSpots()
-    {
-        zxNeg = new Vector3(-0.5f, 0, -0.5f);
-        zNegXPos = new Vector3(0.5f, 0, -0.5f);
-        zxPos = new Vector3(0.5f, 0, 0.5f);
-        zPosXNeg = new Vector3(-0.5f, 0, 0.5f);
-    }
 
     public void SetMoveLocations(List<Vector3> locations)
     {
@@ -167,4 +140,10 @@ public class AnimalBehavior : MonoBehaviour
     {
         currentPlayer = player; 
     }
+
+    public void SetCanFollowPlayer(bool follow)
+    {
+        canFollowPlayer = follow; 
+    }
+    
 }
