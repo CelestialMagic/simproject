@@ -32,19 +32,16 @@ public abstract class Animal : ObjectFactory
     [SerializeField]
     protected Transform spawnPos;//The animal's spawned position
 
-    //[SerializeField]
-    //protected float waitingTime;
+    [SerializeField]
+    protected AnimalBehavior behavior; //The animal behavior attached to the animal
 
-    //[SerializeField]
-    //protected float resettingTime;
 
     [SerializeField] GameObject m_prefab;//Animal prefab
     [SerializeField] int m_cost;//Animal cost
     [SerializeField] string m_name;//Animal name
     [SerializeField] string m_description;//Animal description
 
-    private Spawner animalLocation;
-
+    [SerializeField]
     private List<Transform> availableLocations = new List<Transform>();
 
     public GameObject prefab//Get and Set established for Interface field prefab
@@ -117,37 +114,25 @@ public abstract class Animal : ObjectFactory
         }
     }
 
-    //Destination for AnimalObjects to use as NavMeshAgents
-    /*
-    Vector3 moveTarget = Vector3.zero;
-
-    protected void LocateNextSpot()
-    {
-        if (waitingTime - Time.deltaTime <= 0)
-        {
-            int randIndex = Random.Range(0, 5);
-            Transform randPosition = availableLocations[randIndex];
-
-            moveTarget = randPosition.position;
-
-            agent.SetDestination(moveTarget);
-
-            waitingTime = resettingTime;
-        }
-        else
-        {
-            waitingTime -= Time.deltaTime;
-        }
-    }
-    */
-
     //Sets up a spawner for the animals and updates the availableLocations
     //for the animal to travel to. These locations are native to the pen
     //the animal is spawned in to avoid the animal seeking other spots. 
     public void SetAnimalLocation(Spawner location)
     {
-        animalLocation = location;
         availableLocations = location.GetAllSpots();
+        List<Vector3> tempPositions = new List<Vector3>();
+        foreach(Transform t in availableLocations)
+        {
+            tempPositions.Add(t.transform.position);
+        }
+        behavior.SetMoveLocations(tempPositions);
+
+        
+    }
+    //Returns the Animal Behavior attached to Animal
+    public AnimalBehavior GetBehavior()
+    {
+        return behavior; 
     }
 
 

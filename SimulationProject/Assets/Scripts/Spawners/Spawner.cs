@@ -144,8 +144,12 @@ public class Spawner : PurchaseObject
     {
         ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
         GameObject animal = ((Animal)objects[currentIndex]).ReturnSpawnedObject();
+        Animal animalComp = animal.GetComponent<Animal>();
+        if(currentPlayer != null)
+        animalComp.GetBehavior().SetCurrentPlayer(currentPlayer);
         spawnedAnimals.Add(animal);
-        animal.GetComponent<Animal>().SetAnimalLocation(penSpawner);
+
+        animalComp.SetAnimalLocation(penSpawner);
         MoneyManager.BuyItem(((Animal)objects[currentIndex]).cost);
         placeIsHeld = true;
 
@@ -171,4 +175,10 @@ public class Spawner : PurchaseObject
         return penSpots;
     }
 
+    public bool GetTouchingPen()
+    {
+        return isTouchingPen; 
+    }
+        
+    
 }

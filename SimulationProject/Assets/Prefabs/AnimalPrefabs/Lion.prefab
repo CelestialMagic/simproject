@@ -407,7 +407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603205127873992383}
   m_LocalRotation: {x: 0, y: 0.8632899, z: 0, w: 0.5047084}
-  m_LocalPosition: {x: -6.534894, y: -1.5046935, z: 0.57219076}
+  m_LocalPosition: {x: -0.284894, y: -1.5046935, z: 4.9721904}
   m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -471,6 +471,7 @@ MonoBehaviour:
   waitPeriod: 0
   agent: {fileID: 3927154835909102908}
   spawnPos: {fileID: 0}
+  behavior: {fileID: 3095471209513106161}
   m_prefab: {fileID: 603205127873992383}
   m_cost: 150
   m_name: Lion

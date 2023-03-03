@@ -36,6 +36,11 @@ public class AnimalBehavior : MonoBehaviour
 
     private List<Vector3> penCorners;
 
+    private List<Vector3> moveLocations = new List<Vector3>();
+
+    private PlayerMovement currentPlayer; 
+
+
     //ActionStates for idling and executing an action
     public enum ActionState { IDLE, WANDER, FOLLOW };
     ActionState state = ActionState.IDLE;
@@ -92,9 +97,9 @@ public class AnimalBehavior : MonoBehaviour
 
     public Node.Status WanderAround()
     {
-        int spotsPerPen = tempPenSpots.Count;
+        int spotsPerPen = moveLocations.Count;
         int randomSpot = Random.Range(0, spotsPerPen);
-        return GoToLocation(tempPenSpots[randomSpot]);
+        return GoToLocation(moveLocations[randomSpot]);
     }
 
     public Node.Status FollowPlayer()
@@ -103,11 +108,9 @@ public class AnimalBehavior : MonoBehaviour
         int randomPlayerIndex = Random.Range(0, amountOfPlayers);
 
         Debug.Log("FIND PLAYER NOW");
-
-        GameObject playerInScene = GameObject.Find($"{players[randomPlayerIndex]}");
-
-        if (playerInScene == true)
-            return GoToLocation(players[randomPlayerIndex].transform.position);
+        
+        if (currentPlayer != null)
+            return GoToLocation(currentPlayer.transform.position);
         else
             return Node.Status.FAILURE;
     }
@@ -155,4 +158,13 @@ public class AnimalBehavior : MonoBehaviour
         zPosXNeg = new Vector3(-0.5f, 0, 0.5f);
     }
 
+    public void SetMoveLocations(List<Vector3> locations)
+    {
+        moveLocations = locations; 
+    }
+
+    public void SetCurrentPlayer(PlayerMovement player)
+    {
+        currentPlayer = player; 
+    }
 }
