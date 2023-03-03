@@ -27,7 +27,9 @@ PERIOD - cycle right
 
 =Bugs=
 -The visitor occasionally jitters if it hits a corner of a pen. We believe this was fixed, but it may occur.
--The visitor also may appear to "float" due to jagged parts of the NavMesh pushing it off the ground. 
+-The visitor also may appear to "float" due to jagged parts of the NavMesh pushing it off the ground.
+-Visitors colliding with large buildings may shake violently afterwards.
+-Animals may randomly have issues with pathfinding to players in a specific orientation. 
 
 =Unity Asset Store Assets=
 
