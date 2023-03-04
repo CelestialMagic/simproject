@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3223642785067662652}
   - component: {fileID: 6860387711040029044}
   - component: {fileID: 6860387711040029041}
+  - component: {fileID: -1388066209089737738}
   m_Layer: 0
   m_Name: Restaurant
   m_TagString: Building
@@ -31,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3144142651131269512}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.284894, y: -1.5046935, z: 0.57219076}
+  m_LocalPosition: {x: 4.345106, y: -1.5046935, z: 0.57219076}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -165,6 +166,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayText: {fileID: 2790589007807517654}
+--- !u!208 &-1388066209089737738
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3144142651131269512}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.1120002, y: 1.7310001, z: 2.7140002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.7760001, z: 1.4050001}
+  m_TimeToStationary: 0.5
 --- !u!1 &4047869321605348719
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5540749828994318924}
   - component: {fileID: 5592142444395935909}
   - component: {fileID: 5909713445351734335}
+  - component: {fileID: -4912388973594207558}
   m_Layer: 0
   m_Name: blue_house
   m_TagString: Untagged
@@ -153,6 +154,22 @@ MonoBehaviour:
   m_name: Gift Shop
   m_description: Generates constant money at random times
   generateBuffer: 10
+--- !u!208 &-4912388973594207558
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2388869423274568273}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.3630002, y: 1.669, z: 2.204}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.082, y: 1.6780001, z: 0.277}
+  m_TimeToStationary: 0.5
 --- !u!1 &3553254337905850724
 GameObject:
   m_ObjectHideFlags: 0

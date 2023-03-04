@@ -1111,6 +1111,7 @@ GameObject:
   - component: {fileID: 7934474740509989298}
   - component: {fileID: 7934474740509989292}
   - component: {fileID: 7934474740509989293}
+  - component: {fileID: 1976598109230204104}
   m_Layer: 0
   m_Name: 'Carousel '
   m_TagString: Untagged
@@ -1200,6 +1201,22 @@ MonoBehaviour:
   - 1
   - 1.5
   - 2
+--- !u!208 &1976598109230204104
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4005425244558650922}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3, y: 0.5, z: 2.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &5077773823423321704
 GameObject:
   m_ObjectHideFlags: 0

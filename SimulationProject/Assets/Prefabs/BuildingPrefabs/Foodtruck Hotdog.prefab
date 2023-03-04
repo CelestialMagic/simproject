@@ -449,6 +449,7 @@ GameObject:
   - component: {fileID: 451518338}
   - component: {fileID: 451518337}
   - component: {fileID: 451518339}
+  - component: {fileID: 4560070457172201510}
   m_Layer: 0
   m_Name: Foodtruck Hotdog
   m_TagString: Untagged
@@ -587,3 +588,19 @@ MonoBehaviour:
   m_description: Generates a random amount of money over time
   min: 25
   max: 30
+--- !u!208 &4560070457172201510
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4496922693050151248}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.578, y: 2.611, z: 2.368}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.45200002, y: 2.611, z: -0.66}
+  m_TimeToStationary: 0.5
