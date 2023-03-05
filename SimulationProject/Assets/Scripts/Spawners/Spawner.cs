@@ -67,7 +67,7 @@ public class Spawner : PurchaseObject
     //SpawnObject() allows players to place an object
     protected override void SpawnObject()
     {
-        //Null check for play er
+        //Null check for player
         if (currentPlayer != null)
         {
             float place = currentPlayer.GetMenuPlace();
@@ -150,6 +150,7 @@ public class Spawner : PurchaseObject
 
         if(currentPlayer != null)
         animalComp.GetBehavior().SetCurrentPlayer(currentPlayer);
+
         animalComponents.Add(animalComp);
         spawnedAnimals.Add(animal);
 
@@ -164,7 +165,6 @@ public class Spawner : PurchaseObject
     {
         ((Building)objects[currentIndex]).transform.position = gameObject.transform.position;
         DestroySpawnedAnimals();
-        //LocationManager.RemoveLocation(spawnerToDestroy);
         LocationManager.RemoveLocation(this.transform.parent.gameObject);
         Destroy(spawnerToDestroy);
         GameObject building = ((Building)objects[currentIndex]).ReturnSpawnedObject();

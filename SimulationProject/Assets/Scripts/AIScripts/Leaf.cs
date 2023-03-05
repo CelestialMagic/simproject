@@ -11,14 +11,12 @@ public class Leaf : Node
     public Leaf() { }
     public Leaf(string n, Tick pm)
     {
-
         name = n;
         ProcessMethod = pm;
     }
 
     public override Status Process()
     {
-
         if (ProcessMethod != null)
             return ProcessMethod();
         return Status.FAILURE;

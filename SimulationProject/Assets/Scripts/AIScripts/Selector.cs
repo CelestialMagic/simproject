@@ -20,7 +20,6 @@ public class Selector : Node
 
         if (childStatus == Status.SUCCESS)
         {
-
             currentChild = 0;
             return Status.SUCCESS;
         }

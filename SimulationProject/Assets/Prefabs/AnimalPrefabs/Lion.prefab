@@ -407,7 +407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603205127873992383}
   m_LocalRotation: {x: 0, y: 0.8632899, z: 0, w: 0.5047084}
-  m_LocalPosition: {x: -0.284894, y: -1.5046935, z: 4.9721904}
+  m_LocalPosition: {x: 4.345106, y: -1.5046935, z: 0.57219076}
   m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -447,7 +447,7 @@ BoxCollider:
   m_GameObject: {fileID: 603205127873992383}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1.72}
   m_Center: {x: 0, y: 0.52, z: 0.15}
@@ -476,6 +476,7 @@ MonoBehaviour:
   m_cost: 150
   m_name: Lion
   m_description: Roars when you get close!
+  availableLocations: []
 --- !u!82 &601941412732825327
 AudioSource:
   m_ObjectHideFlags: 0
@@ -610,7 +611,7 @@ MonoBehaviour:
   - {fileID: 2014014231836175301, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
   - {fileID: 6372581183293435050, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
   tempPenSpots: []
-  locationDistance: 0.4
+  locationDistance: 1
   waitingTime: 10
   resetTimer: 10
 --- !u!1 &603217885494530667

@@ -403,7 +403,7 @@ BoxCollider:
   m_GameObject: {fileID: 1233404657667106231}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0.8, z: 0.1}
@@ -581,7 +581,7 @@ MonoBehaviour:
   - {fileID: 2014014231836175301, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
   - {fileID: 6372581183293435050, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
   tempPenSpots: []
-  locationDistance: 0.5
+  locationDistance: 1
   waitingTime: 10
   resetTimer: 10
 --- !u!1 &1233404657667106233
