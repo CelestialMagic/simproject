@@ -5,17 +5,17 @@ using UnityEngine;
 //Code by Jessie Archer and Brandon Lo
 public class LocationManager : MonoBehaviour
 {
-    private static bool expansionPurchased = false;
+    private static bool expansionPurchased = false;//Bool that shows if expansion was purchased
 
-    private static List<GameObject> activeLocations = new List<GameObject>();//The player's current income in-game
-    private static List<GameObject> accessibleLocations = new List<GameObject>();
+    private static List<GameObject> activeLocations = new List<GameObject>();//Locations available in the scene
+    private static List<GameObject> accessibleLocations = new List<GameObject>();//Locations that can be accessed (expansion)
 
-    //Returns the Current Amount of Money
+    //Adds a location to the activeLocations list
     public static void AddLocation(GameObject location)
     {
         activeLocations.Add(location);
     }
-    //Sets the current amount of money through addition
+    //Removes a location from the active and accessible list
     public static void RemoveLocation(GameObject location)
     {
         Debug.Log(location.name);
@@ -23,12 +23,12 @@ public class LocationManager : MonoBehaviour
         Debug.Log(accessibleLocations.Remove(location));
 
     }
-
+    //Indicates that the expansion has been purchased
     public static void ToggleExpansionPurchased()
     {
         expansionPurchased = true;
     }
-
+    //Sets the available locations for visitors to enter
     public static void SetAccessibleLocations()
     {
         //Before the expansion is purchased, only make the pens in the starting area accessible
@@ -48,16 +48,17 @@ public class LocationManager : MonoBehaviour
         }
        
     }
-
+    //Returns the Accessible Locations
     public static List<GameObject> GetAccessibleLocations()
     {
         return accessibleLocations; 
     }
-
+    //Resets both location lists upon restarting the game
     public static void ResetLists()
     {
         activeLocations = new List<GameObject>();
         accessibleLocations = new List<GameObject>();
+        expansionPurchased = false; 
     }
  
 }

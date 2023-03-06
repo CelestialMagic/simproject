@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Code by Jessie Archer
+//Purchase Object provides methods and fields used by both the Spawner and
+//LandExpansion classes. 
 public abstract class PurchaseObject : MonoBehaviour
 {
     protected bool isTouchingPen;//determines if player is touching pen

@@ -3,34 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Adapted from the Behavior Tree tutorial
 public class BehaviorTree : Node
 {
-
+    //A default BehaviorTree Object
     public BehaviorTree()
     {
 
         name = "Tree";
     }
-
+    //A Behavior Tree Object with a string established
     public BehaviorTree(string n)
     {
 
         name = n;
     }
-
+    //Node Levels used 
     struct NodeLevel
     {
 
         public int level;
         public Node node;
     }
-
+    //Overridden process method to run current child
     public override Status Process()
     {
 
         return children[currentChild].Process();
     }
-
+    //Displays the layout of the behavior tree
     public void PrintTree()
     {
 

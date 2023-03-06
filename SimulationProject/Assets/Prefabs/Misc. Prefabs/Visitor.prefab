@@ -112,10 +112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee2c2fbf21f9a0449c2412a4cc72a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 6911978957391612722}
   visitable: []
   ticketBooth: {fileID: 8436620731106223639, guid: 3a5afd64527898b49b98e2193ed0b6f0, type: 3}
   locationDistance: 1.5
   idleDuration: 3
+  stopRotation: {x: 0, y: 1, z: 0}
   minInterest: 2
   maxInterest: 5
 --- !u!195 &6911978957391612722

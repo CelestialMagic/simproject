@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Code by Brandon Lo
 public class Lion : Animal, ISpawnableObject
 {
     //The overridden Update() method removes the MakeNoise() method.

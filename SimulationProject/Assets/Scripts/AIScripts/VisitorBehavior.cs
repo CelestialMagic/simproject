@@ -4,24 +4,27 @@ using UnityEngine;
 using UnityEngine.AI;
 
 //Code by Brandon Lo
-
 public class VisitorBehavior : MonoBehaviour
 {
-    private BehaviorTree tree;
-    private NavMeshAgent agent;
+    private BehaviorTree tree;//Behavior Tree
     [SerializeField]
-    private List<GameObject> visitable = new List<GameObject>();
+    private NavMeshAgent agent;//The NavMesh Agent
 
     [SerializeField]
-    private GameObject ticketBooth;
+    private List<GameObject> visitable = new List<GameObject>();//A list of places to visit
+
+    [SerializeField]
+    private GameObject ticketBooth;//The location to return to
     
+    [SerializeField]
+    private float locationDistance;//The location distance 
 
     [SerializeField]
-    private float locationDistance;
-
-    [SerializeField]
-    private float idleDuration;
+    private float idleDuration;//The idle time
     private float idleCount = 0;
+
+    [SerializeField]
+    private Vector3 stopRotation;//The Vector3 to stop rotating the visitor
 
     //each visitor will spawn with a random interest between min and max
     [SerializeField]
@@ -47,7 +50,6 @@ public class VisitorBehavior : MonoBehaviour
         //randomizing interest and starting visit location
         interest = Random.Range(minInterest, maxInterest);
 
-        agent = GetComponent<NavMeshAgent>();
         tree = new BehaviorTree();
 
         Sequence visitPark = new Sequence("Visit the Park");
@@ -76,27 +78,25 @@ public class VisitorBehavior : MonoBehaviour
         Leaf goToBuilding = new Leaf("Go To Building", GoToBuilding);
         Leaf decreaseInterest = new Leaf("Decrease Interest", DecreaseInterest);
         Leaf idle = new Leaf("Idle in Place", Idle);
-        //Leaf enterBuilding = new Leaf("Enter Into Building", EnterIntoBuilding);
+       
         visitBuilding.AddChild(goToBuilding);
         visitBuilding.AddChild(decreaseInterest);
         visitBuilding.AddChild(findNewLocation);
         visitBuilding.AddChild(idle);
-
-        //Sequence visitAnimal = new Sequence("Visit Animal");
 
         visitAttraction.AddChild(visitBuilding);
 
         return visitAttraction;
     }
 
+    //Enters park and finds locations
     public Node.Status GetTicket()
     {
         SetVisitableLocations();
-        //Debug.Log(visitable.Count);
         toVisit = Random.Range(0, visitable.Count);
         return Idle();
     }
-
+    //Finds a new location to travel to 
     public Node.Status FindNewLocation()
     {
         if (interest > 0)
@@ -108,7 +108,6 @@ public class VisitorBehavior : MonoBehaviour
                 newToVisit = Random.Range(0, visitable.Count);
             }
             toVisit = newToVisit;
-            //Debug.Log("new index:" + toVisit);
         }
         return Node.Status.SUCCESS;
     }
@@ -137,7 +136,7 @@ public class VisitorBehavior : MonoBehaviour
         else
         {
             idleCount+=Time.deltaTime;
-            this.gameObject.transform.Rotate(0.0f, 1.0f, 0.0f);
+            this.gameObject.transform.Rotate(stopRotation);
         }
         return Node.Status.RUNNING;
 
@@ -153,7 +152,6 @@ public class VisitorBehavior : MonoBehaviour
     public Node.Status DecreaseInterest()
     {
         interest--;
-        //Debug.Log(interest);
         return Node.Status.SUCCESS;
     }
 
@@ -176,14 +174,12 @@ public class VisitorBehavior : MonoBehaviour
         {
             //haven't made it to destination, agent failed
             state = ActionState.IDLE;
-            //Debug.Log("FAILED");
             return Node.Status.FAILURE;
         }
         else if (distanceToTarget < locationDistance)
         {
-            //successful!
+            //successful! Can reach location
             state = ActionState.IDLE;
-            //Debug.Log("SUCCESS!!!");
             return Node.Status.SUCCESS;
         }
         return Node.Status.RUNNING;
@@ -193,14 +189,14 @@ public class VisitorBehavior : MonoBehaviour
     private void Update()
     {
         RefreshVisitableLocations();
-        //SetVisitableLocations();
         if (treeStatus != Node.Status.SUCCESS)
         {
             treeStatus = tree.Process();
         }
      
     }
-
+    //Sets the visitable locations to the currently accessible spots
+    //These spots include the expansion if it has been purchased. 
     private void RefreshVisitableLocations()
     {
         
@@ -208,7 +204,8 @@ public class VisitorBehavior : MonoBehaviour
 
     }
 
-    //this should only get used when accessible locations NEED to be updated bc of purchases!!!
+    //this should only get used when accessible locations NEED to be updated
+    //bc of purchases!!!
     private void SetVisitableLocations()
     {
         LocationManager.SetAccessibleLocations();

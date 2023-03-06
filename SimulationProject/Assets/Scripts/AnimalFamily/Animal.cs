@@ -27,12 +27,6 @@ public abstract class Animal : ObjectFactory
                                //sound is played
 
     [SerializeField]
-    protected NavMeshAgent agent;//The navmesh agent of the animal
-
-    [SerializeField]
-    protected Transform spawnPos;//The animal's spawned position
-
-    [SerializeField]
     protected AnimalBehavior behavior; //The animal behavior attached to the animal
 
 
@@ -81,20 +75,12 @@ public abstract class Animal : ObjectFactory
         Instantiate(gameObject);
     }
 
- 
 
-    protected void Start()
-    {
-        agent = this.GetComponent<NavMeshAgent>();
-        spawnPos = this.GetComponent<Transform>();
-    }
 
     //Update() is used primarily to play animal sound effects
-    //This may be overridden for various AI behaviors
     protected virtual void Update()
     {
         MakeNoise(defaultSound, volume);
-        //LocateNextSpot();
     }
 
     //MakeNoise() is used to play a sound after a given time

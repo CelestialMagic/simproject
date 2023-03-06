@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Code by Jessie Archer
 public class DecorativeBuilding : Building, ISpawnableObject
 {
     //Decorative Building overrides GenerateMoney() in order to gradually

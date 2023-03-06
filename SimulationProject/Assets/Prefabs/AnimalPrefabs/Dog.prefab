@@ -577,6 +577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f8996dce4fe29a478e7769e10a13fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 5492508144105591822}
+  spawnPos: {fileID: 1233404657666685329}
   players:
   - {fileID: 2014014231836175301, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
   - {fileID: 6372581183293435050, guid: f82fde5bf4167499d885c940db30b07d, type: 3}

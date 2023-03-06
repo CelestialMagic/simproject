@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Code by Brandon Lo, Noel Paredes, and Jessie Archer
 public class Restaurant : Building, ISpawnableObject
 {
     //restaurant generates a random amount of money between

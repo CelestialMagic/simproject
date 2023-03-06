@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     private InputAction menuPlace;//A single binding representing placing an object
 
 
-
+    //Enables Player Moveset
     private void OnEnable()
     {
         sideMovement.Enable();
@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         menuPlace.Enable();
 
     }
-
+    //Disables Player Moveset 
     private void OnDisable()
     {
         sideMovement.Disable();
@@ -77,12 +77,14 @@ public class PlayerMovement : MonoBehaviour
     {
         pRenderer.material.color = color;
     }
-
+    //GetMenuPlace() is a public getter method used to determine if player
+    //is pressing the menu cycle keys
     public float GetMenuValue()
     {
         return menuCycle.ReadValue<float>();
     }
-
+    //GetMenuPlace() is a public getter method used to determine if player
+    //is pressing down their place key
     public float GetMenuPlace()
     {
         return menuPlace.ReadValue<float>();

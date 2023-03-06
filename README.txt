@@ -1,4 +1,3 @@
-First Playtest
 Jessie Archer
 Brandon Lo
 Noel M. Paredes 
@@ -24,12 +23,18 @@ COMMA - open menu
 M - cycle left
 PERIOD - cycle right
 
+=AI Note=
+-Animals will begin Idle, move to a random spot in pen, and then wait for the player to approach the pen. 
+-Animals will wander again after the player leaves the pen radius. 
+-After some time, newly spawned animals may not move due to what is believed to be a memory-issue. This is not gamebreaking, but it is worth noting. 
 
 =Bugs=
 -The visitor occasionally jitters if it hits a corner of a pen. We believe this was fixed, but it may occur.
 -The visitor also may appear to "float" due to jagged parts of the NavMesh pushing it off the ground.
 -Visitors colliding with large buildings may shake violently afterwards.
 -Animals may randomly have issues with pathfinding to players in a specific orientation. 
+
+
 
 =Unity Asset Store Assets=
 

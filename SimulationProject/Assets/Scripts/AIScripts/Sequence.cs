@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Adapted from the Behavior Tree tutorial
 public class Sequence : Node
 {
-
+    //Sequence Constructor
     public Sequence(string n)
     {
 
         name = n;
     }
-
+    //Process() method for Sequence
     public override Status Process()
     {
 
@@ -19,6 +19,7 @@ public class Sequence : Node
         if (childStatus == Status.FAILURE) return childStatus;
 
         currentChild++;
+        //Resets index of children
         if (currentChild >= children.Count)
         {
 

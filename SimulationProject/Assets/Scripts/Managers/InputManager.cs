@@ -4,8 +4,8 @@ using System.Security.Cryptography;
 using UnityEngine;
 
 //Code by Brandon Lo
-//InputManager is a Work-in-Progress Script that will be developed
-//more in Playtest 2
+//InputManager is a deprecated script. It has been scrapped in favor of using
+//the Spawner class, which detects players entering the range of the pen
 public class InputManager : MonoBehaviour
 {
     private bool inRange = false;//Determines if the player is in-range

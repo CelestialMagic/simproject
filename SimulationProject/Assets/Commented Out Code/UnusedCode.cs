@@ -92,4 +92,7 @@ public class UnusedCode : MonoBehaviour
         }
     }
     */
+    //In VisitorBehavior
+    //Sequence visitAnimal = new Sequence("Visit Animal");
+    //Leaf enterBuilding = new Leaf("Enter Into Building", EnterIntoBuilding);
 }

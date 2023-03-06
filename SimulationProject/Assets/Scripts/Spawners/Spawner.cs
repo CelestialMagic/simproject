@@ -6,9 +6,9 @@ using UnityEngine;
 public class Spawner : PurchaseObject
 {
 
-    [SerializeField] public List<Transform> penSpots;
+    [SerializeField] public List<Transform> penSpots;//A list of waypoints within the current pen
 
-    [SerializeField] private Spawner penSpawner; 
+    [SerializeField] private Spawner penSpawner;//The spawner object of pen 
     [SerializeField]
     private List<ObjectFactory> objects;//A list of available objects to buy (buildings and animals)
 
@@ -144,17 +144,21 @@ public class Spawner : PurchaseObject
     //SpawnAnimals() spawns an animal object and adds it to a list of spawnedAnimals,
     private void SpawnAnimal()
     {
+        //Animal is spawned and animal component is saved
         ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
         GameObject animal = ((Animal)objects[currentIndex]).ReturnSpawnedObject();
         Animal animalComp = animal.GetComponent<Animal>();
-
+        //If-statement performs null check and updates the animal component to
+        //the current player in pen radius. 
         if(currentPlayer != null)
         animalComp.GetBehavior().SetCurrentPlayer(currentPlayer);
-
+      
+        //Spawned Animal and its component are added to lists 
         animalComponents.Add(animalComp);
         spawnedAnimals.Add(animal);
-
+        //AI location is set
         animalComp.SetAnimalLocation(penSpawner);
+        //Animal price is deducted from money 
         MoneyManager.BuyItem(((Animal)objects[currentIndex]).cost);
         placeIsHeld = true;
 
@@ -163,27 +167,37 @@ public class Spawner : PurchaseObject
     //and places the pen at the previous location
     private void SpawnBuilding()
     {
+        //Building location is set
         ((Building)objects[currentIndex]).transform.position = gameObject.transform.position;
+
+        //Animals are destroyed, pen location is removed from list for visitors,
+        //and spawner is destroyed
         DestroySpawnedAnimals();
         LocationManager.RemoveLocation(this.transform.parent.gameObject);
         Destroy(spawnerToDestroy);
+
+        //Building is spawned, added to visitor location list, and purchased. 
         GameObject building = ((Building)objects[currentIndex]).ReturnSpawnedObject();
         LocationManager.AddLocation(building);
         LocationManager.SetAccessibleLocations();
         MoneyManager.BuyItem(((Building)objects[currentIndex]).cost);
         placeIsHeld = true;
     }
+
     //Returns the pen's spots to the animal.
     public List<Transform> GetAllSpots()
     {
         return penSpots;
     }
 
+    //GetTouchingPen() is a public getter method that 
     public bool GetTouchingPen()
     {
         return isTouchingPen; 
     }
-        
+
+    //UpdateAnimals() notifies all spawned animals in the pen about whether the
+    //player has entered the pen and can be followed
     private void UpdateAnimals()
     {
         foreach(Animal a in animalComponents)

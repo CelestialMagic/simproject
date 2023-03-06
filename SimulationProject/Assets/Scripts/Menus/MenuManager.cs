@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using System;
 
 //Code by Brandon Lo
-//MenuManager is a work-in-progress script to be developed in Playtest 2
+//MenuManager is currently deprecated. 
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager instance;//The MenuManager in scene

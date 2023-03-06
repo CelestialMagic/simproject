@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+//Code by Brandon Lo
 public class PauseMenu : MonoBehaviour
 {
     private static bool GamePaused = false;//sets initial paused value to false

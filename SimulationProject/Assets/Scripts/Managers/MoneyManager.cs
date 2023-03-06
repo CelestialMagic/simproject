@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+//Code by Jessie Archer
 public class MoneyManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI displayText;//Text used to display current money

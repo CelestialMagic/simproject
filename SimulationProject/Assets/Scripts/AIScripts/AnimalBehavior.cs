@@ -4,52 +4,52 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
+//Code by Noel Paredes
 public class AnimalBehavior : MonoBehaviour
 {
     private BehaviorTree tree;//The Animal Behavior Tree
+    [SerializeField]
     private NavMeshAgent agent;//The Animal NavMesh Agent
+    [SerializeField]
     private Transform spawnPos;//The Animal Spawn Position
 
     [SerializeField]
-    private List<GameObject> players = new List<GameObject>();
+    private float locationDistance;//A float representing a range to travel
 
     [SerializeField]
-    private List<Vector3> tempPenSpots = new List<Vector3>();
+    private float waitingTime;//A countdown timer used to countdown idle state
 
     [SerializeField]
-    private float locationDistance;
+    private float resetTimer;//A timer used to reset the idle time. 
 
-    [SerializeField]
-    private float waitingTime;
-
-    [SerializeField]
-    private float resetTimer;
-
+    //A list of locations the animal can move to in pen
     private List<Vector3> moveLocations = new List<Vector3>();
 
+    //A PlayerMovement representing a player to travel to
     private PlayerMovement currentPlayer;
 
+    //A bool used to determine if the animal AI can move to a player
     private bool canFollowPlayer; 
 
     //ActionStates for idling and executing an action
     public enum ActionState { IDLE, WANDER, FOLLOW };
+
+    //State is initialized to IDLE
     ActionState state = ActionState.IDLE;
 
+    //Status is set to RUNNING
     Node.Status treeStatus = Node.Status.RUNNING;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        agent = GetComponent<NavMeshAgent>();
-        spawnPos = GetComponent<Transform>();
-
-
         tree = new BehaviorTree();
 
+        //A sequence representing the states of Animal Walk Behavior
         Sequence walk = new Sequence("Walk Around Pen");
         
-
+       
         Leaf isIdle = new Leaf("Is Idle", IsIdle);
         Leaf wanderAround = new Leaf("Wander Around", WanderAround);
         Leaf followPlayer = new Leaf("Follow Player", FollowPlayer);
@@ -76,7 +76,7 @@ public class AnimalBehavior : MonoBehaviour
         }
     }
 
-
+    //Determines where the animal wanders to in the pen based on waypoints
     public Node.Status WanderAround()
     {
         int spotsPerPen = moveLocations.Count;
@@ -84,11 +84,9 @@ public class AnimalBehavior : MonoBehaviour
         return GoToLocation(moveLocations[randomSpot]);
     }
 
+    //Allows the AI animal to follow the player. 
     public Node.Status FollowPlayer()
     {
-        int amountOfPlayers = players.Count;
-        int randomPlayerIndex = Random.Range(0, amountOfPlayers);
-
         Debug.Log("FIND PLAYER NOW");
         
         if (canFollowPlayer)
@@ -116,7 +114,7 @@ public class AnimalBehavior : MonoBehaviour
         }
         else if (distanceToTarget < locationDistance)
         {
-            //successful!
+            //successful! Able to reach destination
             state = ActionState.IDLE;
             Debug.Log("SUCCESS!!!");
             return Node.Status.SUCCESS;
@@ -130,17 +128,23 @@ public class AnimalBehavior : MonoBehaviour
         treeStatus = tree.Process();
     }
 
-
+    //SetMoveLocations() is a public setter method 
     public void SetMoveLocations(List<Vector3> locations)
     {
         moveLocations = locations; 
     }
 
+    //SetCurrentPlayer() is a public setter method accessed by the Spawner
+    //class. It sets the current player to the player that entered the pen
+    //OnTriggerEnter().
     public void SetCurrentPlayer(PlayerMovement player)
     {
         currentPlayer = player; 
     }
 
+    //SetCanFollowPlayer() is a public setter method used to determine if
+    //the player is in range. This method is used by the Spawner class,
+    //which determines if the player is in the range of the pen.
     public void SetCanFollowPlayer(bool follow)
     {
         canFollowPlayer = follow; 

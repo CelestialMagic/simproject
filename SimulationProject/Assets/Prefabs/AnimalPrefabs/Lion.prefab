@@ -407,7 +407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603205127873992383}
   m_LocalRotation: {x: 0, y: 0.8632899, z: 0, w: 0.5047084}
-  m_LocalPosition: {x: 4.345106, y: -1.5046935, z: 0.57219076}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -607,6 +607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f8996dce4fe29a478e7769e10a13fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 3927154835909102908}
+  spawnPos: {fileID: 597814800707729107}
   players:
   - {fileID: 2014014231836175301, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
   - {fileID: 6372581183293435050, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
