@@ -337,8 +337,6 @@ MonoBehaviour:
   audioTimer: 5
   resetAudioTimer: 5
   waitPeriod: 2
-  agent: {fileID: 7695962528756804573}
-  spawnPos: {fileID: 0}
   behavior: {fileID: 6268390292507376956}
   m_prefab: {fileID: 8101637316843772605}
   m_cost: 25
@@ -481,8 +479,9 @@ MonoBehaviour:
   agent: {fileID: 7695962528756804573}
   spawnPos: {fileID: 8101637316843538077}
   locationDistance: 1
-  waitingTime: 10
-  resetTimer: 10
+  idlingTime: 8
+  shortenIdling: 4
+  resetIdleTimer: 8
 --- !u!1 &8101637316843772607
 GameObject:
   m_ObjectHideFlags: 0

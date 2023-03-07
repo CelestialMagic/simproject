@@ -17,10 +17,13 @@ public class AnimalBehavior : MonoBehaviour
     private float locationDistance;//A float representing a range to travel
 
     [SerializeField]
-    private float waitingTime;//A countdown timer used to countdown idle state
+    private float idlingTime;//A countdown timer used to countdown idle state
 
     [SerializeField]
-    private float resetTimer;//A timer used to reset the idle time. 
+    private float shortenIdling;//Subtracts the idlingTime by however much for ShortIdle
+
+    [SerializeField]
+    private float resetIdleTimer;//A timer used to reset the idle time.
 
     //A list of locations the animal can move to in pen
     private List<Vector3> moveLocations = new List<Vector3>();
@@ -51,6 +54,7 @@ public class AnimalBehavior : MonoBehaviour
         
        
         Leaf isIdle = new Leaf("Is Idle", IsIdle);
+        Leaf shortIdle = new Leaf("Short Idle", ShortIdle);
         Leaf wanderAround = new Leaf("Wander Around", WanderAround);
         Leaf followPlayer = new Leaf("Follow Player", FollowPlayer);
 
@@ -58,7 +62,10 @@ public class AnimalBehavior : MonoBehaviour
         
         walk.AddChild(isIdle);
         walk.AddChild(wanderAround);
+        walk.AddChild(shortIdle);
         walk.AddChild(followPlayer);
+        walk.AddChild(shortIdle);
+        walk.AddChild(wanderAround);
         tree.AddChild(walk);
 
         tree.PrintTree();
@@ -67,11 +74,31 @@ public class AnimalBehavior : MonoBehaviour
     //Determines a random time for the animal to wait before wandering.
     public Node.Status IsIdle()
     {
-        if (waitingTime - Time.deltaTime <= 0)
+        if (idlingTime - Time.deltaTime <= 0)
+        {
+            idlingTime = resetIdleTimer;
             return Node.Status.SUCCESS;
+        }
         else
         {
-            waitingTime -= Time.deltaTime;
+            idlingTime -= Time.deltaTime;
+            return Node.Status.RUNNING;
+        }
+    }
+
+    //Behaves like IsIdle, but now shortens the time for idling
+    public Node.Status ShortIdle()
+    {
+        float shortened = idlingTime - shortenIdling;
+
+        if (shortened - Time.deltaTime <= 0)
+        {
+            idlingTime = resetIdleTimer;
+            return Node.Status.SUCCESS;
+        }
+        else
+        {
+            idlingTime -= Time.deltaTime;
             return Node.Status.RUNNING;
         }
     }
@@ -81,6 +108,8 @@ public class AnimalBehavior : MonoBehaviour
     {
         int spotsPerPen = moveLocations.Count;
         int randomSpot = Random.Range(0, spotsPerPen);
+
+        Debug.Log("WANDER NOW");
         return GoToLocation(moveLocations[randomSpot]);
     }
 
@@ -102,7 +131,6 @@ public class AnimalBehavior : MonoBehaviour
         if (state == ActionState.IDLE)
         {
             agent.SetDestination(destination);
-            Debug.Log("WANDER NOW");
             state = ActionState.WANDER;
         }
         else if (Vector3.Distance(agent.pathEndPosition, destination) >= locationDistance)

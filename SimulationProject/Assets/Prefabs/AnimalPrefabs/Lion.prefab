@@ -469,8 +469,6 @@ MonoBehaviour:
   audioTimer: 0
   resetAudioTimer: 0
   waitPeriod: 0
-  agent: {fileID: 3927154835909102908}
-  spawnPos: {fileID: 0}
   behavior: {fileID: 3095471209513106161}
   m_prefab: {fileID: 603205127873992383}
   m_cost: 150
@@ -609,13 +607,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 3927154835909102908}
   spawnPos: {fileID: 597814800707729107}
-  players:
-  - {fileID: 2014014231836175301, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
-  - {fileID: 6372581183293435050, guid: f82fde5bf4167499d885c940db30b07d, type: 3}
-  tempPenSpots: []
   locationDistance: 1
-  waitingTime: 10
-  resetTimer: 10
+  idlingTime: 15
+  shortenIdling: 8
+  resetIdleTimer: 15
 --- !u!1 &603217885494530667
 GameObject:
   m_ObjectHideFlags: 0
