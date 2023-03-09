@@ -18,8 +18,10 @@ public class TargetGroup : MonoBehaviour
     {
         foreach(GameObject p in PlayerMovement.GetOnlinePlayers())
         {
-            if(targetGroup.FindMember(p.transform) < 0)
-            targetGroup.AddMember(p.transform, weight, radius);
+            if (targetGroup.FindMember(p.transform) < 0)
+                targetGroup.AddMember(p.transform, weight, radius);
+            else if (targetGroup.FindMember(null) != -1)
+                targetGroup.RemoveMember(null);
         }
         
     }

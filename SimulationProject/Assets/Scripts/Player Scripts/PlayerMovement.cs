@@ -42,6 +42,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GameObject prefab;
 
+    [SerializeField]
+    private List <Color> colors; 
+
     //Enables Player Moveset
     private void OnEnable()
     {
@@ -68,12 +71,14 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         onlinePlayers.Add(this.gameObject);
-        foreach(GameObject p in onlinePlayers)
+        pRenderer.material.color = colors[Random.Range(0, colors.Count - 1)];
+        foreach (GameObject p in onlinePlayers)
         {
             Debug.Log(p);
         }
        
     }
+
     // Update is called once per frame
     void Update()
     {

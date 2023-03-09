@@ -117,7 +117,7 @@ MonoBehaviour:
   moveSpeed: 2
   rotationSpeed: 720
   rb: {fileID: 2014014231836175300}
-  pRenderer: {fileID: 0}
+  pRenderer: {fileID: 2014014231836175305}
   sideMovement:
     m_Name: Side Movement
     m_Type: 0
@@ -236,6 +236,15 @@ MonoBehaviour:
     m_Flags: 0
   view: {fileID: 2527868616903152198}
   prefab: {fileID: 2014014231836175301}
+  colors:
+  - {r: 1, g: 0, b: 0, a: 0}
+  - {r: 1, g: 0.61711216, b: 0, a: 0}
+  - {r: 0.9388454, g: 1, b: 0, a: 0}
+  - {r: 0, g: 1, b: 0.7773812, a: 0}
+  - {r: 0, g: 0.28738022, b: 1, a: 0}
+  - {r: 0.42635584, g: 0, b: 1, a: 0}
+  - {r: 0.81453896, g: 0, b: 1, a: 0}
+  - {r: 1, g: 0, b: 0.4914298, a: 0}
 --- !u!54 &2014014231836175300
 Rigidbody:
   m_ObjectHideFlags: 0
