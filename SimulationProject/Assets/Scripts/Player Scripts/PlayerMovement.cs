@@ -37,8 +37,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private PhotonView view;
 
-    [SerializeField]
-    private CinemachineVirtualCamera cam;
+    private static List<GameObject> onlinePlayers = new List<GameObject>();
 
     [SerializeField]
     private GameObject prefab;
@@ -68,8 +67,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        if(view.IsMine)
-        cam.LookAt = prefab.transform;
+        onlinePlayers.Add(this.gameObject);
+        foreach(GameObject p in onlinePlayers)
+        {
+            Debug.Log(p);
+        }
+       
     }
     // Update is called once per frame
     void Update()
@@ -117,5 +120,9 @@ public class PlayerMovement : MonoBehaviour
         return menuPlace.ReadValue<float>();
     }
 
+    public static List<GameObject> GetOnlinePlayers()
+    {
+        return onlinePlayers;
+    }
     
 }
