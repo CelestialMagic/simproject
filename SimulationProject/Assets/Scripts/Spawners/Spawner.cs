@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 //Code by Jessie Archer, Brandon Lo, and Noel Paredes
 public class Spawner : PurchaseObject
@@ -38,6 +39,7 @@ public class Spawner : PurchaseObject
     {
         UpdateAnimals();
         DisplayCurrentObject();
+        Debug.Log("About to Spawn");
         SpawnObject();
         ScrollObjects();
         
@@ -68,7 +70,7 @@ public class Spawner : PurchaseObject
     protected override void SpawnObject()
     {
         //Null check for player
-        if (currentPlayer != null)
+        if (currentPlayer != null && currentPlayer.GetView().IsMine )
         {
             float place = currentPlayer.GetMenuPlace();
             //Switch statement executes based on input
@@ -76,12 +78,14 @@ public class Spawner : PurchaseObject
             if (placeIsHeld && place == 0)
             {
                 placeIsHeld = false;
+                
 
             }else if (!placeIsHeld && isTouchingPen && place == 1)
             {
                 if (objects[currentIndex] is Animal && ((Animal)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
                 {
                     SpawnAnimal();
+                    
                 }
                 //Building Object Code
                 else if (objects[currentIndex] is Building && ((Building)objects[currentIndex]).cost <= MoneyManager.GetCurrentIncome())
@@ -99,7 +103,7 @@ public class Spawner : PurchaseObject
     private void ScrollObjects()
     {
         //user selects choice
-        if (currentPlayer != null)
+        if (currentPlayer != null && currentPlayer.GetView().IsMine)
         {
             float scrollSelect = currentPlayer.GetMenuValue();
             switch (scrollSelect)

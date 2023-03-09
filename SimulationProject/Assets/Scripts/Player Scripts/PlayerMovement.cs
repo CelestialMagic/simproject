@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Photon.Pun;
+using Cinemachine;
 
 //Code by Jessie Archer
 public class PlayerMovement : MonoBehaviour
@@ -32,6 +34,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private InputAction menuPlace;//A single binding representing placing an object
 
+    [SerializeField]
+    private PhotonView view;
+
+    [SerializeField]
+    private CinemachineVirtualCamera cam;
+
+    [SerializeField]
+    private GameObject prefab;
 
     //Enables Player Moveset
     private void OnEnable()
@@ -51,24 +61,41 @@ public class PlayerMovement : MonoBehaviour
         menuPlace.Disable();
     }
 
+   public PhotonView GetView()
+    {
+        return view; 
+    }
+
+    private void Awake()
+    {
+        if(view.IsMine)
+        cam.LookAt = prefab.transform;
+    }
     // Update is called once per frame
     void Update()
     {
-        //Reads movement value from input system
-        float sideInput = sideMovement.ReadValue<float>();
-        float forwardInput = forwardMovement.ReadValue<float>();
-
-        Vector3 movementDirection = new Vector3(forwardInput, 0, sideInput);
-
-        m_ToApplyMove = new Vector3(forwardInput * moveSpeed * Time.deltaTime, 0, sideInput * moveSpeed * Time.deltaTime);
-        transform.Translate(m_ToApplyMove, Space.World);
-
-        //Determines when to rotate the player character
-        if(m_ToApplyMove != Vector3.zero && movementDirection != Vector3.zero)
+        if (view.IsMine)
         {
-            Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            //Reads movement value from input system
+            float sideInput = sideMovement.ReadValue<float>();
+            float forwardInput = forwardMovement.ReadValue<float>();
+
+            Vector3 movementDirection = new Vector3(forwardInput, 0, sideInput);
+
+            m_ToApplyMove = new Vector3(forwardInput * moveSpeed * Time.deltaTime, 0, sideInput * moveSpeed * Time.deltaTime);
+            transform.Translate(m_ToApplyMove, Space.World);
+
+            //Determines when to rotate the player character
+            if (m_ToApplyMove != Vector3.zero && movementDirection != Vector3.zero)
+            {
+                Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            }
+
+            
+         
         }
+        
 
     }
 
@@ -90,5 +117,5 @@ public class PlayerMovement : MonoBehaviour
         return menuPlace.ReadValue<float>();
     }
 
-
+    
 }
