@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 //Code by Brandon Lo
 public class VisitorDespawner : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class VisitorDespawner : MonoBehaviour
     {
         if (other.tag == "Visitor")
         {
+            PhotonNetwork.Destroy(other.gameObject);
             Destroy(other.gameObject);
+
         }
     }
 }

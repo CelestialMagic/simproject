@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 //Code by Jessie Archer
 public class VisitorSpawner : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class VisitorSpawner : MonoBehaviour
     [SerializeField]
     private float timeVariation;//A float to vary the countdownTimer by  
 
+    [SerializeField]
+    private string visitorPrefabName;
 
     // Update is called once per frame
     void Update()
@@ -46,6 +49,6 @@ public class VisitorSpawner : MonoBehaviour
     {
         GameObject visitor = visitorPrefabs[Random.Range(0, visitorPrefabs.Count - 1)];
         visitor.transform.position = gameObject.transform.position; 
-        Instantiate(visitor);
+        PhotonNetwork.Instantiate(visitorPrefabName, gameObject.transform.position, Quaternion.identity, 0);
     }
 }
