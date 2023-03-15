@@ -450,8 +450,9 @@ GameObject:
   - component: {fileID: 451518337}
   - component: {fileID: 451518339}
   - component: {fileID: 4560070457172201510}
+  - component: {fileID: -5263334192357473299}
   m_Layer: 0
-  m_Name: Foodtruck Hotdog
+  m_Name: HotDogTruckPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -465,7 +466,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4496922693050151248}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 4.3451056, y: -1.5046935, z: -3.8278098}
+  m_LocalPosition: {x: 4.3451056, y: -1.5046935, z: 4.9721904}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -586,6 +587,7 @@ MonoBehaviour:
   m_cost: 50
   m_name: Hot Dog Truck
   m_description: Generates a random amount of money over time
+  m_prefabName: HotDogTruckPrefab
   min: 25
   max: 30
 --- !u!208 &4560070457172201510
@@ -604,3 +606,25 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.45200002, y: 2.611, z: -0.66}
   m_TimeToStationary: 0.5
+--- !u!114 &-5263334192357473299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4496922693050151248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0

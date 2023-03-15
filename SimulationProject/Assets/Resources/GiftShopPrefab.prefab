@@ -16,8 +16,9 @@ GameObject:
   - component: {fileID: 5592142444395935909}
   - component: {fileID: 5909713445351734335}
   - component: {fileID: -4912388973594207558}
+  - component: {fileID: 8889156054676422792}
   m_Layer: 0
-  m_Name: blue_house
+  m_Name: GiftShopPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,6 +154,7 @@ MonoBehaviour:
   m_cost: 80
   m_name: Gift Shop
   m_description: Generates constant money at random times
+  m_prefabName: GiftShopPrefab
   generateBuffer: 10
 --- !u!208 &-4912388973594207558
 NavMeshObstacle:
@@ -170,6 +172,28 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.082, y: 1.6780001, z: 0.277}
   m_TimeToStationary: 0.5
+--- !u!114 &8889156054676422792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2388869423274568273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &3553254337905850724
 GameObject:
   m_ObjectHideFlags: 0

@@ -33,6 +33,7 @@ public abstract class Animal : ObjectFactory
     [SerializeField] GameObject m_prefab;//Animal prefab
     [SerializeField] int m_cost;//Animal cost
     [SerializeField] string m_name;//Animal name
+    [SerializeField] string m_prefabName;//Animal name
     [SerializeField] string m_description;//Animal description
 
     [SerializeField]
@@ -57,6 +58,11 @@ public abstract class Animal : ObjectFactory
         set { name = m_name; }
     }
 
+    public string prefabName//Get and Set established for Interface field prefab
+    {
+        get { return m_prefabName; }
+        set { prefabName = m_prefabName; }
+    }
     public string description//Get and Set established for Interface field prefab
     {
         get { return m_description; }

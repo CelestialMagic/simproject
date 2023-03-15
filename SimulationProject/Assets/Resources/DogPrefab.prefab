@@ -348,8 +348,10 @@ GameObject:
   - component: {fileID: 1233404657667072791}
   - component: {fileID: 5492508144105591822}
   - component: {fileID: -1530792384898164996}
+  - component: {fileID: -7801095346487589289}
+  - component: {fileID: 699413177183178234}
   m_Layer: 0
-  m_Name: Dog
+  m_Name: DogPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,6 +445,7 @@ MonoBehaviour:
   m_prefab: {fileID: 1233404657667106231}
   m_cost: 10
   m_name: Dog
+  m_prefabName: DogPrefab
   m_description: Your best friend.
   availableLocations: []
 --- !u!82 &1233404657667072791
@@ -581,6 +584,45 @@ MonoBehaviour:
   idlingTime: 10
   shortenIdling: 6
   resetIdleTimer: 10
+--- !u!114 &-7801095346487589289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233404657667106231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 699413177183178234}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &699413177183178234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233404657667106231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &1233404657667106233
 GameObject:
   m_ObjectHideFlags: 0

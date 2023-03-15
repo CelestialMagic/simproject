@@ -21,6 +21,7 @@ public abstract class Building : ObjectFactory
     [SerializeField] int m_cost;//The cost for building type
     [SerializeField] string m_name;//Building name
     [SerializeField] string m_description;//Building description
+    [SerializeField] string m_prefabName;//Building description
 
     public GameObject prefab //Get and Set established for Interface field prefab
     {
@@ -37,6 +38,12 @@ public abstract class Building : ObjectFactory
     {
         get { return m_name; }
         set { name = m_name; }
+    }
+
+    public string prefabName//Get and Set established for Interface field prefab
+    {
+        get { return m_prefabName; }
+        set { prefabName = m_prefabName; }
     }
 
     public string description//Get and Set established for Interface field prefab

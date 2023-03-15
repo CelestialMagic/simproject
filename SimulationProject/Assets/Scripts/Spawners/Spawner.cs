@@ -25,13 +25,14 @@ public class Spawner : PurchaseObject
 
     private bool isHeld;//A boolean that checks if a menu input is held down
     private int objListLength;//An integer representing the length of the 
-
+    private Vector3 spawnLocation;
     //Start() initializes the objListLength and spawnedAnimals list
     private void Start()
     {
         LocationManager.AddLocation(spawnerToDestroy);
         Debug.Log("Added location");
         objListLength = objects.Count;
+        spawnLocation = this.gameObject.transform.position;
     
     }
     // Update is called once per frame
@@ -142,6 +143,7 @@ public class Spawner : PurchaseObject
     {
         foreach(GameObject animal in spawnedAnimals)
         {
+            PhotonNetwork.Destroy(animal);
             Destroy(animal);
         }
     }
@@ -150,8 +152,11 @@ public class Spawner : PurchaseObject
     {
         //Animal is spawned and animal component is saved
         ((Animal)objects[currentIndex]).transform.position = gameObject.transform.position;
-        GameObject animal = ((Animal)objects[currentIndex]).ReturnSpawnedObject();
+
+
+        GameObject animal = ((Animal)objects[currentIndex]).ReturnSpawnedObject(((Animal)objects[currentIndex]).prefabName, spawnLocation);
         Animal animalComp = animal.GetComponent<Animal>();
+        
         //If-statement performs null check and updates the animal component to
         //the current player in pen radius. 
         if(currentPlayer != null)
@@ -178,10 +183,11 @@ public class Spawner : PurchaseObject
         //and spawner is destroyed
         DestroySpawnedAnimals();
         LocationManager.RemoveLocation(this.transform.parent.gameObject);
+        PhotonNetwork.Destroy(spawnerToDestroy);
         Destroy(spawnerToDestroy);
 
         //Building is spawned, added to visitor location list, and purchased. 
-        GameObject building = ((Building)objects[currentIndex]).ReturnSpawnedObject();
+        GameObject building = ((Building)objects[currentIndex]).ReturnSpawnedObject(((Building)objects[currentIndex]).prefabName, spawnLocation);
         LocationManager.AddLocation(building);
         LocationManager.SetAccessibleLocations();
         MoneyManager.BuyItem(((Building)objects[currentIndex]).cost);
