@@ -115,7 +115,7 @@ MonoBehaviour:
   moveSpeed: 2
   rotationSpeed: 720
   rb: {fileID: 6372581183293435051}
-  renderer: {fileID: 6372581183293435046}
+  pRenderer: {fileID: 0}
   sideMovement:
     m_Name: Side Movement
     m_Type: 0
@@ -191,6 +191,18 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  menuPlace:
+    m_Name: Menu Place
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 0605a2d5-da68-409a-8e82-bf781af582ac
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  view: {fileID: 0}
+  prefab: {fileID: 0}
+  colors: []
 --- !u!54 &6372581183293435051
 Rigidbody:
   m_ObjectHideFlags: 0
