@@ -43,7 +43,8 @@ public class PlayerMovement : MonoBehaviour
     private GameObject prefab;
 
     [SerializeField]
-    private List <Color> colors; 
+    private List <Color> colors;
+
 
     //Enables Player Moveset
     private void OnEnable()
@@ -71,17 +72,25 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         onlinePlayers.Add(this.gameObject);
-        pRenderer.material.color = colors[Random.Range(0, colors.Count - 1)];
         foreach (GameObject p in onlinePlayers)
         {
             Debug.Log(p);
         }
        
     }
+    private void Start()
+    {
+        Color color = colors[(int)Random.Range(0, colors.Count - 1)];
+
+        if (view)
+            this.view.RPC("RPC_SendColor", RpcTarget.All, new Vector3(color.r, color.g, color.b));
+
+    }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (view.IsMine)
         {
             //Reads movement value from input system
@@ -129,5 +138,11 @@ public class PlayerMovement : MonoBehaviour
     {
         return onlinePlayers;
     }
-    
+
+    [PunRPC]
+    private void RPC_SendColor(Vector3 color)
+    {
+        gameObject.GetComponentInChildren<Renderer>().material.color = new Color(color.x, color.y, color.z); 
+    }
+
 }
