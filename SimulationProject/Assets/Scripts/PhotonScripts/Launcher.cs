@@ -16,10 +16,11 @@ using Photon.Realtime;
     private byte maxPlayersPerRoom = 4;
 
     [SerializeField]
-    private GameObject roomPanel;
+    private GameObject roomPanel;//A game object that holds the create and join buttons
 
-    [SerializeField] private TMP_InputField createInput;
-    [SerializeField] private TMP_InputField joinInput;
+    [SerializeField] private TMP_InputField createInput;//Input field to create a room
+    [SerializeField] private TMP_InputField joinInput;//Input field to join a room
+    [SerializeField] private string roomName; //The name of main game scene
 
     #endregion
 
@@ -122,7 +123,7 @@ using Photon.Realtime;
         if (PhotonNetwork.IsMasterClient)
         {
             PhotonNetwork.AutomaticallySyncScene = true;
-            PhotonNetwork.LoadLevel("MainScene");
+            PhotonNetwork.LoadLevel(roomName);
 
         }
             

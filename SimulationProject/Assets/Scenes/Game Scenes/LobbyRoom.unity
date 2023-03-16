@@ -2343,6 +2343,7 @@ MonoBehaviour:
   roomPanel: {fileID: 1197911462}
   createInput: {fileID: 993545813}
   joinInput: {fileID: 453101779}
+  roomName: MainScene
 --- !u!4 &1880050117
 Transform:
   m_ObjectHideFlags: 0

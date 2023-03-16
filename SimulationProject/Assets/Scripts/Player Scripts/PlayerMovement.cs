@@ -35,15 +35,15 @@ public class PlayerMovement : MonoBehaviour
     private InputAction menuPlace;//A single binding representing placing an object
 
     [SerializeField]
-    private PhotonView view;
+    private PhotonView view;//PhotonView component
 
-    private static List<GameObject> onlinePlayers = new List<GameObject>();
-
-    [SerializeField]
-    private GameObject prefab;
+    private static List<GameObject> onlinePlayers = new List<GameObject>();//List of current active players
 
     [SerializeField]
-    private List <Color> colors;
+    private GameObject prefab;//The player prefab
+
+    [SerializeField]
+    private List <Color> colors;//A list of available colors to randomly select
 
 
     //Enables Player Moveset
@@ -63,12 +63,12 @@ public class PlayerMovement : MonoBehaviour
         menuCycle.Disable();
         menuPlace.Disable();
     }
-
+    //Retrieves the PhotonView component
    public PhotonView GetView()
     {
         return view; 
     }
-
+    //Awake() adds the player to list of active players
     private void Awake()
     {
         onlinePlayers.Add(this.gameObject);
@@ -78,10 +78,11 @@ public class PlayerMovement : MonoBehaviour
         }
        
     }
+    //Start() selects a random color for the players and sends it to other players
     private void Start()
     {
         Color color = colors[(int)Random.Range(0, colors.Count - 1)];
-
+        //RPC call
         if (view)
             this.view.RPC("RPC_SendColor", RpcTarget.All, new Vector3(color.r, color.g, color.b));
 
@@ -133,12 +134,13 @@ public class PlayerMovement : MonoBehaviour
     {
         return menuPlace.ReadValue<float>();
     }
-
+    //Returns the active player objects
     public static List<GameObject> GetOnlinePlayers()
     {
         return onlinePlayers;
     }
-
+    //RPC_SendColor() sets the player to a random color and updates the other
+    //players' screens. 
     [PunRPC]
     private void RPC_SendColor(Vector3 color)
     {
