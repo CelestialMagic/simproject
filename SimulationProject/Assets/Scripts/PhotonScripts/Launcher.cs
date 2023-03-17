@@ -108,6 +108,13 @@ using Photon.Realtime;
         Debug.Log("Joined Lobby!");
     }
 
+    public override void OnJoinRandomFailed(short returnCode, string message)
+    {
+        Debug.Log("PUN Basics Tutorial/Launcher: OnJoinRandomFailed() was called by PUN. No random available, so we create one.\nCalling: PhotonNetwork.CreateRoom");
+
+    }
+
+
     public void CreateRoom()
     {
         PhotonNetwork.CreateRoom(createInput.text);
