@@ -40,7 +40,7 @@ public class Spawner : PurchaseObject
     {
         UpdateAnimals();
         DisplayCurrentObject();
-        Debug.Log("About to Spawn");
+
         SpawnObject();
         ScrollObjects();
         

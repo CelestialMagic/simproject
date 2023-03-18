@@ -117,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+
     //To be used with potential scriptableobjects
     public void Initialize(Color color)
     {
@@ -145,6 +146,12 @@ public class PlayerMovement : MonoBehaviour
     private void RPC_SendColor(Vector3 color)
     {
         gameObject.GetComponentInChildren<Renderer>().material.color = new Color(color.x, color.y, color.z); 
+    }
+
+    //resets the list of active players
+    private void OnDestroy()
+    {
+        onlinePlayers = new List<GameObject>();
     }
 
 }

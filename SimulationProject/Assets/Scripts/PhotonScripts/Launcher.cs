@@ -79,7 +79,8 @@ using Photon.Realtime;
                 PhotonNetwork.ConnectUsingSettings();
                 PhotonNetwork.GameVersion = gameVersion;
             }
-        }
+
+    }
 
     #endregion
 
@@ -106,6 +107,7 @@ using Photon.Realtime;
     {
         //base.OnJoinedLobby();
         Debug.Log("Joined Lobby!");
+        roomPanel.SetActive(true);
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
