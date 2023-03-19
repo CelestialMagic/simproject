@@ -24,7 +24,7 @@ public class VisitorBehavior : MonoBehaviour
     private float idleCount = 0;
 
     [SerializeField]
-    private Vector3 stopRotation;//The Vector3 to stop rotating the visitor
+    private Vector3 stopRotation;//The Vector3 to rotate the visitor when it stops
 
     //each visitor will spawn with a random interest between min and max
     [SerializeField]
@@ -89,13 +89,15 @@ public class VisitorBehavior : MonoBehaviour
         return visitAttraction;
     }
 
-    //Enters park and finds locations
+    //Enters park and finds locations, while idling
     public Node.Status GetTicket()
     {
         SetVisitableLocations();
         toVisit = Random.Range(0, visitable.Count);
         return Idle();
     }
+
+
     //Finds a new location to travel to 
     public Node.Status FindNewLocation()
     {
@@ -112,18 +114,7 @@ public class VisitorBehavior : MonoBehaviour
         return Node.Status.SUCCESS;
     }
 
-    //WILL BE UTILIZED IN NEXT PLAYTEST
-    //Checks if the visitor still has interest in visiting other locations
-    public Node.Status HasInterest()
-    {
-        if (interest > 0)
-        {
-            return VisitAttractionSetup().Process();
-        }
-        return ExitPark();
-    }
-
-    //Stops the agent in its place
+    //Stops the agent in its place for the amount of idle time specified
     public Node.Status Idle()
     {
         if (idleCount >= idleDuration)
