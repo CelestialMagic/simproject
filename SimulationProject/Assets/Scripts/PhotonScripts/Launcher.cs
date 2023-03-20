@@ -5,6 +5,7 @@ using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
 
+    //Code by Jessie Archer and Brandon Lo
     public class Launcher : MonoBehaviourPunCallbacks
     {
     #region Private Serializable Fields
@@ -13,7 +14,7 @@ using Photon.Realtime;
     /// </summary>
     [Tooltip("The maximum number of players per room. When a room is full, it can't be joined by new players, and so new room will be created")]
     [SerializeField]
-    private byte maxPlayersPerRoom = 4;
+    private byte maxPlayersPerRoom;
 
     [SerializeField]
     private GameObject roomPanel;//A game object that holds the create and join buttons
@@ -21,7 +22,7 @@ using Photon.Realtime;
     [SerializeField] private TMP_InputField createInput;//Input field to create a room
     [SerializeField] private TMP_InputField joinInput;//Input field to join a room
     [SerializeField] private string roomName; //The name of main game scene
-
+    [SerializeField] private string gameVersion; 
     #endregion
 
     #region Private Fields
@@ -29,16 +30,16 @@ using Photon.Realtime;
     /// <summary>
     /// This client's version number. Users are separated from each other by gameVersion (which allows you to make breaking changes).
     /// </summary>
-    string gameVersion = "1";
 
-        #endregion
 
-        #region MonoBehaviour CallBacks
+    #endregion
 
-        /// <summary>
-        /// MonoBehaviour method called on GameObject by Unity during early initialization phase.
-        /// </summary>
-        void Awake()
+    #region MonoBehaviour CallBacks
+
+    /// <summary>
+    /// MonoBehaviour method called on GameObject by Unity during early initialization phase.
+    /// </summary>
+    void Awake()
         {
             // #Critical
             // this makes sure we can use PhotonNetwork.LoadLevel() on the master client and all clients in the same room sync their level automatically
@@ -85,7 +86,7 @@ using Photon.Realtime;
     #endregion
 
     #region MonoBehaviourPunCallbacks Callbacks
-
+    //OnConnectedToMaster() activates create and join menu and joins a lobby
     public override void OnConnectedToMaster()
     {
         Debug.Log("PUN Basics Tutorial/Launcher: OnConnectedToMaster() was called by PUN");
@@ -94,7 +95,7 @@ using Photon.Realtime;
         PhotonNetwork.JoinLobby();
 
     }
-
+    //OnDisconnected disables the lobby panel
     public override void OnDisconnected(DisconnectCause cause)
     {
         Debug.LogWarningFormat("PUN Basics Tutorial/Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
@@ -102,31 +103,31 @@ using Photon.Realtime;
     }
 
     #endregion
-
+    //OnJobbyLobby() activates the join and create menu
     public override void OnJoinedLobby()
     {
         //base.OnJoinedLobby();
         Debug.Log("Joined Lobby!");
         roomPanel.SetActive(true);
     }
-
+    //OnJoinRandomFailed is from Photon Tutorial
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
         Debug.Log("PUN Basics Tutorial/Launcher: OnJoinRandomFailed() was called by PUN. No random available, so we create one.\nCalling: PhotonNetwork.CreateRoom");
 
     }
 
-
+    //CreateRoom() creates a room based on user input
     public void CreateRoom()
     {
         PhotonNetwork.CreateRoom(createInput.text);
     }
-
+    //JoinRoom() joins a room based on user input
     public void JoinRoom()
     {
         PhotonNetwork.JoinRoom(joinInput.text);
     }
-
+    //OnJoinedRoom() loads the room and syncs the scene
     public override void OnJoinedRoom()
     {
         if (PhotonNetwork.IsMasterClient)

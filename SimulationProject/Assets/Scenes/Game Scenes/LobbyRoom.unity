@@ -3658,11 +3658,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00265de630f3b49b38d0fc1331915dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlayersPerRoom: 4
+  maxPlayersPerRoom: 2
   roomPanel: {fileID: 1197911462}
   createInput: {fileID: 993545813}
   joinInput: {fileID: 453101779}
   roomName: MainScene
+  gameVersion: 1
 --- !u!4 &1880050117
 Transform:
   m_ObjectHideFlags: 0

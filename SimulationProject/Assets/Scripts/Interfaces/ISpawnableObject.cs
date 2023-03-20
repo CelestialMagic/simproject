@@ -10,6 +10,6 @@ public interface ISpawnableObject
     int cost { get; set; }//Get and Set for cost int
     string name { get; set; }//Get and Set for string name
     string description { get; set; }//Get and Set for string description
-    string prefabName { get; set; }
+    string prefabName { get; set; }//Get and Set for string prefabName (used for PhotonNetwork.Instantiate())
 
 }

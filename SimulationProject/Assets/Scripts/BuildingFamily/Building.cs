@@ -40,13 +40,13 @@ public abstract class Building : ObjectFactory
         set { name = m_name; }
     }
 
-    public string prefabName//Get and Set established for Interface field prefab
+    public string prefabName//Get and Set established for Interface field prefab name
     {
         get { return m_prefabName; }
         set { prefabName = m_prefabName; }
     }
 
-    public string description//Get and Set established for Interface field prefab
+    public string description//Get and Set established for Interface field description
     {
         get { return m_description; }
         set { description = m_description; }

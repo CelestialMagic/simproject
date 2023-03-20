@@ -10,7 +10,7 @@ public class MainMenuNavigator : MonoBehaviour
     [SerializeField] GameObject baseMenu;//A game object representing the base menu
     [SerializeField] GameObject settingsMenu;//A game object representing the 
     [SerializeField] string mainScene; //A string representing the main scene
-    [SerializeField] string loadScene; 
+    [SerializeField] string loadScene; //A string representing the loading scene/lobby
 
     [SerializeField]
     List<int> resWidths;//A list of screen size widths

@@ -37,7 +37,7 @@ public abstract class Animal : ObjectFactory
     [SerializeField] string m_description;//Animal description
 
     [SerializeField]
-    private List<Transform> availableLocations = new List<Transform>();
+    private List<Transform> availableLocations = new List<Transform>();//A list representing locations in pen to travel to. 
 
     public GameObject prefab//Get and Set established for Interface field prefab
     {

@@ -9,8 +9,9 @@ public class MoneyManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI displayText;//Text used to display current money
     private static float currentIncome;//The player's current income in-game
-    private static PhotonView photonView;
+    private static PhotonView photonView;//PhotonView component
 
+    //Start retrieves the PhotonView, since it can not be serialized 
     public void Start()
     {
         photonView = gameObject.GetComponent<PhotonView>();
@@ -46,18 +47,19 @@ public class MoneyManager : MonoBehaviour
         currentIncome = 0;
     }
 
+    //Add Income is an RPC call used to add money to both players
     [PunRPC]
     public void AddIncome(float amount)
     {
         currentIncome += amount;
     }
-
+    //SubtractIncome is an RPC call used to deduct money for both players
     [PunRPC]
     public void SubtractIncome(float amount)
     {
         currentIncome -= amount;
     }
-
+    //SyncIncome() is an RPC call intended to sync player income
     [PunRPC]
     public void SyncIncome()
     {

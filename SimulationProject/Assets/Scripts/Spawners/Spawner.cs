@@ -25,7 +25,8 @@ public class Spawner : PurchaseObject
 
     private bool isHeld;//A boolean that checks if a menu input is held down
     private int objListLength;//An integer representing the length of the 
-    private Vector3 spawnLocation;
+    private Vector3 spawnLocation;//The location of the spawner 
+
     //Start() initializes the objListLength and spawnedAnimals list
     private void Start()
     {

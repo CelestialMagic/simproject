@@ -72,16 +72,12 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         onlinePlayers.Add(this.gameObject);
-        foreach (GameObject p in onlinePlayers)
-        {
-            Debug.Log(p);
-        }
        
     }
     //Start() selects a random color for the players and sends it to other players
     private void Start()
     {
-        Color color = colors[(int)Random.Range(0, colors.Count - 1)];
+        Color color = colors[(int)Random.Range(0, colors.Count - 1)];//Picks a random color 
         //RPC call
         if (view)
             this.view.RPC("RPC_SendColor", RpcTarget.All, new Vector3(color.r, color.g, color.b));

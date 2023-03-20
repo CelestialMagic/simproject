@@ -21,7 +21,7 @@ public class VisitorBehavior : MonoBehaviour
 
     [SerializeField]
     private float idleDuration;//The idle time
-    private float idleCount = 0;
+    private float idleCount = 0;//Idle timer that counts up
 
     [SerializeField]
     private Vector3 stopRotation;//The Vector3 to rotate the visitor when it stops
