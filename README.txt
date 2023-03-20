@@ -36,7 +36,8 @@ Escape - Menu
 =Final Playtest Bugs=
 -Money may not sync up during gameplay, but players can still build and place animals.
 -After buying a building, the pen may still be there. This occurs randomly, as sometimes the pen may be destroyed as intended.
--Visitors may pile up in front of the ticket booth and not leave. Players can push them into the booth to destroy them.
+-Visitors may pile up in front of the ticket booth and not leave. Players can push them into the booth to destroy them. 
+-Visitors may also pile up in other locations in the zoo. 
 -If the master client leaves, the zoo may become empty if they built multiple pens. The main solution to this has been creating a new room. 
 
 
