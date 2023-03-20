@@ -3658,7 +3658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00265de630f3b49b38d0fc1331915dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlayersPerRoom: 2
+  maxPlayersPerRoom: 4
   roomPanel: {fileID: 1197911462}
   createInput: {fileID: 993545813}
   joinInput: {fileID: 453101779}
