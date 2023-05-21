@@ -433,7 +433,7 @@ MonoBehaviour:
   waitPeriod: 0
   behavior: {fileID: 6651508036888158272}
   m_prefab: {fileID: 4089764131692655300}
-  m_cost: 0
+  m_cost: 125
   m_name: Bear
   m_prefabName: VoxelBear
   m_description: Growls when you get close!
