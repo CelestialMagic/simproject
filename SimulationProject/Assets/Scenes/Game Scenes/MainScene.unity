@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -340,6 +340,10 @@ PrefabInstance:
     - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_NavMeshData
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086608298332466867, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: sceneViewId
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
@@ -753,6 +757,10 @@ PrefabInstance:
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 23800000, guid: b7683dd2b3e07764abd123d138283041, type: 2}
+    - target: {fileID: 8086608298332466867, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: sceneViewId
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen (1)
@@ -1555,6 +1563,10 @@ PrefabInstance:
     - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_NavMeshData
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086608298332466867, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: sceneViewId
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
@@ -2684,6 +2696,10 @@ PrefabInstance:
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8086608298332466867, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: sceneViewId
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen (7)
@@ -3136,6 +3152,10 @@ PrefabInstance:
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8086608298332466867, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: sceneViewId
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen (6)
@@ -3385,6 +3405,10 @@ PrefabInstance:
     - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_NavMeshData
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086608298332466867, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: sceneViewId
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
@@ -6911,6 +6935,10 @@ PrefabInstance:
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8086608298332466867, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: sceneViewId
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: ExpansionAnimalPen2
@@ -7336,6 +7364,10 @@ PrefabInstance:
     - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_NavMeshData
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086608298332466867, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: sceneViewId
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
@@ -9379,6 +9411,10 @@ PrefabInstance:
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8086608298332466867, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: sceneViewId
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen (8)
@@ -9695,6 +9731,10 @@ PrefabInstance:
     - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_NavMeshData
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086608298332466867, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: sceneViewId
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
@@ -10810,6 +10850,10 @@ PrefabInstance:
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8086608298332466867, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: sceneViewId
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen (9)
@@ -10907,33 +10951,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 121367452}
     m_Modifications:
-    - target: {fileID: 1428088900, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3871162907334259671, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 3871162907334259671, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459989790513700846, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
+    - target: {fileID: 8086608298332466867, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
+      propertyPath: sceneViewId
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_Name
       value: AnimalPen
-      objectReference: {fileID: 0}
-    - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8086608298346589750, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
       propertyPath: m_RootOrder
@@ -10986,33 +11010,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8086608298346589750, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
   m_PrefabInstance: {fileID: 8086608298332466864}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8086608298332466866 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8086608298346589749, guid: 18da0d654b95645e9ba63f5ad07c1679, type: 3}
-  m_PrefabInstance: {fileID: 8086608298332466864}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8086608298332466867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8086608298332466866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 1
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1001 &8747574621906152013
 PrefabInstance:
   m_ObjectHideFlags: 0

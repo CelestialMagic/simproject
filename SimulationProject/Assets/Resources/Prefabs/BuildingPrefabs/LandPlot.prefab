@@ -88,6 +88,7 @@ MonoBehaviour:
   - {fileID: 8401052145945930122, guid: 4b382efe03c924cf18132ce30eeab129, type: 3}
   - {fileID: 8101637317198216708, guid: aab65bc10f6864f39bc477056b5afc45, type: 3}
   - {fileID: 601941412732825320, guid: e7ca6c67613681f4590aa8835437097e, type: 3}
+  - {fileID: 3589850687133388454, guid: d20cd56a7f7044e8ca1a84637664c7cb, type: 3}
   - {fileID: 41150620379193701, guid: 7e1dffe627076724fb03b45b68c936a4, type: 3}
   - {fileID: 8215792608950769701, guid: 596ecfe650e9148cbbb8339046857b40, type: 3}
   - {fileID: 6860387711040029044, guid: 48f5af36c18b2437485464c2378a80fb, type: 3}
@@ -860,7 +861,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.05333333
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: c544b9742abbfad419d74346913c682c, type: 2}
+  m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
 --- !u!1 &8086608298346589749
 GameObject:
@@ -871,6 +872,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8086608298346589750}
+  - component: {fileID: 8086608298332466867}
   m_Layer: 6
   m_Name: LandPlot
   m_TagString: AnimalPen
@@ -896,6 +898,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8086608298332466867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8086608298346589749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &8099829851158610778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,11 +1551,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5346900254629367300, guid: ef36aeadb319fb5408e43abc45679d9f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.053
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5346900254629367300, guid: ef36aeadb319fb5408e43abc45679d9f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.478
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 5346900254629367300, guid: ef36aeadb319fb5408e43abc45679d9f, type: 3}
       propertyPath: m_LocalRotation.w
