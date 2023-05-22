@@ -1306,7 +1306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b838049f4d6dd43498e3f9d5c5a503b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 2014014231836175301, guid: e6c142bd1d5294e8994e9036f849dd48, type: 3}
+  playerPrefab: {fileID: 7445085943229688933, guid: 8a9422545787d4e65afe2fb6adb9e889, type: 3}
   spawnLocation: {x: 8, y: 0, z: 1}
 --- !u!4 &238645840
 Transform:

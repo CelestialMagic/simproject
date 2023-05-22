@@ -81,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         //RPC call
         if (view)
             this.view.RPC("RPC_SendColor", RpcTarget.All, new Vector3(color.r, color.g, color.b));
+        
 
     }
 
@@ -141,7 +142,12 @@ public class PlayerMovement : MonoBehaviour
     [PunRPC]
     private void RPC_SendColor(Vector3 color)
     {
-        gameObject.GetComponentInChildren<Renderer>().material.color = new Color(color.x, color.y, color.z); 
+        gameObject.GetComponentInChildren<Renderer>().material.color = new Color(color.x, color.y, color.z);
+        MeshRenderer[] childrenRenderers = GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer m in childrenRenderers)
+        {
+            m.material.color = new Color(color.x, color.y, color.z);
+        }
     }
 
     //resets the list of active players
