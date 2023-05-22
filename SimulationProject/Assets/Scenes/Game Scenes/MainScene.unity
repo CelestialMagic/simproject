@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 831cbbbc1699e49b69e8ec54bc5c6653, type: 2}
 --- !u!1 &19233253
 GameObject:
   m_ObjectHideFlags: 0
@@ -2905,7 +2905,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.001
+  near clip plane: 0.01
   far clip plane: 5000
   field of view: 60
   orthographic: 0
@@ -5802,11 +5802,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visitorPrefabs:
-  - {fileID: 6911978957391612712, guid: b33c84b7f6d82aa4ebfb74d6ad1b00cd, type: 3}
-  resetTimer: 20
+  - {fileID: 4330638625705216147, guid: 95bf5b982df53402e9d4ca9a9ed314bc, type: 3}
+  - {fileID: 8347043109089100278, guid: f14a177a0b463458586c99da86f6e317, type: 3}
+  - {fileID: 6107219825347181720, guid: 51fdbc9c96c654d509371e80028086fd, type: 3}
+  - {fileID: 271819983595748033, guid: 423992c52c2dc4b0c9991eb6f8a1b4d4, type: 3}
+  - {fileID: 4844592661133425892, guid: eea2db3a1768345d6b79a693e36e2147, type: 3}
+  - {fileID: 8607124540704683856, guid: f086bfccbad964d8091aac60f1487bd0, type: 3}
+  resetTimer: 15
   countdownTimer: 15
   timeVariation: 5
-  visitorPrefabName: Visitor
 --- !u!4 &1063126770
 Transform:
   m_ObjectHideFlags: 0
@@ -5815,7 +5819,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063126768}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.792, y: -1.4, z: 0.8000002}
+  m_LocalPosition: {x: 7.792, y: -1.491, z: 0.8000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

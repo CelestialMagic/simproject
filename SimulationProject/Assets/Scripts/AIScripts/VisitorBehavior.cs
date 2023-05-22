@@ -38,6 +38,9 @@ public class VisitorBehavior : MonoBehaviour
 
     private bool visitableInstantiated = false;
 
+    [SerializeField]
+    private string prefabName;
+
     //ActionStates for idling and executing an action
     public enum ActionState { IDLE, WORKING };
     ActionState state = ActionState.IDLE;
@@ -201,5 +204,10 @@ public class VisitorBehavior : MonoBehaviour
     {
         LocationManager.SetAccessibleLocations();
         RefreshVisitableLocations();
+    }
+
+    public string GetName()
+    {
+        return prefabName;
     }
 }

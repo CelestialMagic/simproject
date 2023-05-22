@@ -19,7 +19,6 @@ public class VisitorSpawner : MonoBehaviour
     [SerializeField]
     private float timeVariation;//A float to vary the countdownTimer by  
 
-    [SerializeField]
     private string visitorPrefabName;
 
     // Update is called once per frame
@@ -48,7 +47,9 @@ public class VisitorSpawner : MonoBehaviour
     private void GenerateRandomVisitor()
     {
         GameObject visitor = visitorPrefabs[Random.Range(0, visitorPrefabs.Count - 1)];
-        visitor.transform.position = gameObject.transform.position; 
+        visitor.transform.position = gameObject.transform.position;
+        VisitorBehavior vb = visitor.GetComponent<VisitorBehavior>();
+        visitorPrefabName = vb.GetName();
         PhotonNetwork.Instantiate(visitorPrefabName, gameObject.transform.position, Quaternion.identity, 0);
     }
 }
