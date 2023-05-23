@@ -423,6 +423,30 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Side Movement
       m_Flags: 8
+    - m_Name: Side(Controller)
+      m_Id: ab99330c-357b-4d5b-b53b-1fe181adc6b9
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Side Movement
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 6195c313-d4e6-4ffe-9bb7-f8f9958e1b50
+      m_Path: <Gamepad>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Side Movement
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: fd0865cc-d040-4cc8-98de-fecf5cd4c69e
+      m_Path: <Gamepad>/leftStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Side Movement
+      m_Flags: 8
     m_Flags: 0
   forwardMovement:
     m_Name: Forward Movement
@@ -451,6 +475,30 @@ MonoBehaviour:
     - m_Name: positive
       m_Id: 0ff7a2d2-7260-41aa-bd44-54fd54ad9315
       m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward Movement
+      m_Flags: 8
+    - m_Name: Forward(Controller)
+      m_Id: f802b6fa-885a-423d-a103-688366bab2c5
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward Movement
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 807b84f8-3f29-4666-ae0c-6fbd99cb72fb
+      m_Path: <Gamepad>/leftStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward Movement
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 33dcd2b1-bea6-475e-aa61-bec63e4aa5a9
+      m_Path: <Gamepad>/leftStick/down
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -489,6 +537,30 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Menu Cycle
       m_Flags: 8
+    - m_Name: Menu(Controller)
+      m_Id: aa69b732-586a-4cb6-a55f-408bd145b747
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Menu Cycle
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 15d199b6-ec00-42e7-a7c0-18df99f68532
+      m_Path: <Gamepad>/dpad/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Menu Cycle
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 228d5ac6-4851-4b8a-9eeb-533841d08126
+      m_Path: <Gamepad>/dpad/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Menu Cycle
+      m_Flags: 8
     m_Flags: 0
   menuPlace:
     m_Name: Menu Place
@@ -501,6 +573,14 @@ MonoBehaviour:
     - m_Name: 
       m_Id: 2506cf28-84d0-4fb1-9719-9aad74ed7f62
       m_Path: <Keyboard>/x
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Menu Place
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 535d12b8-e8b1-4d75-9884-064a37df8af5
+      m_Path: <Gamepad>/buttonEast
       m_Interactions: 
       m_Processors: 
       m_Groups: 
